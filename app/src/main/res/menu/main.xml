@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/inform" android:title="待处理" android:icon="@drawable/inform"/>
+    <item android:id="@+id/contacts" android:title="订单管理" android:icon="@drawable/contacts"/>
+    <item android:id="@+id/video" android:title="门店运营" android:icon="@drawable/eye"/>
+    <item android:id="@+id/action" android:title="我的" android:icon="@drawable/action"/>
+</menu>

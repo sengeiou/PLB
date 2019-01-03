@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.MainActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </android.support.v4.view.ViewPager>
+    </LinearLayout>
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottomView"
+        app:labelVisibilityMode="labeled"
+        app:itemTextColor="@drawable/inform_checked"
+        app:itemIconTint="@drawable/inform_checked"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/main"
+        android:background="#dddddd"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+    </android.support.design.widget.BottomNavigationView>
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--头布局-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:padding="10dp"
+        android:background="#214a74"
+        android:gravity="center_vertical"
+        android:layout_height="wrap_content">
+        <!--头像-->
+        <LinearLayout
+            android:layout_width="80dp"
+            android:layout_height="80dp">
+            <ImageView
+                android:id="@+id/iv_my_head"
+                android:src="@drawable/ic_launcher_background"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!--店铺信息-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_my_name"
+                android:text="门店名称"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:padding="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_my_ylmd"
+                android:text="点击预览门店 >"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="18sp"
+                android:padding="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <!--二维码-->
+        <LinearLayout
+            android:gravity="right"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/iv_my_ewm"
+                android:src="@drawable/erweima"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--内容-->
+    <LinearLayout
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!--营业状态-->
+        <LinearLayout
+            android:id="@+id/ll_my_state"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="营业状态"
+                android:textSize="18sp"
+                android:layout_weight="1"
+                android:textColor="@android:color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_my_state"
+                android:text="待开始营业 >"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="#32c3c5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:padding="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/md_setting"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="5dp"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:src="@drawable/mendiansetting"
+                    android:layout_width="40dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_height="40dp" />
+                <TextView
+                    android:text="门店设置"
+                    android:textColor="@android:color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_my_ddsetting"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="5dp"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:src="@drawable/mendiandindan"
+                    android:layout_width="40dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_height="40dp" />
+                <TextView
+                    android:text="订单设置"
+                    android:textColor="@android:color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="5dp"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:src="@drawable/mendiansetting"
+                    android:layout_width="40dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_height="40dp" />
+                <TextView
+                    android:text="打印设置"
+                    android:textColor="@android:color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_my_lssetting"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="5dp"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:src="@drawable/lingsheng"
+                    android:layout_width="40dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_height="40dp" />
+                <TextView
+                    android:text="消息和铃声"
+                    android:textColor="@android:color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_my_yj"
+            android:padding="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="产品意见反馈"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_my_zh"
+            android:padding="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="当前账户"
+                android:layout_weight="1"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_my_zh"
+                android:text="hk651125"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="15sp"
+                android:layout_marginRight="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_my_gx"
+            android:padding="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="检查更新"
+                android:layout_weight="1"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_my_gx"
+                android:text="当前版本1.0.0"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="15sp"
+                android:layout_marginRight="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:padding="15dp"
+            android:layout_weight="1"
+            android:layout_marginBottom="40dp"
+            android:gravity="bottom|center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_my_logout"
+                android:text="退出登陆"
+                android:padding="20dp"
+                android:textSize="20sp"
+                android:layout_marginBottom="20dp"
+                android:background="#eae7e7"
+                android:textColor="@android:color/holo_red_light"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

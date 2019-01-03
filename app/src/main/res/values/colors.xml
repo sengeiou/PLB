@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF7400</color>
+    <color name="colorHard">#20354f</color>
+    <color name="colorHard_et">#FF3C6598</color>
+    <color name="colorHard_text">#FFF</color>
+    <color name="colorBottomView">#e7e7e7</color>
+    <color name="colorBottomView_checked">#00bbff</color>
+    <color name="colorBottomView_nochecked">#a5a5a5</color>
+    <color name="white">#FFF</color>
+    <color name="colorMain">#FF7400</color>
+
+    <color name="colorLoginBottonNormal">#FF7400</color>
+    <color name="colorLoginBottonOnclick">#cc5d00</color>
+    <color name="colorLoginEditText">#a1f0f0f0</color>
+
+</resources>
