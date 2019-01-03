@@ -9,7 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.example.administrator.plb.R;
-import com.example.administrator.plb.fragment.operating_managers.NewGood;
+import com.example.administrator.plb.fragment.operating.operating_managers.NewGood;
 
 /*
 * 商品管理

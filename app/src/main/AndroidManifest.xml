@@ -28,7 +28,7 @@
         <activity android:name=".fragment.operating.operating_evaluation" />
         <activity android:name=".fragment.operating.operating_financial" />
         <activity android:name=".fragment.operating.operating_data"></activity>
-        <activity android:name=".fragment.operating_managers.NewGood"/>
+        <activity android:name=".fragment.operating.operating_managers.NewGood"/>
         <activity android:name=".fragment.operating.operating_activity.Business_statistics" />
         <activity android:name=".fragment.operating.operating_activity.Customer_analysis" />
         <activity android:name=".fragment.operating.operating_activity.Traffic_analysis" />

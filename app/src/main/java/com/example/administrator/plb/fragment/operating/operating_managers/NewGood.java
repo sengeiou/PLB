@@ -1,4 +1,4 @@
-package com.example.administrator.plb.fragment.operating_managers;
+package com.example.administrator.plb.fragment.operating.operating_managers;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,7 +8,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.administrator.plb.R;
-import com.example.administrator.plb.fragment.operating_managers.Adapter.NewGoodAdapter;
+import com.example.administrator.plb.fragment.operating.operating_managers.Adapter.NewGoodAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.example.administrator.plb.fragment.operating_managers.Adapter;
+package com.example.administrator.plb.fragment.operating.operating_managers.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;

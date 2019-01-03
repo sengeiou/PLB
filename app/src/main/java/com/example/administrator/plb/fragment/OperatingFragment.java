@@ -18,10 +18,10 @@ import com.example.administrator.plb.fragment.operating.operating_manager;
 
 public class OperatingFragment extends Fragment implements View.OnClickListener {
     private View view;
-    private LinearLayout mEvaluation;
-    private LinearLayout mFinancial;
-    private LinearLayout mData;
-    private LinearLayout mManager;
+    private LinearLayout mEvaluation,mFinancial,mData,mManager;
+    private LinearLayout mPromote,mConfiguration;
+    private LinearLayout mTosignUp,mStare,mOprRefund,mOprInvite;
+    private LinearLayout mReplenish,mCourierCompany,mLogisticsDepartment;
 
     @Nullable
     @Override
@@ -41,6 +41,24 @@ public class OperatingFragment extends Fragment implements View.OnClickListener 
         mData.setOnClickListener(this);
         mManager = (LinearLayout) view.findViewById(R.id.manager);
         mManager.setOnClickListener(this);
+        mPromote = (LinearLayout) view.findViewById(R.id.promote);
+        mPromote.setOnClickListener(this);
+        mConfiguration = (LinearLayout) view.findViewById(R.id.configuration);
+        mConfiguration.setOnClickListener(this);
+        mTosignUp = (LinearLayout) view.findViewById(R.id.Tosign_up);
+        mTosignUp.setOnClickListener(this);
+        mStare = (LinearLayout) view.findViewById(R.id.stare);
+        mStare.setOnClickListener(this);
+        mOprRefund = (LinearLayout) view.findViewById(R.id.opr_refund);
+        mOprRefund.setOnClickListener(this);
+        mOprInvite = (LinearLayout) view.findViewById(R.id.opr_invite);
+        mOprInvite.setOnClickListener(this);
+        mReplenish = (LinearLayout) view.findViewById(R.id.Replenish);
+        mReplenish.setOnClickListener(this);
+        mCourierCompany = (LinearLayout) view.findViewById(R.id.Courier_company);
+        mCourierCompany.setOnClickListener(this);
+        mLogisticsDepartment = (LinearLayout) view.findViewById(R.id.Logistics_department);
+        mLogisticsDepartment.setOnClickListener(this);
     }
 
     @Override
@@ -49,17 +67,50 @@ public class OperatingFragment extends Fragment implements View.OnClickListener 
             default:
                 break;
             case R.id.evaluation:
-                startActivity(new Intent(getActivity(),operating_evaluation.class));//用户评价
+                /*用户评价*/
+                startActivity(new Intent(getActivity(), operating_evaluation.class));
                 break;
             case R.id.financial:
-                startActivity(new Intent(getActivity(),operating_financial.class));//财务对账
+                /*财务对账*/
+                startActivity(new Intent(getActivity(), operating_financial.class));
                 break;
             case R.id.data:
-                startActivity(new Intent(getActivity(),operating_data.class));//经营数据
+                /*经营数据*/
+                startActivity(new Intent(getActivity(), operating_data.class));
                 break;
             case R.id.manager:
-                startActivity(new Intent(getActivity(),operating_manager.class));//商品管理
+                /*商品管理*/
+                startActivity(new Intent(getActivity(), operating_manager.class));
+                break;
+            case R.id.promote:
+                /*门店推广*/
+                break;
+            case R.id.configuration:
+                /*活动配置*/
+                break;
+            case R.id.Tosign_up:
+                /*活动报名*/
+                break;
+            case R.id.stare:
+                /*店铺*/
+                break;
+            case R.id.opr_refund:
+                /*极速退款*/
+                break;
+            case R.id.opr_invite:
+                /*货物自取*/
+                break;
+            case R.id.Replenish:
+                /*进货商*/
+                break;
+            case R.id.Courier_company:
+                /*快递公司*/
+                break;
+            case R.id.Logistics_department:
+                /*后勤部门*/
                 break;
         }
     }
+
+
 }
