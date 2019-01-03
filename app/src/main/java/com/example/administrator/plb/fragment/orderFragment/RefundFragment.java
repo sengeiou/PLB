@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
+import com.example.administrator.plb.R;
+
 
 public class RefundFragment extends Fragment {
     private ListView mList;
@@ -18,7 +20,7 @@ public class RefundFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return null;
+        return inflater.inflate(R.layout.fragment_order_new,null);
     }
 
     @Override
