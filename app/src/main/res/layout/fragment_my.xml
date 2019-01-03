@@ -17,9 +17,9 @@
             android:layout_height="80dp">
             <ImageView
                 android:id="@+id/iv_my_head"
-                android:src="@drawable/ic_launcher_background"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:src="@mipmap/logo"
+                android:layout_width="80dp"
+                android:layout_height="80dp" />
         </LinearLayout>
 
         <!--店铺信息-->

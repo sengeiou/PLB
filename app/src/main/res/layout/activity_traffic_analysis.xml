@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark">
+        <ImageView
+            android:id="@+id/close3"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@mipmap/quit"
+            android:layout_alignParentLeft="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="流量分析"
+            android:layout_centerInParent="true"
+            android:textSize="20dp"
+            android:padding="10dp"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:paddingLeft="20dp"
+        android:orientation="horizontal"
+        android:padding="10dp">
+        <TextView
+            android:id="@+id/traffic1"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="昨天"
+            android:gravity="center"
+            android:textColor="@color/data"
+            android:background="@drawable/status_bg2"/>
+        <TextView
+            android:id="@+id/traffic2"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="近7天"
+            android:gravity="center"
+            android:background="@drawable/status_bg1"/>
+        <TextView
+            android:id="@+id/traffic3"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="近30天"
+            android:gravity="center"
+            android:textColor="@color/data"
+            android:background="@drawable/status_bg2"/>
+    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/traffic_frag"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp">
+
+    </FrameLayout>
+
+</LinearLayout>

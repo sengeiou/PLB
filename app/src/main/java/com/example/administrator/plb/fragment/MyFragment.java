@@ -64,7 +64,6 @@ public class MyFragment extends Fragment implements View.OnClickListener {
         ivMyEwm.setOnClickListener(this);
 
         tvMyState = (TextView) view.findViewById(R.id.tv_my_state);
-        tvMyState.setOnClickListener(this);
 
         llMyState = (LinearLayout) view.findViewById(R.id.ll_my_state);
         llMyState.setOnClickListener(this);

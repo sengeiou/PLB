@@ -1,6 +1,8 @@
 package com.example.administrator.plb.activity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -15,6 +17,11 @@ import android.widget.Toast;
 
 import com.example.administrator.plb.R;
 import com.example.administrator.plb.until.CacheUntil;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -50,7 +57,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }else{
             //如果不成功则提示用户手动登陆
         }
-
     }
 
     @Override

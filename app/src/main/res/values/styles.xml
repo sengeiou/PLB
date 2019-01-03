@@ -15,4 +15,8 @@
         <!-- 设置Menu窗口不覆盖Toolbar视图 -->
         <item name="overlapAnchor">false</item>
     </style>
+    <style name="TabStyle" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+        <item name="android:textSize">18sp</item>
+    </style>
 </resources>

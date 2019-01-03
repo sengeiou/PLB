@@ -16,4 +16,8 @@
     <color name="colorLoginBottonOnclick">#cc5d00</color>
     <color name="colorLoginEditText">#a1f0f0f0</color>
 
+    <color name="black">#000000</color>2
+    <color name="DarkGreen">#00b0a5</color>
+    <color name="data">#22b0c6</color>
+
 </resources>

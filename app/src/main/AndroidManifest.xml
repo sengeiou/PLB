@@ -24,6 +24,17 @@
         <activity android:name=".activity.MendianSettingActivity" />
         <activity android:name=".activity.LingShengSettingActivity" />
         <activity android:name=".activity.YingYeStateActivity"></activity>
+        <activity android:name=".fragment.operating.operating_manager" />
+        <activity android:name=".fragment.operating.operating_evaluation" />
+        <activity android:name=".fragment.operating.operating_financial" />
+        <activity android:name=".fragment.operating.operating_data"></activity>
+        <activity android:name=".fragment.operating_managers.NewGood"/>
+        <activity android:name=".fragment.operating.operating_activity.Business_statistics" />
+        <activity android:name=".fragment.operating.operating_activity.Customer_analysis" />
+        <activity android:name=".fragment.operating.operating_activity.Traffic_analysis" />
+        <activity android:name=".fragment.operating.operating_activity.Product_analysis" />
+        <activity android:name=".fragment.operating.operating_activity.Merchants_experience" />
+
     </application>
 
 </manifest>

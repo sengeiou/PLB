@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">批零帮(批发商版)</string>
+    <string-array name="day">
+        <item >昨天</item>
+        <item >近7天</item>
+        <item >近30天</item>
+    </string-array>
 </resources>
