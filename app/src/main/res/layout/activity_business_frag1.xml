@@ -26,11 +26,11 @@
                 android:gravity="center"
                 android:paddingLeft="20dp"
                 android:paddingTop="20dp"
-                android:textSize="25dp"
+                android:textSize="20dp"
                 />
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:gravity="center"
                 android:layout_marginTop="25dp"
                 android:src="@mipmap/help"
@@ -43,11 +43,11 @@
                 android:gravity="center"
                 android:paddingLeft="20dp"
                 android:paddingTop="20dp"
-                android:textSize="25dp"
+                android:textSize="20dp"
                 />
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:gravity="center"
                 android:layout_marginTop="25dp"
                 android:src="@mipmap/help"
@@ -62,7 +62,7 @@
                 android:layout_height="wrap_content"
                 android:text="   ￥"
                 android:gravity="center"
-                android:textSize="25dp"
+                android:textSize="18dp"
                 android:paddingLeft="50dp"
                 />
             <TextView
@@ -73,7 +73,7 @@
                 android:text="9999"
                 android:gravity="center"
                 android:paddingRight="30dp"
-                android:textSize="25dp"
+                android:textSize="18dp"
                 />
             <TextView
                 android:layout_width="0dp"
@@ -81,7 +81,7 @@
                 android:layout_height="wrap_content"
                 android:text="   ￥"
                 android:gravity="center"
-                android:textSize="25dp"
+                android:textSize="18dp"
                 android:paddingLeft="50dp"
                 />
             <TextView
@@ -92,7 +92,7 @@
                 android:text="9999"
                 android:gravity="center"
                 android:paddingRight="30dp"
-                android:textSize="25dp"
+                android:textSize="18dp"
                 />
         </TableRow>
         <TableRow
@@ -108,11 +108,11 @@
                 android:gravity="center"
                 android:paddingLeft="20dp"
                 android:paddingTop="20dp"
-                android:textSize="25dp"
+                android:textSize="20dp"
                 />
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:gravity="center"
                 android:layout_marginTop="25dp"
                 android:src="@mipmap/help"
@@ -125,11 +125,11 @@
                 android:gravity="center"
                 android:paddingLeft="20dp"
                 android:paddingTop="20dp"
-                android:textSize="25dp"
+                android:textSize="20dp"
                 />
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:gravity="center"
                 android:layout_marginTop="25dp"
                 android:src="@mipmap/help"
@@ -146,7 +146,7 @@
                 android:layout_height="wrap_content"
                 android:text="9999"
                 android:gravity="center"
-                android:textSize="25dp"
+                android:textSize="18dp"
                 />
 
             <TextView
@@ -156,7 +156,7 @@
                 android:layout_height="wrap_content"
                 android:text="9999"
                 android:gravity="center"
-                android:textSize="25dp"
+                android:textSize="18dp"
                 />
         </TableRow>
         <TableRow
@@ -170,7 +170,7 @@
                 android:layout_height="wrap_content"
                 android:text="       客单价：￥"
                 android:gravity="center"
-                android:textSize="18dp"
+                android:textSize="16dp"
                 />
             <TextView
                 android:id="@+id/num5"
@@ -179,7 +179,7 @@
                 android:layout_height="wrap_content"
                 android:text="33.5"
                 android:gravity="center"
-                android:textSize="18dp"
+                android:textSize="16dp"
                 />
             <TextView
                 android:layout_width="0dp"
@@ -187,7 +187,7 @@
                 android:layout_height="wrap_content"
                 android:text="损失营业额：￥"
                 android:gravity="center"
-                android:textSize="18dp"
+                android:textSize="16dp"
                 android:layout_marginLeft="30dp"
                 />
             <TextView
@@ -197,7 +197,7 @@
                 android:layout_height="wrap_content"
                 android:text="33.5"
                 android:gravity="center"
-                android:textSize="18dp"
+                android:textSize="16dp"
                 />
         </TableRow>
     </TableLayout>

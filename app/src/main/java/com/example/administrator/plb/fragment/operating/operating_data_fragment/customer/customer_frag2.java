@@ -1,4 +1,4 @@
-package com.example.administrator.plb.fragment.operating.operating_fragment.traffic;
+package com.example.administrator.plb.fragment.operating.operating_data_fragment.customer;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -11,14 +11,13 @@ import android.view.ViewGroup;
 
 import com.example.administrator.plb.R;
 
-public class traffic_frag1 extends Fragment {
+public class customer_frag2 extends Fragment {
     private View view;
     public Context mContext;
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view=inflater.inflate(R.layout.traffic_frag1,container,false);
+        view=inflater.inflate(R.layout.activity_customer_frag2,container,false);
         return view;
     }
 }

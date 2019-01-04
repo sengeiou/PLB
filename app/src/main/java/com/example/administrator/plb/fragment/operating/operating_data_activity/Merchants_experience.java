@@ -1,4 +1,4 @@
-package com.example.administrator.plb.fragment.operating.operating_activity;
+package com.example.administrator.plb.fragment.operating.operating_data_activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -6,7 +6,10 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.example.administrator.plb.R;
-
+/*
+ * create by csy 1/2
+ * 商家体验
+ * */
 public class Merchants_experience extends AppCompatActivity implements View.OnClickListener {
 
     private ImageView mClose5;

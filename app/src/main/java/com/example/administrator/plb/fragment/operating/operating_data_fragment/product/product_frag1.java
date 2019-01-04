@@ -1,4 +1,4 @@
-package com.example.administrator.plb.fragment.operating.operating_fragment.product;
+package com.example.administrator.plb.fragment.operating.operating_data_fragment.product;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
