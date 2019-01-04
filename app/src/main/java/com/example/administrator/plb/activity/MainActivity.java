@@ -22,6 +22,7 @@ import com.example.administrator.plb.fragment.MyFragment;
 import com.example.administrator.plb.fragment.OperatingFragment;
 import com.example.administrator.plb.fragment.OrderFragment;
 import com.example.administrator.plb.fragment.OrderManageFragment;
+import com.example.administrator.plb.until.GDLocation;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +39,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         initView();
         initData();
+        /**
+         * 定位
+         */
+        //location();
+    }
+
+    private void location() {
+        GDLocation gdLocation = new GDLocation(this);
+        gdLocation.getLocation();
     }
 
     private void initView() {
