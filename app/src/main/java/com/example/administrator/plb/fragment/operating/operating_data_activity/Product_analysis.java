@@ -1,4 +1,4 @@
-package com.example.administrator.plb.fragment.operating.operating_activity;
+package com.example.administrator.plb.fragment.operating.operating_data_activity;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -12,10 +12,12 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.example.administrator.plb.R;
-import com.example.administrator.plb.fragment.operating.operating_fragment.product.product_frag1;
-import com.example.administrator.plb.fragment.operating.operating_fragment.product.product_frag2;
-
-
+import com.example.administrator.plb.fragment.operating.operating_data_fragment.product.product_frag1;
+import com.example.administrator.plb.fragment.operating.operating_data_fragment.product.product_frag2;
+/*
+ * create by csy 1/2
+ * 商品分析
+ * */
 public class Product_analysis extends AppCompatActivity implements View.OnClickListener {
 
     private ImageView mClose4;

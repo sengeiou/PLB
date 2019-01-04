@@ -8,13 +8,13 @@
     >
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="50dp"
         android:gravity="center"
         android:orientation="horizontal">
         <Spinner
             android:id="@+id/product_spinner"
             android:layout_width="0dp"
-            android:layout_weight="0.6"
+            android:layout_weight="1.2"
             android:layout_height="wrap_content"
             android:entries="@array/day"
             >
@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:text="销售额最高"
             android:gravity="center"
-            android:textSize="20dp"/>
+            android:textSize="16dp"/>
         <View
             android:layout_width="2dp"
             android:layout_height="20dp"
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:text="销售量最高"
             android:gravity="center"
-            android:textSize="20dp"/>
+            android:textSize="16dp"/>
 
         <TextView
             android:id="@+id/product_good"
@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:text="赞"
             android:gravity="center"
-            android:textSize="20dp"/>
+            android:textSize="16dp"/>
         <View
             android:layout_width="2dp"
             android:layout_height="20dp"
@@ -60,7 +60,7 @@
             android:layout_height="wrap_content"
             android:text="踩"
             android:gravity="center"
-            android:textSize="20dp"/>
+            android:textSize="16dp"/>
     </LinearLayout>
     <View
         android:layout_width="match_parent"

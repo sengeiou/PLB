@@ -1,4 +1,4 @@
-package com.example.administrator.plb.fragment.operating.operating_fragment;
+package com.example.administrator.plb.fragment.operating.operating_data_fragment.product;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -10,13 +10,13 @@ import android.view.ViewGroup;
 
 import com.example.administrator.plb.R;
 
-public class Businessdata_frg extends Fragment {
+public class product_frag2 extends Fragment {
     private View view;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view=inflater.inflate(R.layout.businessdata_frg,container,false);
+        view=inflater.inflate(R.layout.activity_product_frag2,container,false);
         return view;
     }
 }
