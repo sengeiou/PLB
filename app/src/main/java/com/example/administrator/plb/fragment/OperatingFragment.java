@@ -11,10 +11,10 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.example.administrator.plb.R;
-import com.example.administrator.plb.fragment.operating.operating_data;
-import com.example.administrator.plb.fragment.operating.operating_evaluation;
-import com.example.administrator.plb.fragment.operating.operating_financial;
-import com.example.administrator.plb.fragment.operating.operating_manager;
+import com.example.administrator.plb.activity.operating_activity.operating_data;
+import com.example.administrator.plb.activity.operating_activity.operating_evaluation;
+import com.example.administrator.plb.activity.operating_activity.operating_financial;
+import com.example.administrator.plb.activity.operating_activity.operating_manager;
 
 public class OperatingFragment extends Fragment implements View.OnClickListener {
     private View view;

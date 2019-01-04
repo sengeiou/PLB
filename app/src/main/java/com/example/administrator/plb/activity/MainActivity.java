@@ -27,6 +27,9 @@ import com.example.administrator.plb.until.GDLocation;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 主页面
+ */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
 
@@ -131,5 +134,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public boolean onOptionsItemSelected(MenuItem item) {
         return true;
     }
+
+
+
+
 
 }

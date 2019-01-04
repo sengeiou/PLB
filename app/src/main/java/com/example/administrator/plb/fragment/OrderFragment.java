@@ -14,9 +14,10 @@ import android.widget.TextView;
 
 import com.example.administrator.plb.R;
 import com.example.administrator.plb.adapter.FragmentAdapter;
-import com.example.administrator.plb.fragment.orderFragment.NewOrderFragment;
-import com.example.administrator.plb.fragment.orderFragment.RefundFragment;
-import com.example.administrator.plb.fragment.orderFragment.ReminderFragment;
+import com.example.administrator.plb.fragment.order_fragment.CompensateFragment;
+import com.example.administrator.plb.fragment.order_fragment.NewOrderFragment;
+import com.example.administrator.plb.fragment.order_fragment.RefundFragment;
+import com.example.administrator.plb.fragment.order_fragment.ReminderFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,7 +53,7 @@ public class OrderFragment extends Fragment {
         fragments.add(new NewOrderFragment());//新订单
         fragments.add(new ReminderFragment());//催单
         fragments.add(new RefundFragment());//退款
-        fragments.add(new NewOrderFragment());//赔付
+        fragments.add(new CompensateFragment());//赔付
         titles.add("新订单");
         titles.add("催单");
         titles.add("退款");

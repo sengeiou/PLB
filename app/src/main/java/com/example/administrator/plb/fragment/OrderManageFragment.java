@@ -14,12 +14,9 @@ import android.widget.TextView;
 
 import com.example.administrator.plb.R;
 import com.example.administrator.plb.adapter.FragmentAdapter;
-import com.example.administrator.plb.fragment.orderFragment.NewOrderFragment;
-import com.example.administrator.plb.fragment.orderFragment.RefundFragment;
-import com.example.administrator.plb.fragment.orderFragment.ReminderFragment;
-import com.example.administrator.plb.fragment.orderManageFragment.CancelFragment;
-import com.example.administrator.plb.fragment.orderManageFragment.CompletedFragment;
-import com.example.administrator.plb.fragment.orderManageFragment.OnGoingFragment;
+import com.example.administrator.plb.fragment.orderManage_fragment.CancelFragment;
+import com.example.administrator.plb.fragment.orderManage_fragment.CompletedFragment;
+import com.example.administrator.plb.fragment.orderManage_fragment.OnGoingFragment;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

@@ -16,25 +16,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.LoginActivity">
-        </activity>
+        <activity android:name=".activity.LoginActivity"></activity>
         <activity android:name=".activity.RegActivity" />
-        <activity android:name=".activity.GuideActivity">
-        </activity>
-        <activity android:name=".activity.MendianSettingActivity" />
-        <activity android:name=".activity.LingShengSettingActivity" />
-        <activity android:name=".activity.YingYeStateActivity"></activity>
-        <activity android:name=".fragment.operating.operating_manager" />
-        <activity android:name=".fragment.operating.operating_evaluation" />
-        <activity android:name=".fragment.operating.operating_financial" />
-        <activity android:name=".fragment.operating.operating_data"/>
-        <activity android:name=".fragment.operating.operating_managers.NewGood"/>
-        <activity android:name=".fragment.operating.operating_data_activity.Business_statistics" />
-        <activity android:name=".fragment.operating.operating_data_activity.Customer_analysis" />
-        <activity android:name=".fragment.operating.operating_data_activity.Traffic_analysis" />
-        <activity android:name=".fragment.operating.operating_data_activity.Product_analysis" />
-        <activity android:name=".fragment.operating.operating_data_activity.Merchants_experience" />
-
+        <activity android:name=".activity.GuideActivity"></activity>
+        <activity android:name=".activity.my_activity.MendianSettingActivity" />
+        <activity android:name=".activity.my_activity.LingShengSettingActivity" />
+        <activity android:name=".activity.my_activity.YingYeStateActivity" />
+        <activity android:name=".activity.operating_activity.operating_manager" />
+        <activity android:name=".activity.operating_activity.operating_evaluation" />
+        <activity android:name=".activity.operating_activity.operating_financial" />
+        <activity android:name=".activity.operating_activity.operating_data" />
+        <activity android:name=".activity.operating_activity.NewGood" />
+        <activity android:name=".activity.operating_activity.Business_statistics" />
+        <activity android:name=".activity.operating_activity.Customer_analysis" />
+        <activity android:name=".activity.operating_activity.Traffic_analysis" />
+        <activity android:name=".activity.operating_activity.Product_analysis" />
+        <activity android:name=".activity.operating_activity.Merchants_experience" />
+        <activity android:name=".activity.Audit"></activity>
     </application>
 
 </manifest>

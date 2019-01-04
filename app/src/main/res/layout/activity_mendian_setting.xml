@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activity.MendianSettingActivity">
+    tools:context=".activity.my_activity.MendianSettingActivity">
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -14,7 +14,7 @@
         <ImageView
             android:id="@+id/back"
             android:layout_gravity="center"
-            android:src="@mipmap/back"
+            android:src="@mipmap/quit"
             android:layout_width="35dp"
             android:layout_height="35dp" />
         <TextView

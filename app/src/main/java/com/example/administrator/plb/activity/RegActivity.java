@@ -14,6 +14,9 @@ import android.widget.Toast;
 
 import com.example.administrator.plb.R;
 
+/**
+ * 注册页
+ */
 public class RegActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText mUsername;
@@ -44,7 +47,6 @@ public class RegActivity extends AppCompatActivity implements View.OnClickListen
               if(submit()){
                   Intent intent=new Intent(RegActivity.this,Audit.class);
                   startActivity(intent);
-
               }
                 break;
         }

@@ -5,14 +5,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".operating.operating_manager">
-
+    tools:context=".activity.operating_activity.operating_manager">
 
     <!--头部布局-->
+    <android.support.v7.widget.Toolbar
+        app:theme="@style/ToolbarTheme"
+        android:background="@color/colorHard"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:background="#37489f">
+        android:layout_height="match_parent"
+        android:background="@color/colorHard">
 
         <ImageView
             android:id="@+id/iv_return"
@@ -41,22 +46,15 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="50dp"/>
 
-        <ImageView
-            android:id="@+id/iv_TheMenu"
-            android:layout_width="22dp"
-            android:layout_height="22dp"
-            android:src="@mipmap/themenu"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="10dp"/>
     </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
     <!--中间内容布局-->
     <LinearLayout
-        android:layout_marginTop="45dp"
+        android:layout_below="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        android:layout_marginBottom="45dp">
+        >
 
         <LinearLayout
             android:layout_width="match_parent"

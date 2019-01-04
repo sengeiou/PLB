@@ -8,13 +8,13 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:background="#37489f">
+        android:background="@color/colorHard">
 
         <ImageView
             android:id="@+id/iv_return"
             android:layout_width="25dp"
             android:layout_height="22dp"
-            android:src="@mipmap/returnpan"
+            android:src="@mipmap/quit"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"/>

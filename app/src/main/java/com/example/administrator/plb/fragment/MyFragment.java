@@ -13,9 +13,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.administrator.plb.R;
-import com.example.administrator.plb.activity.LingShengSettingActivity;
-import com.example.administrator.plb.activity.MendianSettingActivity;
-import com.example.administrator.plb.activity.YingYeStateActivity;
+import com.example.administrator.plb.activity.my_activity.LingShengSettingActivity;
+import com.example.administrator.plb.activity.my_activity.MendianSettingActivity;
+import com.example.administrator.plb.activity.my_activity.YingYeStateActivity;
 
 
 public class MyFragment extends Fragment implements View.OnClickListener {

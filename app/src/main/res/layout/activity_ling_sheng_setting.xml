@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activity.LingShengSettingActivity">
+    tools:context=".activity.my_activity.LingShengSettingActivity">
 
     <LinearLayout
         android:padding="20dp"
         android:gravity="center_vertical"
-        android:background="#153455"
+        android:background="@color/colorHard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 

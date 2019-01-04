@@ -8,6 +8,9 @@ import android.os.Bundle;
 
 import com.example.administrator.plb.R;
 
+/**
+ * 引导页
+ */
 public class GuideActivity extends AppCompatActivity {
 
     @Override

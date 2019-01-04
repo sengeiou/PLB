@@ -23,6 +23,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
+/**
+ * 登陆页
+ */
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText mUsername;
