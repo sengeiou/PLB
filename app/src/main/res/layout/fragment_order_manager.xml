@@ -18,7 +18,7 @@
                 android:textSize="18sp"
                 android:textColor="@color/colorHard_text"
                 android:id="@+id/time"
-                android:text="预订单"
+                android:text="时间"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <EditText
