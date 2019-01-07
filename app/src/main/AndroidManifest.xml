@@ -40,14 +40,16 @@
         <service android:name="com.amap.api.location.APSService"></service>
 
         <activity android:name=".activity.MainActivity">
+
+        </activity>
+        <activity android:name=".activity.LoginActivity"></activity>
+        <activity android:name=".activity.RegActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.LoginActivity"></activity>
-        <activity android:name=".activity.RegActivity" />
         <activity android:name=".activity.GuideActivity"></activity>
         <activity android:name=".activity.my_activity.MendianSettingActivity" />
         <activity android:name=".activity.my_activity.LingShengSettingActivity" />

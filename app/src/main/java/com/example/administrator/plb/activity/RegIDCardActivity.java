@@ -53,7 +53,7 @@ public class RegIDCardActivity extends AppCompatActivity implements View.OnClick
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_reg);
+        setContentView(R.layout.activity_reg_id_card);
         sp=getSharedPreferences("data", Context.MODE_PRIVATE);
 
         editor=sp.edit();
