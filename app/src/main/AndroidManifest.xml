@@ -52,6 +52,7 @@
         <activity android:name=".activity.my_activity.MendianSettingActivity" />
         <activity android:name=".activity.my_activity.LingShengSettingActivity" />
         <activity android:name=".activity.my_activity.YingYeStateActivity" />
+        <activity android:name=".activity.RegIDCardActivity"/>
         <activity android:name=".activity.operating_activity.operating_manager" />
         <activity android:name=".activity.operating_activity.operating_evaluation" />
         <activity android:name=".activity.operating_activity.operating_financial" />
@@ -62,7 +63,6 @@
         <activity android:name=".activity.operating_activity.Traffic_analysis" />
         <activity android:name=".activity.operating_activity.Product_analysis" />
         <activity android:name=".activity.operating_activity.Merchants_experience" />
-        <activity android:name=".activity.Audit"></activity>
     </application>
 
 </manifest>

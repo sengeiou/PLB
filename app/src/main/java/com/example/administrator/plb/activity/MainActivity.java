@@ -1,5 +1,9 @@
 package com.example.administrator.plb.activity;
 
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -45,7 +49,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         /**
          * 定位
          */
-        location();
+        //location();
+
     }
 
     private void location() {

@@ -45,7 +45,7 @@ public class RegActivity extends AppCompatActivity implements View.OnClickListen
         switch (v.getId()) {
             case R.id.reg:
               if(submit()){
-                  Intent intent=new Intent(RegActivity.this,Audit.class);
+                  Intent intent=new Intent(RegActivity.this,RegIDCardActivity.class);
                   startActivity(intent);
               }
                 break;
