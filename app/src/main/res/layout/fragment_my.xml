@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content" />
         </LinearLayout>
         <!--二维码-->
-        <LinearLayout
+        <!--<LinearLayout
             android:gravity="right"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -56,7 +56,7 @@
                 android:src="@drawable/erweima"
                 android:layout_width="40dp"
                 android:layout_height="40dp" />
-        </LinearLayout>
+        </LinearLayout>-->
     </LinearLayout>
 
     <!--内容-->

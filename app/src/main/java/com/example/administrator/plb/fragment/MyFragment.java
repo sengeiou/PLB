@@ -25,7 +25,6 @@ public class MyFragment extends Fragment implements View.OnClickListener {
     private ImageView ivMyHead;
     private TextView tvMyName;
     private TextView tvMyYlmd;
-    private ImageView ivMyEwm;
     private TextView tvMyState;
     private LinearLayout llMyState;
     private LinearLayout llMyDdsetting;
@@ -59,9 +58,6 @@ public class MyFragment extends Fragment implements View.OnClickListener {
 
         tvMyYlmd = (TextView) view.findViewById(R.id.tv_my_ylmd);
         tvMyYlmd.setOnClickListener(this);
-
-        ivMyEwm = (ImageView) view.findViewById(R.id.iv_my_ewm);
-        ivMyEwm.setOnClickListener(this);
 
         tvMyState = (TextView) view.findViewById(R.id.tv_my_state);
 
@@ -108,6 +104,7 @@ public class MyFragment extends Fragment implements View.OnClickListener {
                 intent = new Intent(getActivity(), YingYeStateActivity.class);
                 getActivity().startActivity(intent);
                 break;
+
         }
     }
 }

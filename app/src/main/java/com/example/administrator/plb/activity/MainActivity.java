@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         /**
          * 定位
          */
-        //location();
+        location();
     }
 
     private void location() {

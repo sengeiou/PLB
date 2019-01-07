@@ -76,11 +76,14 @@ public class GDLocation {
         mLocationOption.setHttpTimeOut(20000);
         //关闭缓存机制
         mLocationOption.setLocationCacheEnable(false);
-        //给定位客户端对象设置定位参数
-        mLocationClient.setLocationOption(mLocationOption);
         //获取一次定位结果：
         //该方法默认为false。
         mLocationOption.setOnceLocation(true);
+
+
+        //给定位客户端对象设置定位参数
+        mLocationClient.setLocationOption(mLocationOption);
+
 
         //异步获取定位结果
         //解析定位结果
