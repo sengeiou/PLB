@@ -4,6 +4,7 @@
 
     <!--高德定位权限-->
     <!--用于进行网络定位-->
+    <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
     <!--用于访问GPS定位-->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
@@ -40,16 +41,16 @@
         <service android:name="com.amap.api.location.APSService"></service>
 
         <activity android:name=".activity.MainActivity">
-
-        </activity>
-        <activity android:name=".activity.LoginActivity"></activity>
-        <activity android:name=".activity.RegActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.LoginActivity">
+
+        </activity>
+        <activity android:name=".activity.RegActivity" />
         <activity android:name=".activity.GuideActivity"></activity>
         <activity android:name=".activity.my_activity.MendianSettingActivity" />
         <activity android:name=".activity.my_activity.LingShengSettingActivity" />

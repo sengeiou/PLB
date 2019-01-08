@@ -29,7 +29,7 @@
         app:menu="@menu/main"
         android:background="#dddddd"
         android:layout_width="match_parent"
-        android:layout_height="50dp">
+        android:layout_height="@dimen/main_bottomView">
 
     </android.support.design.widget.BottomNavigationView>
     </RelativeLayout>

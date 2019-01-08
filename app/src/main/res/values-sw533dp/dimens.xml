@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<dimen name="main_bottomView">74.0278dp</dimen>
+	<dimen name="order_toolbar">74.0278dp</dimen>
+	<dimen name="toobar_title_text">37.0139sp</dimen>
+	<dimen name="order_tab">148.0556dp</dimen>
+	<dimen name="order_manager_toolbar">74.0278dp</dimen>
+	<dimen name="order_manager_time">26.6500sp</dimen>
+	<dimen name="order_manager_seach_editText_margin">14.8056dp</dimen>
+	<dimen name="order_manager_seach_editText_padding">7.4028dp</dimen>
+	<dimen name="order_manager_seach_editText_height">44.4167dp</dimen>
+	<dimen name="operating_image_width">59.2222dp</dimen>
+	<dimen name="operating_image_height">59.2222dp</dimen>
+	<dimen name="operating_image_textSize">17.7667sp</dimen>
+	<dimen name="operating_title_textSize">22.2083sp</dimen>
+	<dimen name="operating_title_padding">22.2083dp</dimen>
+	<dimen name="operating_activity_margin">22.2083dp</dimen>
+	<dimen name="operating_activity_title_textSize">23.6889sp</dimen>
+	<dimen name="operating_activity_text_textSize">17.7667sp</dimen>
+	<dimen name="operating_activity_image">44.4167dp</dimen>
+</resources>

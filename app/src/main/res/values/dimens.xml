@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--主布局-->
+    <dimen name="main_bottomView">50dp</dimen>
+
+    <!--待处理-->
+    <dimen name="order_toolbar">50dp</dimen>
+    <dimen name="toobar_title_text">25sp</dimen>
+    <dimen name="order_tab">100dp</dimen>
+
+    <!--订单管理-->
+    <dimen name="order_manager_toolbar">50dp</dimen>
+    <dimen name="order_manager_time">18sp</dimen>
+    <dimen name="order_manager_seach_editText_margin">10dp</dimen>
+    <dimen name="order_manager_seach_editText_padding">5dp</dimen>
+    <dimen name="order_manager_seach_editText_height">30dp</dimen>
+
+    <!--门店运营-->
+    <dimen name="operating_image_width">40dp</dimen>
+    <dimen name="operating_image_height">40dp</dimen>
+    <dimen name="operating_image_textSize">12sp</dimen>
+    <dimen name="operating_title_textSize">15sp</dimen>
+    <dimen name="operating_title_padding">15dp</dimen>
+    <dimen name="operating_activity_margin">15dp</dimen>
+    <dimen name="operating_activity_title_textSize">16sp</dimen>
+    <dimen name="operating_activity_text_textSize">12sp</dimen>
+    <dimen name="operating_activity_image">30dp</dimen>
+</resources>
