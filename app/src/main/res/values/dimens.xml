@@ -25,4 +25,10 @@
     <dimen name="operating_activity_title_textSize">16sp</dimen>
     <dimen name="operating_activity_text_textSize">12sp</dimen>
     <dimen name="operating_activity_image">30dp</dimen>
+
+    <!--经营数据-->
+    <dimen name="operating_data_image">35dp</dimen>
+    <dimen name="operating_data_textSize">12sp</dimen>
+    <dimen name="operating_data_title">20sp</dimen>
+    <dimen name="operating_data_title_padding">10dp</dimen>
 </resources>

@@ -10,8 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="数据统计"
-        android:textSize="20dp"
-        android:padding="10dp"/>
+        android:textSize="@dimen/operating_data_title"
+        android:padding="@dimen/operating_data_title_padding"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -24,19 +24,19 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center">
+
             <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:gravity="center"
-                android:padding="5dp"
+                android:layout_width="@dimen/operating_data_image"
+                android:layout_height="@dimen/operating_data_image"
                 android:background="@mipmap/data1"
-                />
+                android:gravity="center"
+                android:padding="5dp" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="营业统计"
                 android:gravity="center"
-                android:textSize="16sp"
+                android:textSize="@dimen/operating_data_textSize"
                 android:padding="5dp"
                 android:layout_marginTop="10dp"
                 />
@@ -49,8 +49,8 @@
             android:orientation="vertical"
             android:gravity="center">
             <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="@dimen/operating_data_image"
+                android:layout_height="@dimen/operating_data_image"
                 android:gravity="center"
                 android:padding="5dp"
                 android:background="@mipmap/data2"
@@ -60,7 +60,7 @@
                 android:layout_height="match_parent"
                 android:text="顾客分析"
                 android:gravity="center"
-                android:textSize="16sp"
+                android:textSize="@dimen/operating_data_textSize"
                 android:padding="5dp"
                 android:layout_marginTop="10dp"
                 />
@@ -73,8 +73,8 @@
             android:orientation="vertical"
             android:gravity="center">
             <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="@dimen/operating_data_image"
+                android:layout_height="@dimen/operating_data_image"
                 android:gravity="center"
                 android:padding="5dp"
                 android:background="@mipmap/data3"
@@ -84,7 +84,7 @@
                 android:layout_height="match_parent"
                 android:text="流量分析"
                 android:gravity="center"
-                android:textSize="16sp"
+                android:textSize="@dimen/operating_data_textSize"
                 android:padding="5dp"
                 android:layout_marginTop="10dp"
                 />
@@ -97,8 +97,8 @@
             android:orientation="vertical"
             android:gravity="center">
             <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="@dimen/operating_data_image"
+                android:layout_height="@dimen/operating_data_image"
                 android:gravity="center"
                 android:padding="5dp"
                 android:background="@mipmap/data4"
@@ -108,7 +108,7 @@
                 android:layout_height="match_parent"
                 android:text="商品分析"
                 android:gravity="center"
-                android:textSize="16sp"
+                android:textSize="@dimen/operating_data_textSize"
                 android:padding="5dp"
                 android:layout_marginTop="10dp"
                 />
@@ -121,8 +121,8 @@
             android:orientation="vertical"
             android:gravity="center">
             <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="@dimen/operating_data_image"
+                android:layout_height="@dimen/operating_data_image"
                 android:gravity="center"
                 android:padding="5dp"
                 android:background="@mipmap/data5"
@@ -132,7 +132,7 @@
                 android:layout_height="match_parent"
                 android:text="商家体验"
                 android:gravity="center"
-                android:textSize="16sp"
+                android:textSize="@dimen/operating_data_textSize"
                 android:padding="5dp"
                 android:layout_marginTop="10dp"
                 />
@@ -144,9 +144,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="经营报告"
-        android:textSize="20dp"
-        android:padding="10dp"
-        android:layout_marginTop="10dp"/>
+        android:textSize="@dimen/operating_data_title"
+        android:padding="@dimen/operating_data_title_padding" />
 
     <LinearLayout
         android:layout_width="match_parent"

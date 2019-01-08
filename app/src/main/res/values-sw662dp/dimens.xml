@@ -18,4 +18,8 @@
 	<dimen name="operating_activity_title_textSize">29.4222sp</dimen>
 	<dimen name="operating_activity_text_textSize">22.0667sp</dimen>
 	<dimen name="operating_activity_image">55.1667dp</dimen>
+	<dimen name="operating_data_image">64.3611dp</dimen>
+	<dimen name="operating_data_textSize">22.0667sp</dimen>
+	<dimen name="operating_data_title">36.7778sp</dimen>
+	<dimen name="operating_data_title_padding">18.3889dp</dimen>
 </resources>
