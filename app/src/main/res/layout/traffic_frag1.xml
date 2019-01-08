@@ -6,44 +6,44 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     >
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="10dp">
+        android:padding="@dimen/traffic_frag1_padding">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="统计时间"
-            android:textSize="20dp" />
+            android:layout_alignParentLeft="true"
+            android:textSize="@dimen/traffic_frag1_textSize" />
 
         <TextView
             android:id="@+id/traffic_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="2019-1-1"
-            android:textSize="20dp"
-            android:layout_marginLeft="130dp"/>
-    </LinearLayout>
+            android:textSize="@dimen/traffic_frag1_textSize"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="10dp">
+        android:padding="@dimen/traffic_frag1_padding">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="流量概况"
-            android:textSize="25dp"
+            android:textSize="@dimen/traffic_frag1_titleSize"
             android:textColor="@color/black"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="(统计“团购”和“零售”数据)"
-            android:textSize="20dp"
-            android:layout_marginLeft="5dp"
+            android:text="(团购,零售的数据分析)"
+            android:textSize="@dimen/traffic_frag1_textSize"
+            android:layout_marginLeft="@dimen/traffic_frag1_layout_marginLeft"
            />
     </LinearLayout>
 
@@ -51,8 +51,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="10dp"
-        android:layout_marginTop="20dp"
+        android:padding="@dimen/traffic_frag1_padding"
+        android:layout_marginTop="@dimen/traffic_frag1_layout_marginTop"
         >
         <LinearLayout
             android:layout_width="0dp"
@@ -64,7 +64,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="曝光"
-                android:textSize="18dp"
+                android:textSize="@dimen/traffic_frag1_textSize"
                 android:gravity="center"
                 android:background="@mipmap/traffic3"/>
             <ImageView
@@ -78,7 +78,7 @@
                 android:text="访问"
                 android:gravity="center"
                 android:background="@mipmap/traffic3"
-                android:textSize="18dp"/>
+                android:textSize="@dimen/traffic_frag1_textSize"/>
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -90,7 +90,7 @@
                 android:text="订单"
                 android:gravity="center"
                 android:background="@mipmap/traffic3"
-                android:textSize="18dp"/>
+                android:textSize="@dimen/traffic_frag1_textSize"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="0dp"
@@ -112,18 +112,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="10dp">
+        android:padding="@dimen/traffic_frag1_padding">
         <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="@dimen/traffic_frag1_Image"
+            android:layout_height="@dimen/traffic_frag1_Image"
             android:src="@mipmap/help"
-            android:layout_marginTop="5dp"/>
+            android:layout_marginTop="@dimen/traffic_frag1_layout_marginLeft"/>
         <TextView
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="查看指标说明"
-            android:textSize="20dp"
-            android:layout_marginLeft="3dp"/>
+            android:textSize="@dimen/traffic_frag1_textSize"
+            android:layout_marginLeft="@dimen/traffic_frag1_layout_marginLeft"/>
     </LinearLayout>
 </LinearLayout>

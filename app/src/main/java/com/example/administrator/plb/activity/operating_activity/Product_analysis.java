@@ -16,7 +16,7 @@ import com.example.administrator.plb.fragment.operating_fragment.product.product
 import com.example.administrator.plb.fragment.operating_fragment.product.product_frag2;
 
 /**
- * 产品分析
+ * 商品分析
  */
 public class Product_analysis extends AppCompatActivity implements View.OnClickListener {
 

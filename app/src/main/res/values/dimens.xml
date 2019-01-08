@@ -31,4 +31,48 @@
     <dimen name="operating_data_textSize">12sp</dimen>
     <dimen name="operating_data_title">20sp</dimen>
     <dimen name="operating_data_title_padding">10dp</dimen>
+
+    <!--经营统计-->
+    <dimen name="business_statistics_image">30dp</dimen>
+    <dimen name="business_statistics_textSize">20dp</dimen>
+    <dimen name="business_statistics_padding">10dp</dimen>
+    <dimen name="business_statistics_layout_height">60dp</dimen>
+    <!--经营统计-今天-->
+    <dimen name="activity_business_frag1_layout_marginTop">10dp</dimen>
+    <dimen name="activity_business_frag1_textSize">25dp</dimen>
+    <dimen name="activity_business_frag1_tablewidth">340dp</dimen>
+    <dimen name="activity_business_frag1_paddingTop">20dp</dimen>
+    <dimen name="activity_business_frag1_textsize1">20dp</dimen>
+    <dimen name="activity_business_frag1_textsize2">18dp</dimen>
+    <dimen name="activity_business_frag1_textsize3">16dp</dimen>
+    <dimen name="activity_business_frag1_padding">3dp</dimen>
+    <!--顾客分析-->
+    <dimen name="activity_customer_analysis_Image">30dp</dimen>
+    <dimen name="activity_customer_analysis_titleSize">20dp</dimen>
+    <dimen name="activity_customer_analysis_titlePadding">10dp</dimen>
+    <dimen name="activity_customer_analysis_layout_height">60dp</dimen>
+    <!--流量分析-->
+    <dimen name="activity_traffic_analysis_Image">30dp</dimen>
+    <dimen name="activity_traffic_analysis_titleSize">20dp</dimen>
+    <dimen name="activity_traffic_analysis_titlePadding">10dp</dimen>
+    <dimen name="activity_traffic_analysis_layout_height">60dp</dimen>
+    <!--流量分析，今天-->
+    <dimen name="traffic_frag1_padding">10dp</dimen>
+    <dimen name="traffic_frag1_textSize">18dp</dimen>
+    <dimen name="traffic_frag1_titleSize">25dp</dimen>
+    <dimen name="traffic_frag1_layout_marginLeft">5dp</dimen>
+    <dimen name="traffic_frag1_layout_marginTop">20dp</dimen>
+    <dimen name="traffic_frag1_Image">20dp</dimen>
+    <!--商品分析-->
+    <dimen name="activity_product_analysis_Image">30dp</dimen>
+    <dimen name="activity_product_analysis_titleSize">20dp</dimen>
+    <dimen name="activity_product_analysis_titlePadding">10dp</dimen>
+    <dimen name="activity_product_analysis_tabIndicatorHeight">3dp</dimen>
+    <!--商品分析,商品销售-->
+    <dimen name="activity_product_frag1_layout_height">50dp</dimen>
+    <dimen name="activity_product_frag1_View_height">10dp</dimen>
+    <dimen name="activity_product_frag1_View_width">2dp</dimen>
+    <dimen name="activity_product_frag1_View_layheight">20dp</dimen>
+    <dimen name="activity_product_frag1_textSize">16dp</dimen>
+
 </resources>

@@ -8,7 +8,7 @@
     >
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/activity_product_frag1_layout_height"
         android:gravity="center"
         android:orientation="horizontal">
         <Spinner
@@ -27,10 +27,10 @@
             android:layout_height="wrap_content"
             android:text="销售额最高"
             android:gravity="center"
-            android:textSize="16dp"/>
+            android:textSize="@dimen/activity_product_frag1_textSize"/>
         <View
-            android:layout_width="2dp"
-            android:layout_height="20dp"
+            android:layout_width="@dimen/activity_product_frag1_View_width"
+            android:layout_height="@dimen/activity_product_frag1_View_layheight"
             android:background="@color/colorBottomView"/>
         <TextView
             android:id="@+id/product_nummax"
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:text="销售量最高"
             android:gravity="center"
-            android:textSize="16dp"/>
+            android:textSize="@dimen/activity_product_frag1_textSize"/>
 
         <TextView
             android:id="@+id/product_good"
@@ -48,10 +48,10 @@
             android:layout_height="wrap_content"
             android:text="赞"
             android:gravity="center"
-            android:textSize="16dp"/>
+            android:textSize="@dimen/activity_product_frag1_textSize"/>
         <View
-            android:layout_width="2dp"
-            android:layout_height="20dp"
+            android:layout_width="@dimen/activity_product_frag1_View_width"
+            android:layout_height="@dimen/activity_product_frag1_View_layheight"
             android:background="@color/colorBottomView"/>
         <TextView
             android:id="@+id/product_bad"
@@ -60,10 +60,10 @@
             android:layout_height="wrap_content"
             android:text="踩"
             android:gravity="center"
-            android:textSize="16dp"/>
+            android:textSize="@dimen/activity_product_frag1_textSize"/>
     </LinearLayout>
     <View
         android:layout_width="match_parent"
-        android:layout_height="10dp"
+        android:layout_height="@dimen/activity_product_frag1_View_height"
         android:background="@color/colorBottomView"/>
 </LinearLayout>

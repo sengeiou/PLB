@@ -10,8 +10,8 @@
         android:background="@color/colorHard">
         <ImageView
             android:id="@+id/close3"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="@dimen/activity_traffic_analysis_Image"
+            android:layout_height="@dimen/activity_traffic_analysis_Image"
             android:background="@mipmap/quit"
             android:layout_alignParentLeft="true"/>
         <TextView
@@ -20,16 +20,15 @@
             android:text="流量分析"
             android:textColor="@color/white"
             android:layout_centerInParent="true"
-            android:textSize="20dp"
-            android:padding="10dp"/>
+            android:textSize="@dimen/activity_traffic_analysis_titleSize"
+            android:padding="@dimen/activity_traffic_analysis_titlePadding"/>
     </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:paddingLeft="20dp"
+        android:layout_height="@dimen/activity_traffic_analysis_layout_height"
         android:orientation="horizontal"
-        android:padding="10dp">
+        android:padding="@dimen/activity_traffic_analysis_titlePadding">
         <TextView
             android:id="@+id/traffic1"
             android:layout_width="0dp"
@@ -61,7 +60,7 @@
         android:id="@+id/traffic_frag"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="20dp">
+        android:padding="@dimen/activity_traffic_analysis_titlePadding">
 
     </FrameLayout>
 
