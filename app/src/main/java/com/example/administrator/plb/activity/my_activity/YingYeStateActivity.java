@@ -178,7 +178,8 @@ public class YingYeStateActivity extends AppCompatActivity implements View.OnCli
                 showDialog();
                 break;
             case R.id.tv_yy_alter_time:
-                //Intent intent = new Intent(YingYeStateActivity.this,);
+                Intent intent = new Intent(YingYeStateActivity.this,UpdateTimeActivity.class);
+                startActivity(intent);
                 break;
         }
     }
