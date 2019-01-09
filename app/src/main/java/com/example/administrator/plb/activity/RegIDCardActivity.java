@@ -16,6 +16,7 @@ import android.os.Build;
 import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
@@ -36,6 +37,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.security.Permission;
+import java.security.Permissions;
 
 public class RegIDCardActivity extends AppCompatActivity implements View.OnClickListener {
     private ImageView sfz,sfzbm,scsfz,yyzz;
@@ -115,7 +117,7 @@ public class RegIDCardActivity extends AppCompatActivity implements View.OnClick
                 break;
         }
     }
-
+    String[]permissions=new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.CAMERA};
     private void selectimgheadalert(){
         final String[] items = {"拍照", "相册"};
         android.app.AlertDialog.Builder listDialog = new android.app.AlertDialog.Builder(RegIDCardActivity.this);
@@ -123,15 +125,34 @@ public class RegIDCardActivity extends AppCompatActivity implements View.OnClick
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 if (i == 0){
-                    camera();
+                    ActivityCompat.requestPermissions(RegIDCardActivity.this,permissions,1);
+                   // camera();
                 }else if (i == 1){
-                    gallery();
+                    ActivityCompat.requestPermissions(RegIDCardActivity.this,permissions,2);
+                   // gallery();
                 }
             }
         });
         listDialog.show();
     }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if(requestCode==1){
+            if(grantResults[0]== PackageManager.PERMISSION_GRANTED || grantResults[1]==PackageManager.PERMISSION_GRANTED){
+                camera();
+            }else{
+                Toast.makeText(this, "部分权限未授予，相机无法使用", Toast.LENGTH_SHORT).show();
+            }
+        }
+        if(requestCode==2){
+            if(grantResults[0]== PackageManager.PERMISSION_GRANTED || grantResults[1]==PackageManager.PERMISSION_GRANTED){
+                gallery();
+            }else{
+                Toast.makeText(this, "部分权限未授予，功相册无法打开", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
 
     //打开相册
     private void gallery(){
@@ -150,13 +171,14 @@ public class RegIDCardActivity extends AppCompatActivity implements View.OnClick
 
             mTmpFile = new File(FileUtils.createRootPath(getBaseContext()) + "/" + System.currentTimeMillis() + ".jpg");
             FileUtils.createFile(mTmpFile);
+            Log.e(""+mTmpFile,FileUtils.createRootPath(getBaseContext()) + "/" + System.currentTimeMillis() + ".jpg");
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N){
+                Log.e("123",(mTmpFile==null)+"");
                 cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT,
-                        FileProvider.getUriForFile(this, BuildConfig.APPLICATION_ID + ".provider", mTmpFile));
+                FileProvider.getUriForFile(this,BuildConfig.APPLICATION_ID + ".fileprovider", mTmpFile));
             }else {
                 cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(mTmpFile));
             }
-            cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(mTmpFile));
             startActivityForResult(cameraIntent, REQUEST_CAMERA);
         }
     }

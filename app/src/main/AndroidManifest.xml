@@ -69,6 +69,16 @@
         <activity android:name=".activity.operating_activity.Traffic_analysis" />
         <activity android:name=".activity.operating_activity.Product_analysis" />
         <activity android:name=".activity.operating_activity.Merchants_experience" />
+        <provider
+            android:authorities="com.example.administrator.plb.fileprovider"
+            android:name="android.support.v4.content.FileProvider"
+            android:grantUriPermissions="true"
+            android:exported="false">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths"/>
+            />
+        </provider>
     </application>
 
 </manifest>

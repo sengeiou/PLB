@@ -6,6 +6,26 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.administrator.plb.activity.RegIDCardActivity">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:background="@color/colorMain"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/order_toolbar">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_centerInParent="true"
+                android:textColor="#FFF"
+                android:text="身份验证"
+                android:textSize="@dimen/toobar_title_text"
+                android:textStyle="bold"
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
