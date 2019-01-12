@@ -9,25 +9,25 @@
         android:id="@+id/liner1"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="@dimen/order_toolbar"
         android:background="@color/colorAccent">
         <ImageView
             android:id="@+id/back"
             android:layout_gravity="center"
-            android:src="@mipmap/back"
-            android:layout_width="35dp"
-            android:layout_height="35dp" />
+            android:src="@mipmap/quit"
+            android:layout_width="@dimen/activity_inform_back_size"
+            android:layout_height="@dimen/activity_inform_back_size" />
         <TextView
             android:layout_gravity="center"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="@dimen/activity_business_state_title_margin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="营业时间修改"
-            android:textSize="22sp"
+            android:textSize="@dimen/activity_inform_title_size"
             android:textColor="@color/white"/>
     </LinearLayout>
     <RelativeLayout
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/activity_business_updata_time_margin"
         android:layout_below="@id/liner1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -38,13 +38,13 @@
             android:text="请选择每周营业日"/>
         <TextView
             android:layout_below="@id/text1"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginLeft="@dimen/activity_business_updata_time_margin"
+            android:layout_marginTop="@dimen/activity_business_updata_time_margin"
             android:id="@+id/tv_weekend"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="营业日"
-            android:textSize="20sp" />
+            android:textSize="@dimen/activity_business_updata_time_text1_size" />
         <TextView
             android:id="@+id/select_day"
             android:layout_alignParentRight="true"
@@ -52,10 +52,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="每天"
-            android:textSize="15sp"/>
+            android:textSize="@dimen/activity_business_updata_time_select_day_size"/>
         <TextView
             android:id="@+id/text2"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/activity_business_updata_time_margin"
             android:layout_below="@id/tv_weekend"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -67,49 +67,49 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="@dimen/activity_business_updata_time_margin">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="10:00"
-                android:textSize="25sp"
-                android:layout_marginRight="20dp"/>
+                android:textSize="@dimen/activity_business_updata_time_date_size"
+                android:layout_marginRight="@dimen/activity_business_updata_time_margin"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="-"
-                android:textSize="25sp"
-                android:layout_marginRight="20dp"/>
+                android:textSize="@dimen/activity_business_updata_time_date_size"
+                android:layout_marginRight="@dimen/activity_business_updata_time_margin"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="23:00"
-                android:textSize="25sp"/>
+                android:textSize="@dimen/activity_business_updata_time_date_size"/>
         </LinearLayout>
         <Button
             android:id="@+id/btn_update_time"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/activity_business_updata_time_margin"
             android:layout_below="@id/liner2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="修改营业时间"
-            android:textSize="20sp"
+            android:textSize="@dimen/activity_business_updata_time_text3"
             android:background="@drawable/updatetime_button_style"/>
         <TextView
             android:id="@+id/text3"
             android:layout_below="@id/btn_update_time"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/activity_business_updata_time_margin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
+            android:textSize="@dimen/activity_business_updata_time_text3"
             android:gravity="center"
             android:text="由于你使用的是美团配送-自建/代理，营业时间的设置需在配送营业时间之内"/>
         <TextView
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/activity_business_updata_time_margin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/text3"
-            android:textSize="18sp"
+            android:textSize="@dimen/activity_business_updata_time_text3"
             android:text="配送营业时间: 07:00-23:59"
             android:gravity="center"/>
     </RelativeLayout>

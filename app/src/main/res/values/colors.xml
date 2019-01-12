@@ -9,6 +9,7 @@
     <color name="colorBottomView">#e7e7e7</color>
     <color name="colorBottomView_checked">#00bbff</color>
     <color name="colorBottomView_nochecked">#a5a5a5</color>
+    <color name="colorOrderBg">#e6e6e6</color>
     <color name="white">#FFF</color>
     <color name="colorMain">#FF7400</color>
 

@@ -14,24 +14,25 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <android.support.v4.view.ViewPager
+            android:layout_weight="1"
             android:id="@+id/viewPager"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
         </android.support.v4.view.ViewPager>
-    </LinearLayout>
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/bottomView"
-        app:labelVisibilityMode="labeled"
-        app:itemTextColor="@drawable/inform_checked"
-        app:itemIconTint="@drawable/inform_checked"
-        android:layout_alignParentBottom="true"
-        app:menu="@menu/main"
-        android:background="#dddddd"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/main_bottomView">
+            <android.support.design.widget.BottomNavigationView
+                android:id="@+id/bottomView"
+                app:labelVisibilityMode="labeled"
+                app:itemTextColor="@drawable/inform_checked"
+                app:itemIconTint="@drawable/inform_checked"
+                android:layout_alignParentBottom="true"
+                app:menu="@menu/main"
+                android:background="#dddddd"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/main_bottomView">
 
-    </android.support.design.widget.BottomNavigationView>
+            </android.support.design.widget.BottomNavigationView>
+    </LinearLayout>
     </RelativeLayout>
 
 </LinearLayout>

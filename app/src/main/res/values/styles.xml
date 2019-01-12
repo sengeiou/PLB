@@ -25,6 +25,7 @@
         <item name="actionMenuTextColor">@android:color/white</item>
         <item name="colorButtonNormal">@android:color/white</item>
         <item name="colorControlNormal">@android:color/white</item>
+        <item name="overlapAnchor">false</item>
     </style>
 
 </resources>

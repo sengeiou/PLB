@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/goodsList_parent_height">
+    <TextView
+        android:layout_centerVertical="true"
+        android:textSize="@dimen/goodsList_parent_textsize"
+        android:layout_margin="@dimen/goodsList_parent_text_margin"
+        android:text="饮品"
+        android:textStyle="bold"
+        android:id="@+id/className"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <ImageView
+        android:id="@+id/arrow"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/arrow"
+        android:layout_width="@dimen/goodsList_parent_image_size"
+        android:layout_height="@dimen/goodsList_parent_image_size" />
+</RelativeLayout>

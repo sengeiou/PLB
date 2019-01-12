@@ -9,7 +9,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/order_toolbar"
         android:background="@color/colorMain"
         android:orientation="vertical">
 
@@ -19,7 +19,7 @@
             android:layout_centerInParent="true"
             android:text="注册"
             android:textColor="#FFF"
-            android:textSize="25sp"
+            android:textSize="@dimen/toobar_title_text"
             android:textStyle="bold" />
     </RelativeLayout>
 
@@ -33,8 +33,8 @@
         <EditText
             android:id="@+id/username"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_margin="15dp"
+            android:layout_height="@dimen/reg_edit_height"
+            android:layout_margin="@dimen/reg_edit_margin"
             android:background="@color/colorLoginEditText"
             android:hint="请输入手机号"
             android:maxLines="1" />
@@ -42,8 +42,8 @@
         <EditText
             android:id="@+id/password"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_margin="15dp"
+            android:layout_height="@dimen/reg_edit_height"
+            android:layout_margin="@dimen/reg_edit_margin"
             android:background="@color/colorLoginEditText"
             android:hint="请输入密码"
             android:inputType="textPassword"
@@ -52,8 +52,8 @@
         <EditText
             android:id="@+id/repassword"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_margin="15dp"
+            android:layout_height="@dimen/reg_edit_height"
+            android:layout_margin="@dimen/reg_edit_margin"
             android:background="@color/colorLoginEditText"
             android:hint="请再次输入密码"
             android:inputType="textPassword"
@@ -67,8 +67,8 @@
                 android:layout_weight="1"
                 android:id="@+id/code"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_margin="15dp"
+                android:layout_height="@dimen/reg_edit_height"
+                android:layout_margin="@dimen/reg_edit_margin"
                 android:background="@color/colorLoginEditText"
                 android:hint="请输入验证码"
                 android:inputType="textPassword"
@@ -86,13 +86,13 @@
             android:id="@+id/reg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_margin="@dimen/reg_edit_margin"
             android:layout_weight="1"
             android:background="@drawable/login_button_selector"
             android:gravity="center"
-            android:padding="5dp"
+            android:padding="@dimen/reg_botton_padding"
             android:text="注册"
             android:textColor="#FFF"
-            android:textSize="20dp" />
+            android:textSize="@dimen/reg_botton_textSize" />
     </LinearLayout>
 </LinearLayout>

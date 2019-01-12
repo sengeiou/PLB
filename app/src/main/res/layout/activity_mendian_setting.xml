@@ -7,28 +7,29 @@
     android:orientation="vertical"
     tools:context=".activity.my_activity.MendianSettingActivity">
     <LinearLayout
+        android:gravity="center_vertical"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:paddingLeft="15dp"
+        android:layout_height="@dimen/order_toolbar"
         android:background="@color/colorAccent">
         <ImageView
             android:id="@+id/back"
             android:layout_gravity="center"
             android:src="@mipmap/quit"
-            android:layout_width="30dp"
-            android:layout_height="30dp" />
+            android:layout_marginLeft="@dimen/activity_inform_back_margin"
+            android:layout_width="@dimen/activity_inform_back_size"
+            android:layout_height="@dimen/activity_inform_back_size" />
         <TextView
             android:layout_gravity="center"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="@dimen/activity_inform_back_margin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="门店信息"
-            android:textSize="18sp"
+            android:textSize="@dimen/activity_inform_title_size"
             android:textColor="@color/white"/>
     </LinearLayout>
     <ListView
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/activity_inform_list_margin"
         android:id="@+id/mListView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"></ListView>

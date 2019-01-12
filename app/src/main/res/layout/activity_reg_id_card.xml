@@ -18,7 +18,7 @@
                 android:layout_centerInParent="true"
                 android:textColor="#FFF"
                 android:text="身份验证"
-                android:textSize="@dimen/toobar_title_text"
+                android:textSize="@dimen/login_toobar_textSize"
                 android:textStyle="bold"
                 android:id="@+id/title"
                 android:layout_width="wrap_content"
@@ -38,8 +38,8 @@
             android:maxLines="1"
             android:background="@color/colorLoginEditText"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_margin="15dp"
+            android:layout_height="@dimen/reg_edit_height"
+            android:layout_margin="@dimen/reg_edit_margin"
             android:hint="请输入真实姓名" />
         <EditText
             android:id="@+id/password"
@@ -47,8 +47,8 @@
             android:maxLines="1"
             android:background="@color/colorLoginEditText"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_margin="15dp"
+            android:layout_height="@dimen/reg_edit_height"
+            android:layout_margin="@dimen/reg_edit_margin"
             android:hint="请输入身份证号码" />
 
         <LinearLayout
@@ -59,16 +59,16 @@
 
             <ImageView
                 android:id="@+id/sfz"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
+                android:layout_width="@dimen/reg_image"
+                android:layout_height="@dimen/reg_image"
                 android:src="@drawable/sfzs"/>
 
             <ImageView
                 android:id="@+id/sfzbm"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="@dimen/reg_image_margin"
 
-                android:layout_width="120dp"
-                android:layout_height="120dp"
+                android:layout_width="@dimen/reg_image"
+                android:layout_height="@dimen/reg_image"
                 android:src="@drawable/sfz2"/>
         </LinearLayout>
         <LinearLayout
@@ -79,16 +79,16 @@
 
             <ImageView
                 android:id="@+id/yyzz"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
+                android:layout_width="@dimen/reg_image"
+                android:layout_height="@dimen/reg_image"
                 android:src="@drawable/yyzz"/>
             <ImageView
                 android:id="@+id/scsfz"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="@dimen/reg_image_margin"
 
-                android:layout_width="120dp"
-                android:layout_height="120dp"
+                android:layout_width="@dimen/reg_image"
+                android:layout_height="@dimen/reg_image"
                 android:src="@drawable/scsfz"/>
         </LinearLayout>
 
@@ -104,6 +104,6 @@
             android:padding="5dp"
             android:text="点击上传验证"
             android:textColor="#FFF"
-            android:textSize="20dp" />
+            android:textSize="@dimen/reg_botton_textSize" />
     </LinearLayout>
 </LinearLayout>

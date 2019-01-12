@@ -1,7 +1,10 @@
 package com.example.administrator.plb.activity.operating_activity;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -9,11 +12,19 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ExpandableListView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.example.administrator.plb.R;
+import com.example.administrator.plb.adapter.GoodsListAdapter;
+import com.example.administrator.plb.entity.GoodsListBean;
+import com.example.administrator.plb.sqllite.GoodsSqlHelper;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /*
 * 商品管理
@@ -21,13 +32,21 @@ import com.example.administrator.plb.R;
 public class operating_manager extends AppCompatActivity implements View.OnClickListener{
 
     private ImageView iv_return;//返回键
-    private ImageView iv_search;//搜索
-    private ListView lv_goods;//左边商品分类
-    private ListView lv_CommodityContent;//右边商品内容
     private LinearLayout ly_classification;//底部商品管理
     private LinearLayout ly_TheSorting;//底部排序批量操作
     private LinearLayout ly_NewGoods;//底部新建商品
     private Toolbar toolbar;
+    private ExpandableListView listView;
+
+
+    private GoodsSqlHelper sqlHelper;
+    private SQLiteDatabase database;
+    private GoodsListBean listBean;
+    private GoodsListAdapter adapter;
+
+    private GoodsListBean.ClassBean classBean;
+    private GoodsListBean.GoodsBean goodsBean;
+    private List<GoodsListBean.ClassBean>classBeans;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,13 +55,13 @@ public class operating_manager extends AppCompatActivity implements View.OnClick
         initView();
         initDate();
         setSupportActionBar(toolbar);
+        sqlHelper=new GoodsSqlHelper(this);
+        database=sqlHelper.getWritableDatabase();
     }
 
     private void initView() {
+        listView=findViewById(R.id.list);
         iv_return=(ImageView) findViewById(R.id.iv_return);//返回键
-        iv_search=(ImageView) findViewById(R.id.iv_search);//搜索
-        lv_goods=(ListView) findViewById(R.id.lv_goods);//左边商品分类
-        lv_CommodityContent=(ListView) findViewById(R.id.lv_CommodityContent);//右边商品内容
         ly_classification=(LinearLayout) findViewById(R.id.ly_classification);//底部商品管理
         ly_TheSorting=(LinearLayout) findViewById(R.id.ly_TheSorting);//底部排序批量操作
         ly_NewGoods=(LinearLayout) findViewById(R.id.ly_NewGoods);//底部新建商品
@@ -50,22 +69,23 @@ public class operating_manager extends AppCompatActivity implements View.OnClick
     }
     private void initDate() {
         iv_return.setOnClickListener(this);//返回键
-        iv_search.setOnClickListener(this);//搜索
         ly_classification.setOnClickListener(this);//底部商品管理
         ly_TheSorting.setOnClickListener(this);//底部排序批量操作
         ly_NewGoods.setOnClickListener(this);//底部新建商品
+
+
+
+        listBean=new GoodsListBean();
+        classBeans=new ArrayList<>();
+        List<GoodsListBean.GoodsBean>goodsBeans=new ArrayList<>();
+        goodsBeans.add(new GoodsListBean.GoodsBean("安慕希","副食品","",100,"件",100,100,"1234-5-6"));
+        classBeans.add(new GoodsListBean.ClassBean("123","213",goodsBeans));
+        listBean.setList(classBeans);
+        adapter=new GoodsListAdapter(this,listBean);
+        listView.setAdapter(adapter);
+
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.operating_manager,menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        return super.onOptionsItemSelected(item);
-    }
 
     @Override
     public void onClick(View v) {
@@ -74,13 +94,9 @@ public class operating_manager extends AppCompatActivity implements View.OnClick
             case R.id.iv_return:
                 finish();
                 break;
-            //搜索
-            case R.id.iv_search:
-
-                break;
             //底部商品管理
             case R.id.ly_classification:
-
+                startActivityForResult(new Intent(operating_manager.this,NewClassActivity.class),1);
                 break;
             //底部排序批量操作
             case R.id.ly_TheSorting:
@@ -88,8 +104,43 @@ public class operating_manager extends AppCompatActivity implements View.OnClick
                 break;
             //底部新建商品
             case R.id.ly_NewGoods:
-                startActivity(new Intent(operating_manager.this,NewGood.class));
+                ArrayList<String>list=new ArrayList<>();
+                for(int i=0;i<listBean.getList().size();i++){
+                    list.add(listBean.getList().get(i).getClassName());
+                }
+                String[]strings=new String[list.size()];
+                strings=list.toArray(strings);
+                Intent intent=new Intent(operating_manager.this,NewGood.class);
+                intent.putExtra("className",strings);
+                startActivityForResult(intent,2);
                 break;
         }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        switch (requestCode){
+            case 1:
+                String className=data.getStringExtra("className");
+                String note=data.getStringExtra("note");
+                insertClassName(className, note);
+
+                break;
+            case 2:
+                Bundle bundle= data.getBundleExtra("goods");
+                bundle.getSerializable("goods");
+                break;
+        }
+    }
+
+    private void insertClassName(String className, String note) {
+        ContentValues contentValues=new ContentValues();
+        contentValues.put("className",className);
+        contentValues.put("note",note);
+        database.insert(GoodsSqlHelper.ClassTable,null,contentValues);
+        classBean=new GoodsListBean.ClassBean(className,note,new ArrayList<GoodsListBean.GoodsBean>());
+        classBeans.add(classBean);
+        adapter.notifyDataSetChanged();
+        //listBean
     }
 }

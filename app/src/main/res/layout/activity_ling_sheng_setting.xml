@@ -8,21 +8,21 @@
     tools:context=".activity.my_activity.LingShengSettingActivity">
 
     <LinearLayout
-        android:padding="20dp"
         android:gravity="center_vertical"
         android:background="@color/colorAccent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="@dimen/order_toolbar">
 
         <ImageView
             android:src="@drawable/back"
-            android:layout_width="30dp"
-            android:layout_height="30dp" />
+            android:layout_marginLeft="@dimen/activity_inform_back_margin"
+            android:layout_width="@dimen/activity_inform_back_size"
+            android:layout_height="@dimen/activity_inform_back_size" />
         <TextView
-            android:layout_marginLeft="50dp"
+            android:layout_marginLeft="@dimen/activity_inform_back_margin"
             android:text="消息和铃声设置"
             android:textColor="@android:color/white"
-            android:textSize="25sp"
+            android:textSize="@dimen/activity_inform_title_size"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
@@ -37,29 +37,26 @@
             android:layout_height="match_parent">
             <LinearLayout
                 android:layout_width="match_parent"
-                android:padding="10dp"
+                android:padding="@dimen/activity_sound_setting_padding"
                 android:layout_height="wrap_content">
                 <TextView
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="@dimen/activity_sound_setting_padding"
                     android:text="订单提醒"
                     android:textColor="@android:color/darker_gray"
-                    android:textSize="15sp"
+                    android:textSize="@dimen/activity_sound_setting_title_size"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>
 
             <LinearLayout
-                android:paddingRight="10dp"
-                android:paddingLeft="10dp"
-                android:paddingTop="20dp"
-                android:paddingBottom="20dp"
+                android:padding="@dimen/activity_sound_setting_padding"
                 android:gravity="center_vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <TextView
                     android:text="订单提醒通知"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/activity_sound_setting_item_size"
                     android:layout_weight="1"
                     android:textColor="@android:color/black"
                     android:layout_width="wrap_content"
@@ -67,22 +64,19 @@
                 <TextView
                     android:text="正常"
                     android:textColor="@android:color/darker_gray"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/activity_sound_setting_item_size"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>
             <LinearLayout
-                android:paddingRight="10dp"
-                android:paddingLeft="10dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="20dp"
+                android:padding="@dimen/activity_sound_setting_padding"
                 android:gravity="center_vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <TextView
                     android:text="订单提醒异常弹窗"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/activity_sound_setting_item_size"
                     android:layout_weight="1"
                     android:textColor="@android:color/black"
                     android:layout_width="wrap_content"
@@ -94,27 +88,24 @@
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:padding="10dp"
+                android:padding="@dimen/activity_sound_setting_padding"
                 android:layout_height="wrap_content">
                 <TextView
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="@dimen/activity_sound_setting_margin"
                     android:text="振动"
                     android:textColor="@android:color/darker_gray"
-                    android:textSize="15sp"
+                    android:textSize="@dimen/activity_sound_setting_title_size"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>
             <LinearLayout
-                android:paddingRight="10dp"
-                android:paddingLeft="10dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="20dp"
+                android:padding="@dimen/activity_sound_setting_padding"
                 android:gravity="center_vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
                     android:text="新消息振动"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/activity_sound_setting_item_size"
                     android:layout_weight="1"
                     android:textColor="@android:color/black"
                     android:layout_width="wrap_content"
@@ -126,27 +117,24 @@
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:padding="10dp"
+                android:padding="@dimen/activity_sound_setting_padding"
                 android:layout_height="wrap_content">
                 <TextView
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="@dimen/activity_sound_setting_margin"
                     android:text="音量"
                     android:textColor="@android:color/darker_gray"
-                    android:textSize="15sp"
+                    android:textSize="@dimen/activity_sound_setting_title_size"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>
             <LinearLayout
-                android:paddingRight="10dp"
-                android:paddingLeft="10dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="20dp"
+                android:padding="@dimen/activity_sound_setting_padding"
                 android:gravity="center_vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
                     android:text="开启APP时声音调为最大"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/activity_sound_setting_item_size"
                     android:layout_weight="1"
                     android:textColor="@android:color/black"
                     android:layout_width="wrap_content"
@@ -157,23 +145,19 @@
                     android:layout_height="wrap_content" />
             </LinearLayout>
             <LinearLayout
-                android:paddingRight="10dp"
-                android:paddingLeft="10dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="20dp"
+                android:padding="@dimen/activity_sound_setting_padding"
                 android:gravity="center_vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
                     android:text="新消息音量"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/activity_sound_setting_item_size"
                     android:textColor="@android:color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
                 <SeekBar
                     android:layout_weight="1"
-                    android:layout_marginLeft="5dp"
                     android:max="100"
                     android:progress="100"
                     android:layout_width="wrap_content"
@@ -182,28 +166,25 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:padding="10dp"
+                android:padding="@dimen/activity_sound_setting_padding"
                 android:layout_height="wrap_content">
                 <TextView
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="@dimen/activity_sound_setting_margin"
                     android:text="播放频率"
                     android:textColor="@android:color/darker_gray"
-                    android:textSize="15sp"
+                    android:textSize="@dimen/activity_sound_setting_item_size"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>
             <LinearLayout
-                android:paddingRight="10dp"
-                android:paddingLeft="10dp"
-                android:paddingTop="20dp"
-                android:paddingBottom="20dp"
+                android:padding="@dimen/activity_sound_setting_padding"
                 android:gravity="center_vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <TextView
                     android:text="接单"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/activity_sound_setting_item_size"
                     android:layout_weight="1"
                     android:textColor="@android:color/black"
                     android:layout_width="wrap_content"
@@ -211,22 +192,19 @@
                 <TextView
                     android:text="循环播放"
                     android:textColor="@android:color/darker_gray"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/activity_sound_setting_item_size"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>
             <LinearLayout
-                android:paddingRight="10dp"
-                android:paddingLeft="10dp"
-                android:paddingTop="20dp"
-                android:paddingBottom="20dp"
+                android:padding="@dimen/activity_sound_setting_padding"
                 android:gravity="center_vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <TextView
                     android:text="退单"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/activity_sound_setting_item_size"
                     android:layout_weight="1"
                     android:textColor="@android:color/black"
                     android:layout_width="wrap_content"
@@ -234,23 +212,21 @@
                 <TextView
                     android:text="循环播放"
                     android:textColor="@android:color/darker_gray"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/activity_sound_setting_item_size"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>
 
             <LinearLayout
-                android:paddingRight="10dp"
-                android:paddingLeft="10dp"
-                android:paddingTop="20dp"
-                android:paddingBottom="20dp"
+                android:padding="@dimen/activity_sound_setting_padding"
+
                 android:gravity="center_vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <TextView
                     android:text="催单"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/activity_sound_setting_item_size"
                     android:layout_weight="1"
                     android:textColor="@android:color/black"
                     android:layout_width="wrap_content"
@@ -258,7 +234,7 @@
                 <TextView
                     android:text="循环播放"
                     android:textColor="@android:color/darker_gray"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/activity_sound_setting_item_size"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>

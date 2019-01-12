@@ -106,7 +106,11 @@
                 />
         </LinearLayout>
     </LinearLayout>
-
+    <View
+        android:layout_margin="10dp"
+        android:background="@color/gray"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -141,12 +145,18 @@
                     android:textSize="@dimen/operating_activity_text_textSize"
                     android:textColor="@color/gray"/>
             </LinearLayout>
+
             <ImageView
                 android:layout_width="@dimen/operating_activity_image"
                 android:layout_height="@dimen/operating_activity_image"
                 android:background="@mipmap/horn"
                 />
         </LinearLayout>
+        <View
+            android:layout_margin="10dp"
+            android:background="@color/gray"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"></View>
         <LinearLayout
             android:id="@+id/configuration"
             android:layout_margin="@dimen/operating_activity_margin"
@@ -278,7 +288,11 @@
                 />
         </LinearLayout>
     </LinearLayout>
-
+    <View
+        android:layout_margin="10dp"
+        android:background="@color/gray"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -289,8 +303,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingRight="20dp"
-        android:paddingLeft="20dp">
+        android:paddingRight="@dimen/operating_activity_last_layout_padding"
+        android:paddingLeft="@dimen/operating_activity_last_layout_padding">
         <LinearLayout
             android:id="@+id/Replenish"
             android:layout_width="wrap_content"
@@ -301,7 +315,7 @@
                 android:layout_width="@dimen/operating_image_width"
                 android:layout_height="@dimen/operating_image_height"
                 android:gravity="center"
-                android:padding="5dp"
+                android:padding="@dimen/operating_activity_last_layout_image_padding"
                 android:background="@mipmap/replenish"
                 />
             <TextView
@@ -310,7 +324,7 @@
                 android:text="进货商"
                 android:gravity="center"
                 android:textSize="@dimen/operating_image_textSize"
-                android:padding="5dp"
+                android:padding="@dimen/operating_activity_last_layout_image_padding"
                 />
         </LinearLayout>
         <LinearLayout
@@ -324,7 +338,7 @@
                 android:layout_width="@dimen/operating_image_width"
                 android:layout_height="@dimen/operating_image_height"
                 android:gravity="center"
-                android:padding="5dp"
+                android:padding="@dimen/operating_activity_last_layout_image_padding"
                 android:background="@mipmap/courier"
                 />
             <TextView
@@ -333,7 +347,7 @@
                 android:text="快递公司"
                 android:gravity="center"
                 android:textSize="@dimen/operating_image_textSize"
-                android:padding="5dp"
+                android:padding="@dimen/operating_activity_last_layout_image_padding"
                 />
         </LinearLayout>
         <LinearLayout
@@ -346,7 +360,7 @@
                 android:layout_width="@dimen/operating_image_width"
                 android:layout_height="@dimen/operating_image_height"
                 android:gravity="center"
-                android:padding="5dp"
+                android:padding="@dimen/operating_activity_last_layout_image_padding"
                 android:background="@mipmap/logistics"
                 />
             <TextView
@@ -355,7 +369,7 @@
                 android:text="后勤部门"
                 android:gravity="center"
                 android:textSize="@dimen/operating_image_textSize"
-                android:padding="5dp"
+                android:padding="@dimen/operating_activity_last_layout_image_padding"
                 />
 
         </LinearLayout>

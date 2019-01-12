@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/goodsList_child_Layout_margin"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/goodsList_child_Layout_height">
+    <TextView
+        android:textSize="@dimen/goodsList_child_text_goodsName_size"
+        android:textStyle="bold"
+        android:text="阿萨姆奶茶"
+        android:id="@+id/goodsName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_centerVertical="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/goodsImage"
+            android:src="@mipmap/logo"
+            android:layout_margin="@dimen/goodsList_child_image_margin"
+            android:layout_width="@dimen/goodsList_child_image_size"
+            android:layout_height="@dimen/goodsList_child_image_size" />
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/goodsList_child_text_info_marginLeft"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="@dimen/goodsList_child_text_info_size"
+                        android:layout_gravity="center"
+                        android:text="库存:"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:text="100"
+                        android:textSize="@dimen/goodsList_child_text_info_size"
+                        android:id="@+id/inventory"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="@dimen/goodsList_child_text_info_size"
+                        android:layout_gravity="center"
+                        android:text="最低数量:"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:text="1"
+                        android:textSize="@dimen/goodsList_child_text_info_size"
+                        android:id="@+id/minCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="@dimen/goodsList_child_text_info_size"
+                        android:layout_gravity="center"
+                        android:text="销售时间:"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:text="2018-05-30"
+                        android:textSize="@dimen/goodsList_child_text_info_size"
+                        android:id="@+id/sellingTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+        <TextView
+            android:textSize="@dimen/goodsList_child_text_goodsName_size"
+            android:textStyle="bold"
+            android:textColor="@color/colorMain"
+            android:layout_gravity="center"
+            android:text="￥50元/箱"
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            
+            />
+    </LinearLayout>
+
+</LinearLayout>
