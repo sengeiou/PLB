@@ -125,7 +125,7 @@
     <dimen name="activity_product_frag1_View_height">10dp</dimen>
     <dimen name="activity_product_frag1_View_width">2dp</dimen>
     <dimen name="activity_product_frag1_View_layheight">20dp</dimen>
-    <dimen name="activity_product_frag1_textSize">16dp</dimen>
+    <dimen name="activity_product_frag1_textSize">13dp</dimen>
 
     <!--门店信息-->
     <dimen name="activity_inform_back_size">30dp</dimen>
@@ -194,4 +194,33 @@
     <dimen name="goodsList_child_image_size">60dp</dimen>
     <dimen name="goodsList_child_image_margin">5dp</dimen>
 
+    <!--商品分析,商品销售ListViewItem-->
+    <dimen name="product_list_item_paddingTop">10dp</dimen>
+    <dimen name="product_list_item_ImageView">32dp</dimen>
+    <dimen name="product_list_item_textSize">25dp</dimen>
+    <dimen name="product_list_item_padding">5dp</dimen>
+    <dimen name="product_list_item_textSize_item">18dp</dimen>
+    <dimen name="product_list_item_textSize_items">16dp</dimen>
+    <dimen name="product_list_item_paddingLeft">32dp</dimen>
+
+    <!--商家体检-->
+    <dimen name="activity_merchants_experience_ImageView">30dp</dimen>
+    <dimen name="activity_merchants_experience_titlepadding">10dp</dimen>
+    <dimen name="activity_merchants_experience_textSize">20dp</dimen>
+    <dimen name="activity_merchants_experience_paddingBottom">10dp</dimen>
+    <dimen name="activity_merchants_experience_layout_marginTop">20dp</dimen>
+    <dimen name="activity_merchants_experience_Textpadding">20dp</dimen>
+    <dimen name="activity_merchants_experience_TexttextSize">18sp</dimen>
+    <dimen name="activity_merchants_experience_paddingLeft">20dp</dimen>
+    <dimen name="activity_merchants_experience_paddingTop">5dp</dimen>
+    <dimen name="activity_merchants_experience_SinkView">140dp</dimen>
+    <dimen name="activity_merchants_experience_layout_marginRight">25dp</dimen>
+    <dimen name="activity_merchants_experience_SinkView_layout_marginTop">10dp</dimen>
+    <dimen name="activity_merchants_experience_TimepaddingTop">10dp</dimen>
+    <dimen name="activity_merchants_experience_TimepaddingLeft">10dp</dimen>
+    <dimen name="activity_merchants_experience_padding">20dp</dimen>
+    <dimen name="activity_merchants_experience_listView_padding">10dp</dimen>
+    <dimen name="activity_merchants_experience_layout_height">3dp</dimen>
+    <dimen name="activity_merchants_experience_lisView_layout_height">220dp</dimen>
+    <dimen name="activity_merchants_experience_TextSize_item">16sp</dimen>
 </resources>

@@ -66,4 +66,11 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/activity_product_frag1_View_height"
         android:background="@color/colorBottomView"/>
+    <ListView
+        android:id="@+id/sort_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </ListView>
+
 </LinearLayout>
