@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.administrator.plb.R;
@@ -50,6 +51,7 @@ public class OrderFragment extends Fragment {
         mTitle.setText("待处理");
         List<Fragment> fragments=new ArrayList<>();
         List<String> titles=new ArrayList<>();
+        List<Integer> image=new ArrayList<>();
         fragments.add(new NewOrderFragment());//新订单
         fragments.add(new ReminderFragment());//催单
         fragments.add(new RefundFragment());//退款
@@ -58,12 +60,45 @@ public class OrderFragment extends Fragment {
         titles.add("催单");
         titles.add("退款");
         titles.add("赔付");
+        image.add(R.drawable.xin_selector);
+        image.add(R.drawable.cui_selector);
+        image.add(R.drawable.tui_selector);
+        image.add(R.drawable.pei_selector);
         mViewPager.setAdapter(new FragmentAdapter(getChildFragmentManager(),fragments,titles));
         mTab.setupWithViewPager(mViewPager);
-//        setupWithViewPager方法会清除Tab，再重新创建
-        mTab.getTabAt(0).setIcon(R.drawable.xin_selector);
-        mTab.getTabAt(1).setIcon(R.drawable.cui_selector);
-        mTab.getTabAt(2).setIcon(R.drawable.tui_selector);
-        mTab.getTabAt(3).setIcon(R.drawable.pei_selector);
+        //setupWithViewPager方法会清除Tab，再重新创建
+        for(int i=0;i<titles.size();i++){
+            TabLayout.Tab tab=mTab.getTabAt(i);
+            tab.setCustomView(R.layout.fragment_order_tab);
+            if (i==0) {
+                View view1=tab.getCustomView();
+                view1.findViewById(R.id.image).setSelected(true);
+                view1.findViewById(R.id.title).setSelected(true);
+            }
+            TextView textView = (TextView) tab.getCustomView().findViewById(R.id.title);
+            ImageView imageView =  tab.getCustomView().findViewById(R.id.image);
+            textView.setText(titles.get(i));
+            imageView.setBackgroundResource(image.get(i));
+        }
+        mTab.addOnTabSelectedListener(listener);
     }
+    private TabLayout.OnTabSelectedListener listener=new TabLayout.OnTabSelectedListener() {
+        @Override
+        public void onTabSelected(TabLayout.Tab tab) {
+            tab.getCustomView().findViewById(R.id.title).setSelected(true);
+            tab.getCustomView().findViewById(R.id.image).setSelected(true);
+            mViewPager.setCurrentItem(tab.getPosition());
+        }
+
+        @Override
+        public void onTabUnselected(TabLayout.Tab tab) {
+            tab.getCustomView().findViewById(R.id.title).setSelected(false);
+            tab.getCustomView().findViewById(R.id.image).setSelected(false);
+        }
+
+        @Override
+        public void onTabReselected(TabLayout.Tab tab) {
+
+        }
+    };
 }

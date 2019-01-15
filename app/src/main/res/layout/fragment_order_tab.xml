@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
    <LinearLayout
        android:gravity="center"
        android:orientation="vertical"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content">
        <ImageView
-
-           android:src="@mipmap/logo"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content" />
+           android:background="@drawable/xin_selector"
+           android:id="@+id/image"
+           android:layout_width="@dimen/order_tab_image_size"
+           android:layout_height="@dimen/order_tab_image_size" />
        <TextView
-           android:text="@string/app_name"
+           android:layout_margin="@dimen/order_tab_text_margin"
+           android:textSize="@dimen/order_tab_text_size"
+           android:textColor="@drawable/text_selector"
+           android:id="@+id/title"
+           android:text="新订单"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content" />
    </LinearLayout>

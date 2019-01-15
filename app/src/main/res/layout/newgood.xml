@@ -147,6 +147,7 @@
                     </LinearLayout>
 
                     <ImageView
+                        android:id="@+id/goodsImage"
                         android:layout_width="@dimen/activity_newGood_goods_image_size"
                         android:layout_height="@dimen/activity_newGood_goods_image_size"
                         android:layout_alignParentRight="true"
@@ -185,6 +186,7 @@
                         android:layout_marginLeft="@dimen/activity_newGood_text_margin"/>
 
                     <EditText
+                        android:gravity="right|center_vertical"
                         android:id="@+id/et_price"
                         android:layout_width="@dimen/activity_newGood_info_item_edit_height"
                         android:layout_height="match_parent"
@@ -282,7 +284,7 @@
                     <Spinner
                         android:id="@+id/sp_unit"
                         android:layout_alignParentRight="true"
-                        android:layout_width="@dimen/activity_newGood_info_item_edit_height"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent">
 
                     </Spinner>

@@ -2,6 +2,8 @@ package com.example.administrator.plb.adapter;
 
 import android.content.Context;
 import android.database.DataSetObserver;
+import android.os.Handler;
+import android.os.Message;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
@@ -9,6 +11,7 @@ import android.widget.ExpandableListAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.administrator.plb.R;
 import com.example.administrator.plb.entity.GoodsListBean;
 import com.example.administrator.plb.until.FileUtils;
@@ -41,27 +44,30 @@ public class GoodsListAdapter extends BaseExpandableListAdapter {
 
     @Override
     public int getChildrenCount(int groupPosition) {
-        return listBean.getList().get(groupPosition).getList().size();
+        return listBean
+                .getList()
+                .get(groupPosition)
+                .getList().size();
     }
 
     @Override
     public Object getGroup(int groupPosition) {
-        return null;
+        return listBean.getList().get(groupPosition);
     }
 
     @Override
     public Object getChild(int groupPosition, int childPosition) {
-        return null;
+        return listBean.getList().get(groupPosition).getList().get(childPosition);
     }
 
     @Override
     public long getGroupId(int groupPosition) {
-        return 0;
+        return groupPosition;
     }
 
     @Override
     public long getChildId(int groupPosition, int childPosition) {
-        return 0;
+        return childPosition;
     }
 
     @Override
@@ -118,6 +124,9 @@ public class GoodsListAdapter extends BaseExpandableListAdapter {
         viewHolder.minCount.setText(goodsBean.getMinCount()+"元/"+goodsBean.getGoodsUnit());
         viewHolder.sellingTime.setText(goodsBean.getSellingTime());
         viewHolder.price.setText("￥"+goodsBean.getGoodsPrice()+"元/"+goodsBean.getGoodsUnit());
+        Glide.with(context).load(goodsBean.getGoodsImage())
+                .error(R.mipmap.logo)
+                .into(viewHolder.goodsImage);
         return viewHolder.rootView;
     }
 
@@ -144,36 +153,10 @@ public class GoodsListAdapter extends BaseExpandableListAdapter {
 
     @Override
     public boolean isChildSelectable(int groupPosition, int childPosition) {
-        return false;
+        return true;
     }
 
-    @Override
-    public boolean areAllItemsEnabled() {
-        return false;
-    }
 
-    @Override
-    public boolean isEmpty() {
-        return false;
-    }
 
-    @Override
-    public void onGroupExpanded(int groupPosition) {
 
-    }
-
-    @Override
-    public void onGroupCollapsed(int groupPosition) {
-
-    }
-
-    @Override
-    public long getCombinedChildId(long groupId, long childId) {
-        return 0;
-    }
-
-    @Override
-    public long getCombinedGroupId(long groupId) {
-        return 0;
-    }
 }

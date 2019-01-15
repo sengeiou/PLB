@@ -18,6 +18,9 @@
 	<dimen name="order_toolbar">100.0000dp</dimen>
 	<dimen name="toobar_title_text">50.0000sp</dimen>
 	<dimen name="order_tab">200.0000dp</dimen>
+	<dimen name="order_tab_image_size">70.0000dp</dimen>
+	<dimen name="order_tab_text_size">30.0000sp</dimen>
+	<dimen name="order_tab_text_margin">20.0000dp</dimen>
 	<dimen name="order_adapter_main_margin">30.0000dp</dimen>
 	<dimen name="order_adapter_id">30.0000sp</dimen>
 	<dimen name="order_adapter_padding">20.0000dp</dimen>
@@ -34,11 +37,14 @@
 	<dimen name="operating_image_height">80.0000dp</dimen>
 	<dimen name="operating_image_textSize">24.0000sp</dimen>
 	<dimen name="operating_title_textSize">30.0000sp</dimen>
-	<dimen name="operating_title_padding">30.0000dp</dimen>
+	<dimen name="operating_title_padding">20.0000dp</dimen>
 	<dimen name="operating_activity_margin">30.0000dp</dimen>
 	<dimen name="operating_activity_title_textSize">32.0000sp</dimen>
 	<dimen name="operating_activity_text_textSize">24.0000sp</dimen>
 	<dimen name="operating_activity_image">60.0000dp</dimen>
+	<dimen name="operating_activity_last_layout_padding">40.0000dp</dimen>
+	<dimen name="operating_activity_last_layout_image_padding">10.0000dp</dimen>
+	<dimen name="operating_activity_line_height">16.0000dp</dimen>
 	<dimen name="fragment_my_tourImage_size">160.0000dp</dimen>
 	<dimen name="fragment_my_tourImage_margin">10.0000dp</dimen>
 	<dimen name="fragment_my_name_size">40.0000sp</dimen>
@@ -126,6 +132,7 @@
 	<dimen name="activity_newGood_info_item_edit_height">190.0000dp</dimen>
 	<dimen name="activity_newGood_info_item_edit_marginRight">20.0000dp</dimen>
 	<dimen name="activity_newGood_goods_image_size">120.0000dp</dimen>
+	<dimen name="activity_newGood_goods_upImage_layout_height">160.0000dp</dimen>
 	<dimen name="activity_new_class_edit_size">24.0000sp</dimen>
 	<dimen name="activity_new_class_edit_height">160.0000dp</dimen>
 	<dimen name="goodsList_parent_height">100.0000dp</dimen>

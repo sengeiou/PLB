@@ -6,6 +6,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:fitsSystemWindows">true</item>
     </style>
     <style name="OverFlowMenuTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- 设置Menu菜单的背景色 -->
@@ -27,5 +28,4 @@
         <item name="colorControlNormal">@android:color/white</item>
         <item name="overlapAnchor">false</item>
     </style>
-
 </resources>

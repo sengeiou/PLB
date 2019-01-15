@@ -18,6 +18,9 @@
 	<dimen name="order_toolbar">91.9444dp</dimen>
 	<dimen name="toobar_title_text">45.9722sp</dimen>
 	<dimen name="order_tab">183.8889dp</dimen>
+	<dimen name="order_tab_image_size">64.3611dp</dimen>
+	<dimen name="order_tab_text_size">27.5833sp</dimen>
+	<dimen name="order_tab_text_margin">18.3889dp</dimen>
 	<dimen name="order_adapter_main_margin">27.5833dp</dimen>
 	<dimen name="order_adapter_id">27.5833sp</dimen>
 	<dimen name="order_adapter_padding">18.3889dp</dimen>
@@ -34,11 +37,14 @@
 	<dimen name="operating_image_height">73.5556dp</dimen>
 	<dimen name="operating_image_textSize">22.0667sp</dimen>
 	<dimen name="operating_title_textSize">27.5833sp</dimen>
-	<dimen name="operating_title_padding">27.5833dp</dimen>
+	<dimen name="operating_title_padding">18.3889dp</dimen>
 	<dimen name="operating_activity_margin">27.5833dp</dimen>
 	<dimen name="operating_activity_title_textSize">29.4222sp</dimen>
 	<dimen name="operating_activity_text_textSize">22.0667sp</dimen>
 	<dimen name="operating_activity_image">55.1667dp</dimen>
+	<dimen name="operating_activity_last_layout_padding">36.7778dp</dimen>
+	<dimen name="operating_activity_last_layout_image_padding">9.1944dp</dimen>
+	<dimen name="operating_activity_line_height">14.7111dp</dimen>
 	<dimen name="fragment_my_tourImage_size">147.1111dp</dimen>
 	<dimen name="fragment_my_tourImage_margin">9.1944dp</dimen>
 	<dimen name="fragment_my_name_size">36.7778sp</dimen>
@@ -126,6 +132,7 @@
 	<dimen name="activity_newGood_info_item_edit_height">174.6944dp</dimen>
 	<dimen name="activity_newGood_info_item_edit_marginRight">18.3889dp</dimen>
 	<dimen name="activity_newGood_goods_image_size">110.3333dp</dimen>
+	<dimen name="activity_newGood_goods_upImage_layout_height">147.1111dp</dimen>
 	<dimen name="activity_new_class_edit_size">22.0667sp</dimen>
 	<dimen name="activity_new_class_edit_height">147.1111dp</dimen>
 	<dimen name="goodsList_parent_height">91.9444dp</dimen>

@@ -25,6 +25,7 @@ public class NewClassActivity extends AppCompatActivity implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_class);
+
         initView();
     }
 
@@ -34,6 +35,9 @@ public class NewClassActivity extends AppCompatActivity implements View.OnClickL
         mEtClassName = (EditText) findViewById(R.id.et_className);
         mEtNote = (EditText) findViewById(R.id.et_note);
 
+        Intent intent=getIntent();
+        mEtClassName.setText(intent.getStringExtra("className"));
+        mEtNote.setText(intent.getStringExtra("note"));
 
         mIvReturn.setOnClickListener(this);
         mSave.setOnClickListener(this);

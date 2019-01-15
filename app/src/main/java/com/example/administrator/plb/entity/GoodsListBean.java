@@ -1,5 +1,6 @@
 package com.example.administrator.plb.entity;
 
+import java.io.Serializable;
 import java.util.List;
 
 public class GoodsListBean {
@@ -49,17 +50,17 @@ public class GoodsListBean {
             this.list = list;
         }
     }
-    public static class GoodsBean{
+    public static class GoodsBean implements Serializable {
         private String GoodsName; //商品名称
         private String GoodsClass;//商品分类
         private String GoodsImage;//商品图片
-        private int GoodsPrice;//商品单价
+        private double GoodsPrice;//商品单价
         private String GoodsUnit;//商品单位
         private int inventory;//库存
         private int minCount;//最低数量
         private String sellingTime;//销售时间
 
-        public GoodsBean(String goodsName, String goodsClass, String goodsImage, int goodsPrice, String goodsUnit, int inventory, int minCount, String sellingTime) {
+        public GoodsBean(String goodsName, String goodsClass, String goodsImage, double goodsPrice, String goodsUnit, int inventory, int minCount, String sellingTime) {
             GoodsName = goodsName;
             GoodsClass = goodsClass;
             GoodsImage = goodsImage;
@@ -94,11 +95,11 @@ public class GoodsListBean {
             GoodsImage = goodsImage;
         }
 
-        public int getGoodsPrice() {
+        public double getGoodsPrice() {
             return GoodsPrice;
         }
 
-        public void setGoodsPrice(int goodsPrice) {
+        public void setGoodsPrice(double goodsPrice) {
             GoodsPrice = goodsPrice;
         }
 
@@ -133,5 +134,6 @@ public class GoodsListBean {
         public void setSellingTime(String sellingTime) {
             this.sellingTime = sellingTime;
         }
+
     }
 }
