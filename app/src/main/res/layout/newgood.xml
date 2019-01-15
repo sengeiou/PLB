@@ -78,6 +78,7 @@
 
                     </RelativeLayout>
                     <EditText
+                        android:layout_margin="@dimen/activity_newGood_info_item_edit_marginRight"
                         android:id="@+id/et_goodsName"
                         android:gravity="right|center_vertical"
                         android:layout_weight="1"
@@ -219,6 +220,7 @@
                         android:layout_marginLeft="@dimen/activity_newGood_text_margin"/>
 
                     <EditText
+                        android:inputType="number"
                         android:hint="0"
                         android:id="@+id/et_Inventory"
                         android:gravity="right|center_vertical"
@@ -226,8 +228,7 @@
                         android:layout_width="@dimen/activity_newGood_info_item_edit_height"
                         android:layout_height="match_parent"
                         android:layout_alignParentRight="true"
-                        android:layout_marginRight="@dimen/activity_newGood_info_item_edit_marginRight"
-                        android:layout_margin="@dimen/activity_newGood_info_item_image_size"/>
+                        android:layout_margin="@dimen/activity_newGood_text_margin"/>
 
                 </RelativeLayout>
                 <View
@@ -259,7 +260,7 @@
                         android:maxLines="1"
                         android:singleLine="true"
                         android:gravity="right|center_vertical"
-                        android:layout_marginRight="@dimen/activity_newGood_info_item_edit_marginRight"
+                        android:layout_margin="@dimen/activity_newGood_text_margin"
                         android:digits="0123456789"/>
 
                 </RelativeLayout>
@@ -298,6 +299,7 @@
                 android:layout_height="0.5dp"
                 android:background="@color/colorBottomView"/>
             <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <!--可售时间-->
@@ -324,6 +326,7 @@
                         android:layout_alignParentRight="true">
 
                         <TextView
+                            android:id="@+id/time"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
@@ -338,6 +341,36 @@
                             android:background="@mipmap/next"
                             android:layout_marginRight="@dimen/activity_newGood_info_item_edit_marginRight"
                             />
+                    </LinearLayout>
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/activity_newGood_info_item_height">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="是否上架"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/activity_newGood_text_size"
+                        android:layout_marginLeft="@dimen/activity_newGood_text_margin"/>
+
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true">
+                        <Spinner
+                            android:id="@+id/shelves"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                        </Spinner>
                     </LinearLayout>
 
                 </RelativeLayout>

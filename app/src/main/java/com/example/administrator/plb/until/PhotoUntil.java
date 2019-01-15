@@ -15,6 +15,7 @@ import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.FileProvider;
 import android.util.Log;
+import android.widget.Toast;
 
 import java.io.File;
 import java.io.IOException;
@@ -52,7 +53,7 @@ public class PhotoUntil {
 
     //打开相册
     public void gallery() {
-        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+        Intent intent = new Intent(Intent.ACTION_PICK,null);
         intent.setType("image/*");
         activity.startActivityForResult(intent, GALLERY);
     }
@@ -110,7 +111,6 @@ public class PhotoUntil {
     public File crop(File file) {
         Uri uri= getImageContentUri(file);
         File outFile=new File(activity.getExternalCacheDir().getAbsolutePath()+"/"+System.currentTimeMillis()+".jpg");
-        Uri imageUri=Uri.fromFile(outFile);
         Intent intent=new Intent("com.android.camera.action.CROP");
         intent.setDataAndType(uri,"image/*");
         intent.putExtra("CROP","true");
@@ -119,7 +119,7 @@ public class PhotoUntil {
         intent.putExtra("outputX", 300);
         intent.putExtra("outputY", 300);
         intent.putExtra("scale", true);
-        intent.putExtra(MediaStore.EXTRA_OUTPUT,imageUri);
+        intent.putExtra(MediaStore.EXTRA_OUTPUT,Uri.fromFile(outFile));
         intent.putExtra("outputFormat", Bitmap.CompressFormat.JPEG.toString());
         intent.putExtra("return-data", false);//data不需要返回,避免图片太大异常
         intent.putExtra("noFaceDetection", true); // no face detection
@@ -128,7 +128,6 @@ public class PhotoUntil {
     }
     public Uri getImageContentUri(File imageFile){
         String filePath = imageFile.getAbsolutePath();
-        Log.e("filePath",filePath);
         Cursor cursor =activity.getContentResolver().query(
                 MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
                 new String[]{MediaStore.Images.Media._ID},
@@ -173,6 +172,8 @@ public class PhotoUntil {
         } else {
             imagePath = getImagePath(uri, null);
         }
+        File file=new File(imagePath);
+        Log.e("123",file.exists()+"");
         return imagePath;
     }
     private String getImagePath(Uri uri, String seletion) {

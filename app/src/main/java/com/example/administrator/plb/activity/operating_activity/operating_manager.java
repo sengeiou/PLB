@@ -35,7 +35,6 @@ import com.jwenfeng.library.pulltorefresh.BaseRefreshListener;
 import com.jwenfeng.library.pulltorefresh.PullToRefreshLayout;
 import com.jwenfeng.library.pulltorefresh.view.HeadRefreshView;
 
-import org.apache.commons.beanutils.BeanUtils;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
@@ -104,7 +103,7 @@ public class operating_manager extends AppCompatActivity implements View.OnClick
         listBean=new GoodsListBean();
         classBeans=new ArrayList<>();
         List<GoodsListBean.GoodsBean>goodsBeans=new ArrayList<>();
-        goodsBeans.add(new GoodsListBean.GoodsBean("安慕希","副食品","",100,"件",100,100,"1234-5-6"));
+        goodsBeans.add(new GoodsListBean.GoodsBean("安慕希","副食品","",100,"件",100,100,"1234-5-6","上架"));
         classBeans.add(new GoodsListBean.ClassBean("123","213",goodsBeans));
         listBean.setList(classBeans);
         adapter=new GoodsListAdapter(this,listBean);
@@ -193,21 +192,21 @@ public class operating_manager extends AppCompatActivity implements View.OnClick
                         }
                     }).create().show();
                 }else if(type==ExpandableListView.PACKED_POSITION_TYPE_CHILD){
-                    alertDialog.setMessage("是否删除商品？")
-                            .setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    listBean.getList().get(group).getList().remove(child);
-                                    listView.collapseGroup(group);
-                                    listView.expandGroup(group);
-                                }
-                            }).setNegativeButton("取消", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
+                alertDialog.setMessage("是否删除商品？")
+                        .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                listBean.getList().get(group).getList().remove(child);
+                                listView.collapseGroup(group);
+                                listView.expandGroup(group);
+                            }
+                        }).setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
 
-                        }
-                    }).create().show();
-                }
+                    }
+                }).create().show();
+            }
                 break;
         }
         return super.onContextItemSelected(item);
@@ -287,7 +286,7 @@ public class operating_manager extends AppCompatActivity implements View.OnClick
                 }
                 if(resultCode==2){
                     GoodsListBean.GoodsBean goods= (GoodsListBean.GoodsBean) data.getBundleExtra("goods").getSerializable("data");
-                    goodsBean=listBean.getList().get(group).getList().get(child);
+                    GoodsListBean.GoodsBean goodsBean=listBean.getList().get(group).getList().get(child);
                     goodsBean.setGoodsClass(goods.getGoodsClass());
                     goodsBean.setGoodsImage(goods.getGoodsImage());
                     goodsBean.setGoodsName(goods.getGoodsName());

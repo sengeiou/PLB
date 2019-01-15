@@ -1,6 +1,7 @@
 package com.example.administrator.plb.activity.operating_activity;
 
 import android.Manifest;
+import android.app.TimePickerDialog;
 import android.content.ContentUris;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -28,6 +29,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -40,6 +42,7 @@ import com.example.administrator.plb.until.PhotoUntil;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Calendar;
 
 import static com.example.administrator.plb.until.PhotoUntil.CAMERA;
 import static com.example.administrator.plb.until.PhotoUntil.CROP;
@@ -66,6 +69,9 @@ public class NewGood extends AppCompatActivity implements View.OnClickListener {
     private ImageView goodsImage;
     private PhotoUntil photoUntil;
     private GoodsListBean.GoodsBean goodsBean;
+    private Spinner sp_shelves;
+    private TextView time;
+    private String[]shelves= new String[]{"是","否"};
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -93,6 +99,8 @@ public class NewGood extends AppCompatActivity implements View.OnClickListener {
             case R.id.goodsImage:
                 photoUntil=new PhotoUntil(this);
                 break;
+            case R.id.time:
+                break;
         }
     }
     private void initView() {
@@ -105,12 +113,14 @@ public class NewGood extends AppCompatActivity implements View.OnClickListener {
         et_Inventory = (EditText) findViewById(R.id.et_Inventory);
         et_minCount = (EditText) findViewById(R.id.et_minCount);
         sp_unit = (Spinner) findViewById(R.id.sp_unit);
+        sp_shelves=findViewById(R.id.shelves);
+        findViewById(R.id.time);
 
 
         unit= getResources().getStringArray(R.array.unit);
         sp_unit.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,unit));
         sp_className.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,classNames));
-
+        sp_shelves.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,shelves));
         if(goodsBean!=null){
             getData();
         }
@@ -173,7 +183,7 @@ public class NewGood extends AppCompatActivity implements View.OnClickListener {
                 Double.parseDouble(price),
                 unit[sp_unit.getSelectedItemPosition()],
                 Integer.parseInt(Inventory),
-                Integer.parseInt(minCount),"");
+                Integer.parseInt(minCount),"",shelves[sp_shelves.getSelectedItemPosition()]);
 
                 Intent intent=new Intent();
                 Bundle bundle=new Bundle();
@@ -189,11 +199,10 @@ public class NewGood extends AppCompatActivity implements View.OnClickListener {
             file = photoUntil.crop();
         }
         if(requestCode==GALLERY && resultCode==RESULT_OK){
-
             file= photoUntil.crop(new File(photoUntil.handleImage(data)));
         }
         if(requestCode==CROP && resultCode==RESULT_OK){
-               Glide.with(this).load(Uri.fromFile(file)).error(R.mipmap.logo).into(goodsImage);
+               Glide.with(this).load(file).error(R.mipmap.logo).into(goodsImage);
         }
     }
 

@@ -59,8 +59,9 @@ public class GoodsListBean {
         private int inventory;//库存
         private int minCount;//最低数量
         private String sellingTime;//销售时间
+        private String shelves;
 
-        public GoodsBean(String goodsName, String goodsClass, String goodsImage, double goodsPrice, String goodsUnit, int inventory, int minCount, String sellingTime) {
+        public GoodsBean(String goodsName, String goodsClass, String goodsImage, double goodsPrice, String goodsUnit, int inventory, int minCount, String sellingTime,String shelves) {
             GoodsName = goodsName;
             GoodsClass = goodsClass;
             GoodsImage = goodsImage;
@@ -69,6 +70,7 @@ public class GoodsListBean {
             this.inventory = inventory;
             this.minCount = minCount;
             this.sellingTime = sellingTime;
+            this.shelves=shelves;
         }
 
         public String getGoodsName() {
