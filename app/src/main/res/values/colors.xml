@@ -23,4 +23,6 @@
     <color name="gray">#a5a4a4</color>
     <color name="experienceNumText">#f2df73</color>
     <color name="experienceNumQuestion">#c01a15</color>
+    <color name="top">#FF7400</color>
+    <color name="Buttom">#7cd957</color>
 </resources>
