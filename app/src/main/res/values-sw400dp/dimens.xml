@@ -18,9 +18,6 @@
 	<dimen name="order_toolbar">55.5556dp</dimen>
 	<dimen name="toobar_title_text">27.7778sp</dimen>
 	<dimen name="order_tab">111.1111dp</dimen>
-	<dimen name="order_tab_image_size">38.8889dp</dimen>
-	<dimen name="order_tab_text_size">16.6667sp</dimen>
-	<dimen name="order_tab_text_margin">11.1111dp</dimen>
 	<dimen name="order_adapter_main_margin">16.6667dp</dimen>
 	<dimen name="order_adapter_id">16.6667sp</dimen>
 	<dimen name="order_adapter_padding">11.1111dp</dimen>
@@ -44,7 +41,6 @@
 	<dimen name="operating_activity_image">33.3333dp</dimen>
 	<dimen name="operating_activity_last_layout_padding">22.2222dp</dimen>
 	<dimen name="operating_activity_last_layout_image_padding">5.5556dp</dimen>
-	<dimen name="operating_activity_line_height">8.8889dp</dimen>
 	<dimen name="fragment_my_tourImage_size">88.8889dp</dimen>
 	<dimen name="fragment_my_tourImage_margin">5.5556dp</dimen>
 	<dimen name="fragment_my_name_size">22.2222sp</dimen>
@@ -96,7 +92,7 @@
 	<dimen name="activity_product_frag1_View_height">11.1111dp</dimen>
 	<dimen name="activity_product_frag1_View_width">2.2222dp</dimen>
 	<dimen name="activity_product_frag1_View_layheight">22.2222dp</dimen>
-	<dimen name="activity_product_frag1_textSize">17.7778dp</dimen>
+	<dimen name="activity_product_frag1_textSize">14.4444dp</dimen>
 	<dimen name="activity_inform_back_size">33.3333dp</dimen>
 	<dimen name="activity_inform_back_margin">11.1111dp</dimen>
 	<dimen name="activity_inform_title_size">20.0000sp</dimen>
@@ -146,4 +142,30 @@
 	<dimen name="goodsList_child_text_goodsName_size">16.6667sp</dimen>
 	<dimen name="goodsList_child_image_size">66.6667dp</dimen>
 	<dimen name="goodsList_child_image_margin">5.5556dp</dimen>
+	<dimen name="product_list_item_paddingTop">11.1111dp</dimen>
+	<dimen name="product_list_item_ImageView">35.5556dp</dimen>
+	<dimen name="product_list_item_textSize">27.7778dp</dimen>
+	<dimen name="product_list_item_padding">5.5556dp</dimen>
+	<dimen name="product_list_item_textSize_item">20.0000dp</dimen>
+	<dimen name="product_list_item_textSize_items">17.7778dp</dimen>
+	<dimen name="product_list_item_paddingLeft">35.5556dp</dimen>
+	<dimen name="activity_merchants_experience_ImageView">33.3333dp</dimen>
+	<dimen name="activity_merchants_experience_titlepadding">11.1111dp</dimen>
+	<dimen name="activity_merchants_experience_textSize">22.2222dp</dimen>
+	<dimen name="activity_merchants_experience_paddingBottom">11.1111dp</dimen>
+	<dimen name="activity_merchants_experience_layout_marginTop">22.2222dp</dimen>
+	<dimen name="activity_merchants_experience_Textpadding">22.2222dp</dimen>
+	<dimen name="activity_merchants_experience_TexttextSize">20.0000sp</dimen>
+	<dimen name="activity_merchants_experience_paddingLeft">22.2222dp</dimen>
+	<dimen name="activity_merchants_experience_paddingTop">5.5556dp</dimen>
+	<dimen name="activity_merchants_experience_SinkView">155.5556dp</dimen>
+	<dimen name="activity_merchants_experience_layout_marginRight">27.7778dp</dimen>
+	<dimen name="activity_merchants_experience_SinkView_layout_marginTop">11.1111dp</dimen>
+	<dimen name="activity_merchants_experience_TimepaddingTop">11.1111dp</dimen>
+	<dimen name="activity_merchants_experience_TimepaddingLeft">11.1111dp</dimen>
+	<dimen name="activity_merchants_experience_padding">22.2222dp</dimen>
+	<dimen name="activity_merchants_experience_listView_padding">11.1111dp</dimen>
+	<dimen name="activity_merchants_experience_layout_height">3.3333dp</dimen>
+	<dimen name="activity_merchants_experience_lisView_layout_height">244.4444dp</dimen>
+	<dimen name="activity_merchants_experience_TextSize_item">17.7778sp</dimen>
 </resources>

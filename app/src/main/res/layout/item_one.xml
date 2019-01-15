@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="@dimen/activity_merchants_experience_paddingTop">
+
+    <ImageView
+        android:id="@+id/yes_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/cuid_yes" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/activity_merchants_experience_TimepaddingLeft"
+        android:layout_alignParentLeft="true">
+        <TextView
+            android:id="@+id/question_yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="催单率"
+            android:textColor="@color/black"
+            android:textSize="@dimen/activity_merchants_experience_TexttextSize" />
+        <TextView
+            android:id="@+id/reason_yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="催单率"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/activity_merchants_experience_TextSize_item" />
+    </LinearLayout>
+    <ImageView
+        android:layout_width="@dimen/activity_merchants_experience_ImageView"
+        android:layout_height="@dimen/activity_merchants_experience_ImageView"
+        android:layout_alignParentRight="true"
+        android:src="@mipmap/next"/>
+    </RelativeLayout>
+
+</LinearLayout>

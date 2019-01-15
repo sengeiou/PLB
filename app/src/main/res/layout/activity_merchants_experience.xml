@@ -4,35 +4,270 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     >
-    <RelativeLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorHard">
-        <ImageView
-            android:id="@+id/close1"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@mipmap/quit"
-            android:layout_centerVertical="true"
-            android:layout_alignParentLeft="true"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="商家体验"
-            android:textColor="@color/colorHard_text"
-            android:layout_centerInParent="true"
-            android:textSize="20dp"
-            android:padding="10dp"/>
-    </RelativeLayout>
+        android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp">
-        <TextView
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorHard">
+
+            <ImageView
+                android:id="@+id/close1"
+                android:layout_width="@dimen/activity_merchants_experience_ImageView"
+                android:layout_height="@dimen/activity_merchants_experience_ImageView"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:background="@mipmap/quit" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:padding="@dimen/activity_merchants_experience_titlepadding"
+                android:text="商家体验"
+                android:textColor="@color/colorHard_text"
+                android:textSize="@dimen/activity_merchants_experience_textSize" />
+        </RelativeLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="商家体验"
-            android:gravity="center"/>
-    </LinearLayout>
+            android:orientation="vertical">
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/activity_merchants_experience_paddingBottom"
+                    android:layout_marginTop="@dimen/activity_merchants_experience_layout_marginTop">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center"
+                        android:padding="@dimen/activity_merchants_experience_Textpadding"
+                        android:text="最近7天体检结果："
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/activity_merchants_experience_TexttextSize" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:gravity="center"
+                        android:paddingLeft="@dimen/activity_merchants_experience_paddingLeft">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="共检测了"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/activity_merchants_experience_TexttextSize" />
+
+                        <TextView
+                            android:id="@+id/experience_num1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="8"
+                            android:textColor="@color/experienceNumText"
+                            android:textSize="@dimen/activity_merchants_experience_TexttextSize" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:text="项，"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/activity_merchants_experience_TexttextSize"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:gravity="center"
+                        android:paddingLeft="@dimen/activity_merchants_experience_paddingLeft"
+                        android:paddingTop="@dimen/activity_merchants_experience_paddingTop">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="其中有"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/activity_merchants_experience_TexttextSize" />
+
+                        <TextView
+                            android:id="@+id/experience_num2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="3"
+                            android:textColor="@color/experienceNumQuestion"
+                            android:textSize="@dimen/activity_merchants_experience_TexttextSize" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:text="项存在问题，"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/activity_merchants_experience_TexttextSize" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center"
+                        android:paddingLeft="@dimen/activity_merchants_experience_paddingLeft"
+                        android:paddingTop="@dimen/activity_merchants_experience_paddingTop"
+                        android:text="建议立即优化。"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/activity_merchants_experience_TexttextSize" />
+                </LinearLayout>
+
+                <com.example.administrator.plb.View.SinkView
+                    android:id="@+id/experience_sinkView"
+                    android:layout_width="@dimen/activity_merchants_experience_SinkView"
+                    android:layout_height="@dimen/activity_merchants_experience_SinkView"
+                    android:layout_marginRight="@dimen/activity_merchants_experience_layout_marginRight"
+                    android:layout_marginTop="@dimen/activity_merchants_experience_SinkView_layout_marginTop"
+                    android:layout_alignParentRight="true">
+
+                </com.example.administrator.plb.View.SinkView>
+            </RelativeLayout>
+            <!--<View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/colorBottomView"/>-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/activity_merchants_experience_TimepaddingLeft"
+                android:paddingTop="@dimen/activity_merchants_experience_TimepaddingTop"
+                android:paddingBottom="@dimen/activity_merchants_experience_layout_marginTop">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="更新时间："
+                    android:textSize="@dimen/activity_merchants_experience_TexttextSize" />
+
+                <TextView
+                    android:id="@+id/experienceTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="2017-12-11"
+                    android:textSize="@dimen/activity_merchants_experience_TexttextSize" />
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/activity_merchants_experience_layout_height"
+                android:background="@color/colorBottomView"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/activity_merchants_experience_paddingLeft"
+                android:paddingTop="@dimen/activity_merchants_experience_layout_marginTop">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:drawableLeft="@mipmap/question_yes"
+                    android:drawablePadding="@dimen/activity_merchants_experience_paddingTop"
+                    android:text="问题项（"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/activity_merchants_experience_TexttextSize" />
+
+                <TextView
+                    android:id="@+id/question_yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="3"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/activity_merchants_experience_TexttextSize" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="）"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/activity_merchants_experience_TexttextSize" />
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/listview_yes"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/activity_merchants_experience_lisView_layout_height"
+                android:paddingLeft="@dimen/activity_merchants_experience_paddingLeft"
+                android:padding="@dimen/activity_merchants_experience_padding">
+            </ListView>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/activity_merchants_experience_layout_height"
+                android:layout_marginTop="@dimen/activity_merchants_experience_layout_marginTop"
+                android:background="@color/colorBottomView"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/activity_merchants_experience_paddingLeft"
+                android:paddingTop="@dimen/activity_merchants_experience_layout_marginTop">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:drawableLeft="@mipmap/question_no"
+                    android:drawablePadding="@dimen/activity_merchants_experience_paddingTop"
+                    android:text="无问题项（"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/activity_merchants_experience_TexttextSize" />
+
+                <TextView
+                    android:id="@+id/question_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="5"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/activity_merchants_experience_TexttextSize" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="）"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/activity_merchants_experience_TexttextSize" />
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/listview_no"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/activity_merchants_experience_lisView_layout_height"
+                android:paddingLeft="@dimen/activity_merchants_experience_paddingLeft"
+                android:padding="@dimen/activity_merchants_experience_listView_padding">
+
+            </ListView>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+    </ScrollView>
 </LinearLayout>
