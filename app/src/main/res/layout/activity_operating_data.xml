@@ -75,7 +75,7 @@
                 android:layout_marginTop="10dp"
                 />
         </LinearLayout>
-        <LinearLayout
+        <!--<LinearLayout
             android:id="@+id/Traffic_analysis"
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -98,7 +98,7 @@
                 android:padding="5dp"
                 android:layout_marginTop="10dp"
                 />
-        </LinearLayout>
+        </LinearLayout>-->
         <LinearLayout
             android:id="@+id/Product_analysis"
             android:layout_width="0dp"

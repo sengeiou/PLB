@@ -49,8 +49,8 @@ public class operating_data extends AppCompatActivity implements View.OnClickLis
         mBusinessStatistics.setOnClickListener(this);
         mCustomerAnalysis = (LinearLayout) findViewById(R.id.Customer_analysis);
         mCustomerAnalysis.setOnClickListener(this);
-        mTrafficAnalysis = (LinearLayout) findViewById(R.id.Traffic_analysis);
-        mTrafficAnalysis.setOnClickListener(this);
+        /*mTrafficAnalysis = (LinearLayout) findViewById(R.id.Traffic_analysis);
+        mTrafficAnalysis.setOnClickListener(this);*/
         mProductAnalysis = (LinearLayout) findViewById(R.id.Product_analysis);
         mProductAnalysis.setOnClickListener(this);
         mMerchantsExperience = (LinearLayout) findViewById(R.id.Merchants_experience);
@@ -86,10 +86,10 @@ public class operating_data extends AppCompatActivity implements View.OnClickLis
                 /*顾客分析*/
                 startActivity(new Intent(operating_data.this, Customer_analysis.class));
                 break;
-            case R.id.Traffic_analysis:
-                /*流量分析*/
+            /*case R.id.Traffic_analysis:
+                *//*流量分析*//*
                 startActivity(new Intent(operating_data.this, Traffic_analysis.class));
-                break;
+                break;*/
             case R.id.Product_analysis:
                 /*商品分析*/
                 startActivity(new Intent(operating_data.this, Product_analysis.class));

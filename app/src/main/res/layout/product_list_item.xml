@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="销售额￥"
-                android:textSize="@dimen/product_list_item_textSize_item"
+                android:textSize="@dimen/product_list_item_textSize_items"
                 android:paddingLeft="@dimen/product_list_item_paddingLeft"
                 android:textColor="@color/black"
                 />
@@ -49,7 +49,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="1222"
-                android:textSize="@dimen/product_list_item_textSize_item"
+                android:textSize="@dimen/product_list_item_textSize_items"
                 android:textColor="@color/black"
                 />
         </LinearLayout>

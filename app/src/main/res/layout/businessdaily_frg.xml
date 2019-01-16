@@ -17,21 +17,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:padding="10dp"
-                android:paddingLeft="10dp">
+                android:padding="@dimen/businessdaily_frg_padding"
+                android:paddingLeft="@dimen/businessdaily_frg_paddingLeft">
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="统计时间:"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/businessdaily_frg_textSize"
                     android:textColor="@color/gray"
                     />
                 <TextView
                     android:id="@+id/count_time"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=""
-                    android:textSize="28dp"
+                    android:textSize="@dimen/businessdaily_frg_TxtextSize"
                     android:textColor="@color/gray"
                     />
             </LinearLayout>
@@ -46,18 +46,19 @@
                     android:layout_weight="7"
                     android:layout_height="wrap_content"
                     android:text="昨日 流量概况"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/businessdaily_frg_textSize"
                     android:textColor="@color/black"
-                    android:paddingLeft="10dp"
+                    android:paddingLeft="@dimen/businessdaily_frg_paddingLeft"
                     />
                 <TextView
+                    android:id="@+id/click"
                     android:layout_width="0dp"
                     android:layout_weight="2"
                     android:layout_height="wrap_content"
                     android:text="详情"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/businessdaily_frg_textSize"
                     android:textColor="@color/gray"
-                    android:paddingLeft="10dp"
+                    android:paddingLeft="@dimen/businessdaily_frg_paddingLeft"
                     android:drawableRight="@mipmap/next_to"
                     />
             </LinearLayout>
@@ -65,19 +66,19 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="@dimen/businessdaily_frg_layout_marginTop"
                 android:orientation="horizontal">
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:paddingLeft="30dp">
+                    android:paddingLeft="@dimen/businessdaily_frg_lineaner_paddingLeft">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="访问顾客"
-                        android:textSize="18sp"/>
+                        android:textSize="@dimen/businessdaily_frg_TxtextSize"/>
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -88,14 +89,14 @@
                             android:layout_height="wrap_content"
                             android:text="303"
                             android:textColor="@color/black"
-                            android:textSize="18sp"
+                            android:textSize="@dimen/businessdaily_frg_TxtextSize"
                             />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="人"
                             android:textColor="@color/black"
-                            android:textSize="18sp"
+                            android:textSize="@dimen/businessdaily_frg_TxtextSize"
                            />
                     </LinearLayout>
                     <LinearLayout
@@ -106,7 +107,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="较前日"
-                            android:textSize="18sp"
+                            android:textSize="@dimen/businessdaily_frg_TxtextSize"
                             />
                         <ImageView
                             android:id="@+id/trafficaccess_top_img"
@@ -120,7 +121,7 @@
                             android:layout_height="wrap_content"
                             android:text="18"
                             android:textColor="@color/top"
-                            android:textSize="18sp"
+                            android:textSize="@dimen/businessdaily_frg_TxtextSize"
                             />
                         <TextView
                             android:id="@+id/trafficpeople1"
@@ -128,7 +129,7 @@
                             android:layout_height="wrap_content"
                             android:text="人"
                             android:textColor="@color/top"
-                            android:textSize="18sp"
+                            android:textSize="@dimen/businessdaily_frg_TxtextSize"
                             />
                     </LinearLayout>
 
@@ -137,8 +138,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="下单顾客"
-                        android:textSize="18sp"
-                        android:layout_marginTop="20dp"/>
+                        android:textSize="@dimen/businessdaily_frg_TxtextSize"
+                        android:layout_marginTop="@dimen/businessdaily_frg_layout_marginTop"/>
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -149,14 +150,14 @@
                             android:layout_height="wrap_content"
                             android:text="42"
                             android:textColor="@color/black"
-                            android:textSize="18sp"
+                            android:textSize="@dimen/businessdaily_frg_TxtextSize"
                             />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="人"
                             android:textColor="@color/black"
-                            android:textSize="18sp"
+                            android:textSize="@dimen/businessdaily_frg_TxtextSize"
                             />
                     </LinearLayout>
                     <LinearLayout
@@ -167,7 +168,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="较前日"
-                            android:textSize="18sp"
+                            android:textSize="@dimen/businessdaily_frg_TxtextSize"
                             />
                         <ImageView
                             android:id="@+id/trafficorder_blow_img"
@@ -181,7 +182,7 @@
                             android:layout_height="wrap_content"
                             android:text="18"
                             android:textColor="@color/Buttom"
-                            android:textSize="18sp"
+                            android:textSize="@dimen/businessdaily_frg_TxtextSize"
                             />
                         <TextView
                             android:id="@+id/trafficpeople2"
@@ -189,7 +190,7 @@
                             android:layout_height="wrap_content"
                             android:text="人"
                             android:textColor="@color/Buttom"
-                            android:textSize="18sp"
+                            android:textSize="@dimen/businessdaily_frg_TxtextSize"
                             />
                     </LinearLayout>
                 </LinearLayout>
@@ -206,7 +207,7 @@
                         android:layout_height="wrap_content"
                         android:text="下单转化率"
                         android:textColor="@color/black"
-                        android:textSize="18sp"
+                        android:textSize="@dimen/businessdaily_frg_TxtextSize"
                         />
                     <TextView
                         android:id="@+id/traffic_count_avg"
@@ -214,7 +215,7 @@
                         android:layout_height="wrap_content"
                         android:text="13.86%"
                         android:textColor="@color/black"
-                        android:textSize="18sp"
+                        android:textSize="@dimen/businessdaily_frg_TxtextSize"
                         />
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -224,7 +225,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="较前日"
-                            android:textSize="18sp"
+                            android:textSize="@dimen/businessdaily_frg_TxtextSize"
                             />
                         <ImageView
                             android:id="@+id/traffic_count_img"
@@ -233,12 +234,12 @@
                             android:src="@mipmap/buttom"/>
 
                         <TextView
-                            android:id="@+id/traffic_count_"
+                            android:id="@+id/traffic_count"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="3.68%"
                             android:textColor="@color/Buttom"
-                            android:textSize="18sp"
+                            android:textSize="@dimen/businessdaily_frg_TxtextSize"
                             />
 
                     </LinearLayout>
@@ -250,24 +251,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginTop="40dp">
+                android:layout_marginTop="@dimen/businessdaily_frg_lineaner_layout_marginTop">
                 <TextView
                     android:layout_width="0dp"
                     android:layout_weight="7"
                     android:layout_height="wrap_content"
                     android:text="昨日 顾客概况"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/businessdaily_frg_textSize"
                     android:textColor="@color/black"
-                    android:paddingLeft="10dp"
+                    android:paddingLeft="@dimen/businessdaily_frg_paddingLeft"
                     />
                 <TextView
                     android:layout_width="0dp"
                     android:layout_weight="2"
                     android:layout_height="wrap_content"
                     android:text="详情"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/businessdaily_frg_textSize"
                     android:textColor="@color/gray"
-                    android:paddingLeft="10dp"
+                    android:paddingLeft="@dimen/businessdaily_frg_paddingLeft"
                     android:drawableRight="@mipmap/next_to"
                     />
             </LinearLayout>
@@ -275,19 +276,19 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="@dimen/businessdaily_frg_layout_marginTop"
                 android:orientation="horizontal">
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:paddingLeft="30dp">
+                    android:paddingLeft="@dimen/businessdaily_frg_lineaner_paddingLeft">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="老客"
-                        android:textSize="18sp"/>
+                        android:textSize="@dimen/businessdaily_frg_TxtextSize"/>
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -298,14 +299,14 @@
                             android:layout_height="wrap_content"
                             android:text="78"
                             android:textColor="@color/black"
-                            android:textSize="18sp"
+                            android:textSize="@dimen/businessdaily_frg_TxtextSize"
                             />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="人"
                             android:textColor="@color/black"
-                            android:textSize="18sp"
+                            android:textSize="@dimen/businessdaily_frg_TxtextSize"
                             />
                     </LinearLayout>
                     <LinearLayout
@@ -316,7 +317,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="较前日"
-                            android:textSize="18sp"
+                            android:textSize="@dimen/businessdaily_frg_TxtextSize"
                             />
                         <ImageView
                             android:id="@+id/access_top_img"
@@ -330,7 +331,7 @@
                             android:layout_height="wrap_content"
                             android:text="18"
                             android:textColor="@color/Buttom"
-                            android:textSize="18sp"
+                            android:textSize="@dimen/businessdaily_frg_TxtextSize"
                             />
                         <TextView
                             android:id="@+id/people1"
@@ -338,7 +339,7 @@
                             android:layout_height="wrap_content"
                             android:text="人"
                             android:textColor="@color/Buttom"
-                            android:textSize="18sp"
+                            android:textSize="@dimen/businessdaily_frg_TxtextSize"
                             />
                     </LinearLayout>
 
@@ -347,8 +348,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="新客"
-                        android:textSize="18sp"
-                        android:layout_marginTop="20dp"/>
+                        android:textSize="@dimen/businessdaily_frg_TxtextSize"
+                        android:layout_marginTop="@dimen/businessdaily_frg_layout_marginTop"/>
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -359,14 +360,14 @@
                             android:layout_height="wrap_content"
                             android:text="110"
                             android:textColor="@color/black"
-                            android:textSize="18sp"
+                            android:textSize="@dimen/businessdaily_frg_TxtextSize"
                             />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="人"
                             android:textColor="@color/black"
-                            android:textSize="18sp"
+                            android:textSize="@dimen/businessdaily_frg_TxtextSize"
                             />
                     </LinearLayout>
                     <LinearLayout
@@ -377,7 +378,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="较前日"
-                            android:textSize="18sp"
+                            android:textSize="@dimen/businessdaily_frg_TxtextSize"
                             />
                         <ImageView
                             android:id="@+id/order_blow_img"
@@ -391,7 +392,7 @@
                             android:layout_height="wrap_content"
                             android:text="18"
                             android:textColor="@color/Buttom"
-                            android:textSize="18sp"
+                            android:textSize="@dimen/businessdaily_frg_TxtextSize"
                             />
                         <TextView
                             android:id="@+id/people2"
@@ -399,7 +400,7 @@
                             android:layout_height="wrap_content"
                             android:text="人"
                             android:textColor="@color/Buttom"
-                            android:textSize="18sp"
+                            android:textSize="@dimen/businessdaily_frg_TxtextSize"
                             />
                     </LinearLayout>
                 </LinearLayout>
@@ -416,7 +417,7 @@
                         android:layout_height="wrap_content"
                         android:text="下单人数"
                         android:textColor="@color/black"
-                        android:textSize="18sp"
+                        android:textSize="@dimen/businessdaily_frg_TxtextSize"
                         />
                     <TextView
                         android:id="@+id/count_avg"
@@ -424,7 +425,7 @@
                         android:layout_height="wrap_content"
                         android:text="188"
                         android:textColor="@color/black"
-                        android:textSize="18sp"
+                        android:textSize="@dimen/businessdaily_frg_TxtextSize"
                         />
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -434,7 +435,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="较前日"
-                            android:textSize="18sp"
+                            android:textSize="@dimen/businessdaily_frg_TxtextSize"
                             />
                         <ImageView
                             android:id="@+id/count_img"
@@ -443,12 +444,12 @@
                             android:src="@mipmap/buttom"/>
 
                         <TextView
-                            android:id="@+id/count_"
+                            android:id="@+id/count"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="55"
                             android:textColor="@color/Buttom"
-                            android:textSize="18sp"
+                            android:textSize="@dimen/businessdaily_frg_TxtextSize"
                             />
 
                     </LinearLayout>

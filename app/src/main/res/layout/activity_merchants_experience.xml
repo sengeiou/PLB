@@ -4,15 +4,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     >
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -35,7 +26,9 @@
                 android:textColor="@color/colorHard_text"
                 android:textSize="@dimen/activity_merchants_experience_textSize" />
         </RelativeLayout>
-
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -266,8 +259,5 @@
             </ListView>
 
         </LinearLayout>
-
-
-    </LinearLayout>
     </ScrollView>
 </LinearLayout>
