@@ -2,11 +2,13 @@ package com.example.administrator.plb.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView.*;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import com.example.administrator.plb.R;
@@ -20,10 +22,11 @@ import java.util.List;
 public class SelectDayAdapter extends BaseAdapter {
     private List mList;
     private Context mContext;
-
-    public SelectDayAdapter(Context context, List<SelectDay> list){
+    private CompoundButton.OnCheckedChangeListener  onCheckedChangeListener;
+    public SelectDayAdapter(Context context, List<SelectDay> list, CompoundButton.OnCheckedChangeListener onCheckedChangeListener){
         this.mList = list;
         this.mContext = context;
+        this.onCheckedChangeListener=onCheckedChangeListener;
     }
     @Override
     public int getCount() {
@@ -41,7 +44,7 @@ public class SelectDayAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         SelectDay sd = (SelectDay) mList.get(position);
         View view;
         ViewHolder viewHolder;
@@ -57,6 +60,8 @@ public class SelectDayAdapter extends BaseAdapter {
         }
         viewHolder.text.setText(sd.getDay());
         viewHolder.ck.setChecked(sd.getCk());
+        viewHolder.ck.setOnCheckedChangeListener(onCheckedChangeListener);
+
         return view;
     }
 

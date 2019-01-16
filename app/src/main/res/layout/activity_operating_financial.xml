@@ -1,9 +1,352 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".activity.operating_activity.operating_financial">
 
-</android.support.constraint.ConstraintLayout>
+    <!--头布局-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/order_toolbar"
+        android:background="@color/colorHard">
+        <ImageView
+            android:id="@+id/close1"
+            android:layout_marginLeft="10dp"
+            android:layout_width="@dimen/activity_inform_back_size"
+            android:layout_height="@dimen/activity_inform_back_size"
+            android:background="@mipmap/quit"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="账户对账"
+            android:textColor="@color/colorHard_text"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/toobar_title_text"
+            android:padding="10dp"/>
+    </RelativeLayout>
+
+
+    <!--账户余额-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#90adc7"
+        android:orientation="vertical">
+        <LinearLayout
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:text="可提现余额"
+                android:textSize="@dimen/activity_operating_manager_text_size"
+                android:textColor="@android:color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="￥"
+                    android:textSize="@dimen/activity_operating_manager_text_size"
+                    android:textColor="@android:color/white"
+                    android:padding="2dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/tv_financial_money"
+                    android:text="0.00"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/activity_operating_manager_text_size"
+                    android:textColor="@android:color/white"
+                    android:padding="2dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/tv_financial_tixian"
+                    android:text="提现"
+                    android:textSize="@dimen/activity_operating_manager_text_size"
+                    android:textColor="@android:color/white"
+                    android:padding="2dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:background="@drawable/ll_bg_financial_money"/>
+        <LinearLayout
+            android:padding="10dp"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:src="@drawable/financial_money"
+                android:layout_width="@dimen/activity_inform_back_size"
+                android:layout_height="@dimen/activity_inform_back_size" />
+            <TextView
+                android:text="查看账户"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:textSize="@dimen/activity_operating_manager_text_size"
+                android:textColor="@android:color/white"
+                android:padding="2dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="推广费、配送费充值 >"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/activity_operating_manager_text_size"
+                android:textColor="@android:color/white"
+                android:padding="2dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--今日预计收入-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="30dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="今日预计收入"
+                    android:textSize="@dimen/activity_operating_manager_text_size"
+                    android:textColor="@android:color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/tv_financial_time"
+                    android:text="(2019-01-01)"
+                    android:textSize="@dimen/activity_operating_manager_text_size"
+                    android:textColor="@android:color/black"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/tv_financial_predict_money"
+                    android:textColor="#fcd045"
+                    android:text="￥1888.32 >"
+                    android:layout_marginRight="5dp"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/activity_operating_manager_text_size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:background="@drawable/ll_bg_financial_predict"
+            android:layout_height="0.2dp"/>
+        <LinearLayout
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/tv_financial_order_name"
+                    android:text="今日订单"
+                    android:layout_weight="3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/tv_financial_order_num"
+                    android:text="共53笔"
+                    android:textSize="@dimen/activity_operating_manager_text_size"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/tv_financial_order_money"
+                    android:text="￥1888.32"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/activity_operating_manager_text_size"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="#fcd045"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--历史账单-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="历史账单"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/activity_operating_manager_text_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="全部历史账单 >"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:paddingRight="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="5dp"
+            android:background="#14c4c9"
+            android:layout_height="match_parent"/>
+        <LinearLayout
+            android:paddingBottom="5dp"
+            android:background="#e6f4f2"
+            android:layout_weight="1"
+            android:paddingLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:paddingTop="5dp"
+                android:paddingBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/tv_financial_old_min_time"
+                    android:text="2019.01.06"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/activity_operating_manager_text_size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:text=" — "
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/activity_operating_manager_text_size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/tv_financial_old_max_time"
+                    android:text="2019.01.08"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/activity_operating_manager_text_size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/tv_financial_old_money"
+                    android:text="￥9999.99"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:textSize="@dimen/activity_operating_manager_text_size"
+                    android:textColor="@android:color/black"
+                    android:paddingRight="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="最近已结算账单"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_financial_old_time3"
+                android:text="2019.01.08"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_financial_old_money3"
+                android:text="￥2999.23 >"
+                android:textColor="@android:color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_financial_old_time2"
+                android:text="2019.01.07"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_financial_old_money2"
+                android:text="￥0.00 >"
+                android:textColor="@android:color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_financial_old_time1"
+                android:text="2019.01.06"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_financial_old_money1"
+                android:text="￥888.33 >"
+                android:textColor="@android:color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

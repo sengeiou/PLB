@@ -191,7 +191,6 @@ public class RegIDCardActivity extends AppCompatActivity implements View.OnClick
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode){
             case REQUEST_CAMERA:
-
                 if (resultCode == RESULT_OK){
                     crop(mTmpFile.getAbsolutePath());
                 }else {

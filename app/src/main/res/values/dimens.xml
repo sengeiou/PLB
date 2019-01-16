@@ -151,7 +151,7 @@
 
     <!--修改营业时间-->
     <dimen name="activity_business_updata_time_text1_size">20sp</dimen>
-    <dimen name="activity_business_updata_time_select_day_size">15sp</dimen>
+    <dimen name="activity_business_updata_time_select_day_size">12sp</dimen>
     <dimen name="activity_business_updata_time_date_size">25sp</dimen>
     <dimen name="activity_business_updata_time_margin">10dp</dimen>
     <dimen name="activity_business_updata_time_text3">18sp</dimen>
