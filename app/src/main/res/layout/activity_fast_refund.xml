@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.operating_activity.FastRefundActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/order_toolbar"
+        android:background="@color/colorHard">
+        <ImageView
+            android:layout_centerVertical="true"
+            android:id="@+id/back"
+            android:src="@drawable/back"
+            android:layout_width="@dimen/activity_inform_back_size"
+            android:layout_height="@dimen/activity_inform_back_size" />
+        <TextView
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="极速退款"
+            android:gravity="center"
+            android:textSize="@dimen/login_toobar_textSize"
+            android:textColor="@color/white"
+            android:padding="@dimen/reg_botton_padding"/>
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:text="保存"
+            android:textColor="@color/white"
+            android:textSize="@dimen/order_tab_text_size"
+            android:layout_margin="@dimen/activity_newGood_text_margin"
+            android:id="@+id/save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/reg_edit_height">
+        <TextView
+            android:layout_centerVertical="true"
+            android:textSize="@dimen/login_toobar_textSize"
+            android:text="极速退款"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Switch
+            android:layout_margin="@dimen/activity_newGood_text_margin"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:id="@+id/swit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/reg_edit_height">
+        <TextView
+
+            android:layout_centerVertical="true"
+            android:textSize="@dimen/login_toobar_textSize"
+            android:text="设置时间"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/time"
+            android:layout_margin="@dimen/activity_newGood_text_margin"
+            android:textSize="@dimen/order_tab_text_size"
+            android:text="3分钟"
+            android:background="@color/colorLoginEditText"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+</LinearLayout>

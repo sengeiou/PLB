@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.example.administrator.plb.R;
+import com.example.administrator.plb.activity.operating_activity.FastRefundActivity;
 import com.example.administrator.plb.activity.operating_activity.operating_data;
 import com.example.administrator.plb.activity.operating_activity.operating_evaluation;
 import com.example.administrator.plb.activity.operating_activity.operating_financial;
@@ -96,6 +97,7 @@ public class OperatingFragment extends Fragment implements View.OnClickListener 
                 break;
             case R.id.opr_refund:
                 /*极速退款*/
+                startActivity(new Intent(getActivity(),FastRefundActivity.class));
                 break;
             case R.id.opr_invite:
                 /*货物自取*/
