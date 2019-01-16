@@ -111,10 +111,7 @@ public class UpdateTimeActivity extends AppCompatActivity implements View.OnClic
         }
     }
 
-    private void sendHttp(){
-        HttpUtil httpUtil = new HttpUtil("","",handler,msgWhat);
-        httpUtil.openConn();
-    }
+
 
     private void showDialog(){
 
