@@ -16,13 +16,11 @@ import okhttp3.Response;
 
 public class HttpUtil {
     private String url;
-    private String json;
     private Handler handler;
     private int what;
 
-    public HttpUtil(String url, String json, Handler handler, int what) {
+    public HttpUtil(String url, Handler handler, int what) {
         this.url = url;
-        this.json = json;
         this.handler = handler;
         this.what = what;
     }
@@ -30,7 +28,7 @@ public class HttpUtil {
     public void openConn(){
         OkHttpClient client=new OkHttpClient();
         final Request request = new Request.Builder()
-                .post(RequestBody.create(MediaType.parse("application/json"),json))
+                .get()
                 .url(url)
                 .build();
 
