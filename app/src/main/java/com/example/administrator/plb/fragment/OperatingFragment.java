@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 
 import com.example.administrator.plb.R;
 import com.example.administrator.plb.activity.operating_activity.FastRefundActivity;
+import com.example.administrator.plb.activity.operating_activity.operating_configuration;
 import com.example.administrator.plb.activity.operating_activity.operating_data;
 import com.example.administrator.plb.activity.operating_activity.operating_evaluation;
 import com.example.administrator.plb.activity.operating_activity.operating_financial;
@@ -87,6 +88,7 @@ public class OperatingFragment extends Fragment implements View.OnClickListener 
                 /*门店推广*/
                 break;
             case R.id.configuration:
+                startActivity(new Intent(getActivity(),operating_configuration.class));
                 /*活动配置*/
                 break;
             case R.id.Tosign_up:

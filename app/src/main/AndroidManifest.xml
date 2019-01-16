@@ -68,6 +68,7 @@
         <activity android:name=".activity.operating_activity.Traffic_analysis" />
         <activity android:name=".activity.operating_activity.Product_analysis" />
         <activity android:name=".activity.operating_activity.Merchants_experience" />
+        <activity android:name=".activity.operating_activity.operating_configuration"/>
 
         <provider
             android:name="android.support.v4.content.FileProvider"
