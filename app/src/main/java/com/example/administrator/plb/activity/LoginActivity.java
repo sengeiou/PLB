@@ -134,6 +134,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     //Log.e("objq", msg.obj.toString());
                     String json = msg.obj.toString();
                     CacheUntil.putString(getApplicationContext(), "infoJson", json);
+                    CacheUntil.putString(getApplicationContext(), "userName", usernameString);
+                    CacheUntil.putString(getApplicationContext(), "pwd", passwordString);
                     Intent intent = new Intent(LoginActivity.this,MainActivity.class);
                     startActivity(intent);
                     finish();
