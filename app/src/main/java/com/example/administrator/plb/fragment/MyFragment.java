@@ -1,7 +1,6 @@
 package com.example.administrator.plb.fragment;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -47,6 +46,8 @@ public class MyFragment extends Fragment implements View.OnClickListener {
     private TextView tvMyLogout;
     private Toolbar toolbar;
 
+    private String myName;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -60,10 +61,9 @@ public class MyFragment extends Fragment implements View.OnClickListener {
     private void initData() {
         String infoJson = CacheUntil.getString(getActivity(), "infoJson", "");
         Log.e("infoJson", infoJson);
-        /*UserInformBean userInformBean = new Gson().fromJson(infoJson, UserInformBean.class);
+        UserInformBean userInformBean = new Gson().fromJson(infoJson, UserInformBean.class);
         UserInformBean.UserInfoBean userInfo = userInformBean.getUserInfo();
-        String name = userInfo.getName();*/
-
+        String myName = userInfo.getName();
 
     }
 

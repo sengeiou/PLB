@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.administrator.plb.R;
+import com.example.administrator.plb.until.HttpUtil;
 
 public class YingYeStateActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -59,6 +61,28 @@ public class YingYeStateActivity extends AppCompatActivity implements View.OnCli
     private int state = 0;
     private LinearLayout llYyTime;
 
+
+    private String url="http://39.98.68.40:8080/RetailManager/updateShopHours?state=1&storeId="+state;
+    private Handler mHandler = new Handler(new Handler.Callback() {
+        @Override
+        public boolean handleMessage(Message msg) {
+            if(msg.what == 666){
+                String str = msg.obj.toString();
+                setState(str);
+            }
+            return false;
+        }
+    });
+
+    public void setState(String str){
+        Log.e("------result-----", "setState: "+str);
+    }
+
+    public void getHttp(){
+        int whats = 666;
+        HttpUtil httpUtil = new HttpUtil(url,mHandler,whats);
+        httpUtil.openConn();
+    }
     private Handler handler = new Handler(){
         @Override
         public void handleMessage(Message msg) {
@@ -167,6 +191,7 @@ public class YingYeStateActivity extends AppCompatActivity implements View.OnCli
 
         handler.sendEmptyMessageDelayed(1, 500);
     }
+
 
     @Override
     public void onClick(View v) {
