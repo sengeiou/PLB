@@ -21,10 +21,13 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.administrator.plb.BuildConfig;
@@ -49,15 +52,15 @@ public class RegIDCardActivity extends AppCompatActivity implements View.OnClick
     public static  final int CROP_PHOTO=2;// 裁剪
     private File mTmpFile;
     private File mCropImageFile;
-    private Uri imageUri;
-    private Bitmap bitmap;
     private static final int     REQUEST_CROP= 102;
     public static  final int CHOICE_PHOTO=3;//从相册中选择
     SharedPreferences sp;
     SharedPreferences.Editor editor;
-    public static File tempFile;
-    private String strSfz,strSfzbm,strscsfz,stryyzz;
+    private ImageView store_logo,Excellence_Certificate;
+    private EditText position,store,Bank_number,Business_license_number,Market_ID;
+    private String strSfz,strSfzbm,strscsfz,stryyzz,strlogo,strCertificate;
     private Button button;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +78,15 @@ public class RegIDCardActivity extends AppCompatActivity implements View.OnClick
     }
 
     private void init() {
+        store=findViewById(R.id.store);
+        position=findViewById(R.id.position);
+        Bank_number=findViewById(R.id.Bank_number);
+        Business_license_number=findViewById(R.id.Business_license_number);
+        Market_ID=findViewById(R.id.Market_ID);
+        store_logo=findViewById(R.id.store_logo);
+        store_logo.setOnClickListener(this);
+        Excellence_Certificate=findViewById(R.id.Excellence_Certificate);
+        Excellence_Certificate.setOnClickListener(this);
         sfz=findViewById(R.id.sfz);
         sfzbm=findViewById(R.id.sfzbm);
         scsfz=findViewById(R.id.scsfz);
@@ -115,11 +127,28 @@ public class RegIDCardActivity extends AppCompatActivity implements View.OnClick
                 editor.putBoolean("isselect3",true);
                 editor.commit();
                 break;
+            case R.id.store_logo:
+                selectimgheadalert();
+                editor=sp.edit();
+                editor.putBoolean("isselect4",true);
+                editor.commit();
+                break;
+            case R.id.Excellence_Certificate:
+                selectimgheadalert();
+                editor=sp.edit();
+                editor.putBoolean("isselect5",true);
+                editor.commit();
+                break;
             case R.id.reg:
                 Toast.makeText(this, strSfz+""+strSfzbm+""+strscsfz+""+stryyzz , Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(RegIDCardActivity.this,MainActivity.class);
+                startActivity(intent);
                 break;
         }
     }
+
+
+
     String[]permissions=new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.CAMERA};
     private void selectimgheadalert(){
         String[] items = {"拍照", "相册"};
@@ -161,7 +190,7 @@ public class RegIDCardActivity extends AppCompatActivity implements View.OnClick
     private void gallery(){
         Intent intent = new Intent();
         intent.setType("image/*");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
+        intent.setAction(Intent.ACTION_PICK);
         startActivityForResult(intent, REQUEST_GALLERY);
     }
 
@@ -205,6 +234,9 @@ public class RegIDCardActivity extends AppCompatActivity implements View.OnClick
                     Boolean isselect1=sp.getBoolean("isselect1",false);
                     Boolean isselect2=sp.getBoolean("isselect2",false);
                     Boolean isselect3=sp.getBoolean("isselect3",false);
+                    Boolean isselect4=sp.getBoolean("isselect4",false);
+                    Boolean isselect5=sp.getBoolean("isselect5",false);
+
                     if(isselect==true){
                     //sfz.setImageBitmap(bitmap);
                        sfz.setImageURI(Uri.fromFile(mCropImageFile));
@@ -283,7 +315,46 @@ public class RegIDCardActivity extends AppCompatActivity implements View.OnClick
                         editor=sp.edit();
                         editor.putBoolean("isselect3",false);
                         editor.commit();
+                    }else if(isselect4==true){
+                        //yyzz.setImageBitmap(bitmap);
+                        store_logo.setImageURI(Uri.fromFile(mCropImageFile));
+                        try {
+                            InputStream in=new FileInputStream(mCropImageFile);
+                            Bitmap bitmap=BitmapFactory.decodeStream(in);
+                            //sfz.setImageBitmap(bitmap);
+                            strlogo = Base64Util.bitmapToBase64(bitmap);
+                            Log.e("strlogo",strlogo);
+
+                          /*  Bitmap bitmap1 = Base64Util.base64ToBitmap(strSfz);
+                            sfz.setImageBitmap(bitmap1);*/
+
+                        } catch (FileNotFoundException e) {
+                            e.printStackTrace();
+                        }
+                        editor=sp.edit();
+                        editor.putBoolean("isselect4",false);
+                        editor.commit();
+                    }else if(isselect5==true){
+                        //yyzz.setImageBitmap(bitmap);
+                        Excellence_Certificate.setImageURI(Uri.fromFile(mCropImageFile));
+                        try {
+                            InputStream in=new FileInputStream(mCropImageFile);
+                            Bitmap bitmap=BitmapFactory.decodeStream(in);
+                            //sfz.setImageBitmap(bitmap);
+                            strCertificate = Base64Util.bitmapToBase64(bitmap);
+                            Log.e("strCertificate",strCertificate);
+
+                          /*  Bitmap bitmap1 = Base64Util.base64ToBitmap(strSfz);
+                            sfz.setImageBitmap(bitmap1);*/
+
+                        } catch (FileNotFoundException e) {
+                            e.printStackTrace();
+                        }
+                        editor=sp.edit();
+                        editor.putBoolean("isselect5",false);
+                        editor.commit();
                     }
+
 
                 }
                 break;
@@ -299,6 +370,8 @@ public class RegIDCardActivity extends AppCompatActivity implements View.OnClick
                 break;
         }
     }
+
+
 
     private void crop(String imagePath){
         //mCropImageFile = FileUtils.createTmpFile(getBaseContext());

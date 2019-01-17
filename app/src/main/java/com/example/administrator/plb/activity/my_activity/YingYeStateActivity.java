@@ -7,6 +7,8 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +17,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.administrator.plb.R;
+import com.example.administrator.plb.entity.UserInformBean;
+import com.example.administrator.plb.until.CacheUntil;
+import com.example.administrator.plb.until.HttpUtil;
+import com.google.gson.Gson;
 
 public class YingYeStateActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -54,10 +60,14 @@ public class YingYeStateActivity extends AppCompatActivity implements View.OnCli
     private TextView tvYyBtnSm;
 
     /**
-     * 记录营业状态 0未到营业时间，1正在营业，2停止营业
+     * 记录营业状态 1正在营业，0停止营业,2 未到营业时间
      */
     private int state = 0;
     private LinearLayout llYyTime;
+
+
+
+
 
     private Handler handler = new Handler(){
         @Override
@@ -65,27 +75,30 @@ public class YingYeStateActivity extends AppCompatActivity implements View.OnCli
             super.handleMessage(msg);
             if (msg.what==1){
                 dialog.dismiss();
-                if (state==0){
-                    stopStateSetting();
-                    state = 2;
-                }else if (state==1){
-                    stopStateSetting();
-                    state = 2;
-                }else if (state==2){
-                    startStateSetting();
-                    state = 1;
-                }
+                Log.e("sssss", msg.obj.toString());
+                updateState();
+            }
+            if (msg.what == 2){
+                String string = msg.obj.toString();
+                CacheUntil.putString(getApplicationContext(), "infoJson", string);
+                state = new Gson().fromJson(string, UserInformBean.class).getStore().getState();
+                Intent intent = new Intent(YingYeStateActivity.this,YingYeStateActivity.class);
+                startActivity(intent);
+                finish();
             }
         }
     };
     private AlertDialog dialog;
+    private UserInformBean.StoreBean store;
+    private UserInformBean userInformBean;
+    private String userName;
+    private String pwd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ying_ye_state);
         initView();
-
         /**
          * 初始化营业状态显示
          */
@@ -94,12 +107,21 @@ public class YingYeStateActivity extends AppCompatActivity implements View.OnCli
     }
 
     private void initShowState() {
-        if (state==0){
-            notTimeStateSetting();
-        }else if (state==1){
-            startStateSetting();
-        }else if (state==2){
-            stopStateSetting();
+        String infoJson = CacheUntil.getString(this, "infoJson", "");
+        userName = CacheUntil.getString(this, "userName", "");
+        pwd = CacheUntil.getString(this, "pwd", "");
+        if (!TextUtils.isEmpty(infoJson)){
+            userInformBean = new Gson().fromJson(infoJson, UserInformBean.class);
+            store = userInformBean.getStore();
+            state = store.getState();
+            Log.e("state", state+"");
+            if (this.state ==2){
+                notTimeStateSetting();
+            }else if (this.state ==1){
+                startStateSetting();
+            }else if (this.state ==0){
+                stopStateSetting();
+            }
         }
     }
 
@@ -163,10 +185,26 @@ public class YingYeStateActivity extends AppCompatActivity implements View.OnCli
         dialog = new AlertDialog.Builder(this)
                 .setView(LayoutInflater.from(this).inflate(R.layout.dialog_update_yy_state, null)).create();
         dialog.show();
+        sendInfo();
 
-
-        handler.sendEmptyMessageDelayed(1, 500);
     }
+    private void sendInfo(){
+        int sendState = 1;
+        if (state==1){
+            sendState = 0;
+        }else if (state==0){
+            sendState = 1;
+        }
+        String url="http://39.98.68.40:8080/RetailManager/updateShopHours?state="+sendState+"&storeId="+store.getStoreId();
+        HttpUtil httpUtil = new HttpUtil(url,handler,1);
+        httpUtil.openConn();
+    }
+    private void updateState(){
+        String url = "http://39.98.68.40:8080/RetailManager/login.do?username="+userName+"&password="+pwd+"&roleId="+2;
+        HttpUtil httpUtil = new HttpUtil(url,handler,2);
+        httpUtil.openConn();
+    }
+
 
     @Override
     public void onClick(View v) {

@@ -50,6 +50,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"/>
             <LinearLayout
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
@@ -71,12 +73,14 @@
                 <TextView
                     android:id="@+id/tv_financial_tixian"
                     android:text="提现"
+                    android:gravity="right"
+                    android:layout_weight="1"
                     android:textSize="@dimen/activity_operating_manager_text_size"
                     android:textColor="@android:color/white"
                     android:padding="2dp"
                     android:layout_marginRight="20dp"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="match_parent" />
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
@@ -86,6 +90,7 @@
             android:layout_marginRight="2dp"
             android:background="@drawable/ll_bg_financial_money"/>
         <LinearLayout
+            android:id="@+id/ll_financial_user"
             android:padding="10dp"
             android:gravity="center_vertical"
             android:layout_width="match_parent"
@@ -121,6 +126,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <LinearLayout
+            android:id="@+id/ll_financial_predict_money"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp">

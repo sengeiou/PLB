@@ -37,26 +37,6 @@
             android:text="商品管理"
             android:textSize="@dimen/toobar_title_text"
             android:textColor="@color/white"/>
-        <TextView
-            android:id="@+id/save"
-            android:textColor="@color/white"
-            android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
-            android:layout_margin="@dimen/fragment_my_tourImage_margin"
-            android:textSize="@dimen/activity_newGood_text_size"
-            android:text="保存"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <!--<ImageView-->
-            <!--android:id="@+id/iv_search"-->
-            <!--android:layout_width="@dimen/activity_inform_back_size"-->
-            <!--android:layout_height="@dimen/activity_inform_back_size"-->
-            <!--android:src="@mipmap/search"-->
-            <!--android:layout_alignParentRight="true"-->
-            <!--android:layout_centerVertical="true"-->
-            <!--/>-->
-
     </RelativeLayout>
     </android.support.v7.widget.Toolbar>
     <!--中间内容布局-->

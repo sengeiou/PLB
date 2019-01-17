@@ -2,6 +2,8 @@ package com.example.administrator.plb.activity.operating_activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
@@ -13,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.administrator.plb.R;
 import com.example.administrator.plb.until.CacheUntil;
+import com.example.administrator.plb.until.HttpUtil;
 
 public class NewClassActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -20,12 +23,14 @@ public class NewClassActivity extends AppCompatActivity implements View.OnClickL
     private TextView mSave;
     private EditText mEtClassName;
     private EditText mEtNote;
-
+    private int action;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_class);
-
+        Intent intent= getIntent();
+        action=intent.getIntExtra("action",0);
+        action=intent.getIntExtra("stareId",0);
         initView();
     }
 
@@ -50,18 +55,26 @@ public class NewClassActivity extends AppCompatActivity implements View.OnClickL
             Toast.makeText(this, "请输入分类名", Toast.LENGTH_SHORT).show();
             return;
         }
-
         String note = mEtNote.getText().toString().trim();
+        if (TextUtils.isEmpty(note)) {
+            Toast.makeText(this, "请输入分类名", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
-        Intent intent=new Intent();
-        intent.putExtra("className",className);
-        intent.putExtra("note",note);
-        setResult(1,intent);
-        finish();
+        new HttpUtil("http://39.98.68.40:8080/RetailManager/" +
+                "addCommodityType?classificationName="+className+
+                "&typeDescribe="+note+
+                "&storeId="
+                ,handler,0);
 
 
     }
+    private Handler handler=new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
 
+        }
+    };
     @Override
     public void onClick(View v) {
         switch (v.getId()){
