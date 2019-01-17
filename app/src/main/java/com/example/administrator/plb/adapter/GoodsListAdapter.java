@@ -13,18 +13,22 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.administrator.plb.R;
+import com.example.administrator.plb.entity.ClassInfoBean;
 import com.example.administrator.plb.entity.GoodsListBean;
+import com.example.administrator.plb.entity.UserInformBean;
 import com.example.administrator.plb.until.FileUtils;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class GoodsListAdapter extends BaseExpandableListAdapter {
 
 
     private Context context;
-    private GoodsListBean listBean;
-
-    public GoodsListAdapter(Context context, GoodsListBean listBean) {
+    private List<ClassInfoBean.ClassBean>list;
+    public GoodsListAdapter(Context context, List<ClassInfoBean.ClassBean>list) {
         this.context = context;
-        this.listBean = listBean;
+        this.list = list;
     }
 
     @Override
@@ -39,25 +43,22 @@ public class GoodsListAdapter extends BaseExpandableListAdapter {
 
     @Override
     public int getGroupCount() {
-        return listBean.getList().size();
+        return list.size();
     }
 
     @Override
     public int getChildrenCount(int groupPosition) {
-        return listBean
-                .getList()
-                .get(groupPosition)
-                .getList().size();
+        return list.get(groupPosition).getCommodityListBeans().size();
     }
 
     @Override
     public Object getGroup(int groupPosition) {
-        return listBean.getList().get(groupPosition);
+        return null;
     }
 
     @Override
     public Object getChild(int groupPosition, int childPosition) {
-        return listBean.getList().get(groupPosition).getList().get(childPosition);
+        return null;
     }
 
     @Override
@@ -85,7 +86,7 @@ public class GoodsListAdapter extends BaseExpandableListAdapter {
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
-        viewHolder.className.setText(listBean.getList().get(groupPosition).getClassName());
+        viewHolder.className.setText(list.get(groupPosition).getClassificationName());
         if(isExpanded){
             viewHolder.arrow.setRotation(180);
         }else{
@@ -118,13 +119,13 @@ public class GoodsListAdapter extends BaseExpandableListAdapter {
         } else {
             viewHolder = (ViewHolder2) convertView.getTag();
         }
-        GoodsListBean.GoodsBean goodsBean= listBean.getList().get(groupPosition).getList().get(childPosition);
+        UserInformBean.CommodityListBean goodsBean= list.get(groupPosition).getCommodityListBeans().get(childPosition);
         viewHolder.goodsName.setText(goodsBean.getGoodsName());
-        viewHolder.inventory.setText(goodsBean.getInventory()+"");
-        viewHolder.minCount.setText(goodsBean.getMinCount()+"元/"+goodsBean.getGoodsUnit());
-        viewHolder.sellingTime.setText(goodsBean.getSellingTime());
-        viewHolder.price.setText("￥"+goodsBean.getGoodsPrice()+"元/"+goodsBean.getGoodsUnit());
-        Glide.with(context).load(goodsBean.getGoodsImage())
+        viewHolder.inventory.setText(goodsBean.getStocks()+"");
+        viewHolder.minCount.setText(goodsBean.getMinNum()+"元/"+goodsBean.getUnit());
+        viewHolder.sellingTime.setText(goodsBean.getShelfLife());
+        viewHolder.price.setText("￥"+goodsBean.getWholesalePrice()+"元/"+goodsBean.getUnit());
+        Glide.with(context).load(goodsBean.getImage())
                 .error(R.mipmap.logo)
                 .into(viewHolder.goodsImage);
         return viewHolder.rootView;

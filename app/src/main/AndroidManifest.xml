@@ -42,15 +42,16 @@
 
         <service android:name="com.amap.api.location.APSService" />
 
-        <activity android:name=".activity.MainActivity" >
-        </activity>
-        <activity android:name=".activity.LoginActivity" />
-        <activity android:name=".activity.RegActivity" >
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".activity.LoginActivity" />
+        <activity android:name=".activity.RegActivity" >
+
         </activity>
         <activity android:name=".activity.GuideActivity" />
         <activity android:name=".activity.my_activity.MendianSettingActivity" />
@@ -58,7 +59,9 @@
         <activity android:name=".activity.my_activity.YingYeStateActivity" />
         <activity android:name=".activity.my_activity.SelectDayListviewActivity" />
         <activity android:name=".activity.my_activity.UpdateTimeActivity" />
-        <activity android:name=".activity.RegIDCardActivity"/>
+        <activity android:name=".activity.RegIDCardActivity" >
+
+        </activity>
         <activity android:name=".activity.operating_activity.operating_manager" />
         <activity android:name=".activity.operating_activity.operating_evaluation" />
         <activity android:name=".activity.operating_activity.operating_financial" />
@@ -69,7 +72,7 @@
         <activity android:name=".activity.operating_activity.Traffic_analysis" />
         <activity android:name=".activity.operating_activity.Product_analysis" />
         <activity android:name=".activity.operating_activity.Merchants_experience" />
-        <activity android:name=".activity.operating_activity.operating_configuration" />
+        <activity android:name=".activity.operating_activity.operating_configuration"/>
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -83,9 +86,7 @@
         </provider>
 
         <activity android:name=".activity.operating_activity.NewClassActivity" />
-        <activity android:name=".activity.operating_activity.FastRefundActivity" />
-        <activity android:name=".activity.operating_activity.DepositActivity" />
-        <activity android:name=".activity.operating_activity.DayMoneyActivity"></activity>
+        <activity android:name=".activity.operating_activity.FastRefundActivity"></activity>
     </application>
 
 </manifest>

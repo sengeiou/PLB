@@ -1,9 +1,21 @@
 package com.example.administrator.plb.entity;
 
-import java.io.Serializable;
 import java.util.List;
 
-public class GoodsListBean {
+public class ClassInfoBean {
+    private List<ClassBean> classBeanList;
+
+    public ClassInfoBean(List<ClassBean> classBeanList) {
+        this.classBeanList = classBeanList;
+    }
+
+    public List<ClassBean> getClassBeanList() {
+        return classBeanList;
+    }
+
+    public void setClassBeanList(List<ClassBean> classBeanList) {
+        this.classBeanList = classBeanList;
+    }
 
     public static class ClassBean{
         private int classificationId;
@@ -12,14 +24,24 @@ public class GoodsListBean {
         private int type;
         private Object typeDescribe;
         private int storeId;
-        private List<UserInformBean.CommodityListBean>list;
+        private List<UserInformBean.CommodityListBean>commodityListBeans;
 
-        public List<UserInformBean.CommodityListBean> getList() {
-            return list;
+        public ClassBean(int classificationId, String classificationName, int parentId, int type, Object typeDescribe, int storeId, List<UserInformBean.CommodityListBean> commodityListBeans) {
+            this.classificationId = classificationId;
+            this.classificationName = classificationName;
+            this.parentId = parentId;
+            this.type = type;
+            this.typeDescribe = typeDescribe;
+            this.storeId = storeId;
+            this.commodityListBeans = commodityListBeans;
         }
 
-        public void setList(List<UserInformBean.CommodityListBean> list) {
-            this.list = list;
+        public List<UserInformBean.CommodityListBean> getCommodityListBeans() {
+            return commodityListBeans;
+        }
+
+        public void setCommodityListBeans(List<UserInformBean.CommodityListBean> commodityListBeans) {
+            this.commodityListBeans = commodityListBeans;
         }
 
         public int getClassificationId() {
@@ -70,6 +92,4 @@ public class GoodsListBean {
             this.storeId = storeId;
         }
     }
-
-
 }

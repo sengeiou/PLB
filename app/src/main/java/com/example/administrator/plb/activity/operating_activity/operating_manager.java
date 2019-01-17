@@ -29,8 +29,13 @@ import android.widget.Toast;
 
 import com.example.administrator.plb.R;
 import com.example.administrator.plb.adapter.GoodsListAdapter;
+import com.example.administrator.plb.entity.ClassInfoBean;
 import com.example.administrator.plb.entity.GoodsListBean;
+import com.example.administrator.plb.entity.UserInformBean;
 import com.example.administrator.plb.sqllite.GoodsSqlHelper;
+import com.example.administrator.plb.until.CacheUntil;
+import com.example.administrator.plb.until.HttpUtil;
+import com.google.gson.Gson;
 import com.jwenfeng.library.pulltorefresh.BaseRefreshListener;
 import com.jwenfeng.library.pulltorefresh.PullToRefreshLayout;
 import com.jwenfeng.library.pulltorefresh.view.HeadRefreshView;
@@ -53,14 +58,8 @@ public class operating_manager extends AppCompatActivity implements View.OnClick
     private ExpandableListView listView;
 
 
-    private GoodsSqlHelper sqlHelper;
-    private SQLiteDatabase database;
-    private GoodsListBean listBean;
     private GoodsListAdapter adapter;
 
-    private GoodsListBean.ClassBean classBean;
-    private GoodsListBean.GoodsBean goodsBean;
-    private List<GoodsListBean.ClassBean>classBeans;
     private TextView save;
     private PullToRefreshLayout refresh;
 
@@ -68,15 +67,18 @@ public class operating_manager extends AppCompatActivity implements View.OnClick
     private int group;
     private int child;
 
+    private UserInformBean bean;
+    private List<ClassInfoBean.ClassBean>list;
+
+    private int RequestCount=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_operating_manager);
+
         initView();
         initDate();
         setSupportActionBar(toolbar);
-        sqlHelper=new GoodsSqlHelper(this);
-        database=sqlHelper.getWritableDatabase();
     }
 
     private void initView() {
@@ -87,40 +89,60 @@ public class operating_manager extends AppCompatActivity implements View.OnClick
         ly_NewGoods=(LinearLayout) findViewById(R.id.ly_NewGoods);//底部新建商品
         refresh=findViewById(R.id.refresh);
         toolbar=findViewById(R.id.toolbar);
-        save=findViewById(R.id.save);
     }
     private void initDate() {
         iv_return.setOnClickListener(this);//返回键
         ly_classification.setOnClickListener(this);//底部商品管理
         ly_TheSorting.setOnClickListener(this);//底部排序批量操作
         ly_NewGoods.setOnClickListener(this);//底部新建商品
-        save.setOnClickListener(this);
         refresh.setRefreshListener(refreshListener);
         listView.setOnChildClickListener(onChildClickListener);
         registerForContextMenu(listView);
-
         refresh.setCanLoadMore(false);
-        listBean=new GoodsListBean();
-        classBeans=new ArrayList<>();
-        List<GoodsListBean.GoodsBean>goodsBeans=new ArrayList<>();
-        goodsBeans.add(new GoodsListBean.GoodsBean("安慕希","副食品","",100,"件",100,100,"1234-5-6","上架"));
-        classBeans.add(new GoodsListBean.ClassBean("123","213",goodsBeans));
-        listBean.setList(classBeans);
-        adapter=new GoodsListAdapter(this,listBean);
-        listView.setAdapter(adapter);
+        bean=new Gson().fromJson(CacheUntil.getString(this,"userInfo",""),UserInformBean.class);
+
+        if(bean!=null){
+            refresh();
+        }
+
 
     }
+
+    private void refresh() {
+        initData(bean);
+        adapter=new GoodsListAdapter(this,list);
+        listView.setAdapter(adapter);
+    }
+
+    private Handler handler=new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what){
+                case 0:
+                    refresh.finishRefresh();
+                    String result=msg.obj.toString();
+                    if(result.indexOf("userInfo")!=-1){
+                        CacheUntil.putString(operating_manager.this,"userInfo",result);
+                        bean=new Gson().fromJson(result,UserInformBean.class);
+                        refresh();
+                    }
+                    break;
+                case 1:
+                    if(msg.obj.toString().indexOf("ok")!=-1){
+                        Toast.makeText(operating_manager.this, "删除成功", Toast.LENGTH_SHORT).show();
+                    }
+                    break;
+
+            }
+        }
+    };
+
 
 
     private BaseRefreshListener refreshListener=new BaseRefreshListener() {
         @Override
         public void refresh() {
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    refresh.finishRefresh();
-                }
-            },2000);
+            new HttpUtil("http://39.98.68.40:8080/RetailManager/login.do?roleId=2&phone=test001&password=123",handler,0).openConn();
         }
 
         @Override
@@ -132,7 +154,7 @@ public class operating_manager extends AppCompatActivity implements View.OnClick
     private ExpandableListView.OnChildClickListener onChildClickListener=new ExpandableListView.OnChildClickListener() {
         @Override
         public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
-            GoodsListBean.GoodsBean goodsBean= listBean.getList().get(groupPosition).getList().get(childPosition);
+
             return true;
         }
     };
@@ -151,26 +173,11 @@ public class operating_manager extends AppCompatActivity implements View.OnClick
         switch (item.getItemId()){
             case R.id.edit:
                 if(type==ExpandableListView.PACKED_POSITION_TYPE_GROUP){
-                    GoodsListBean.ClassBean classBean= listBean.getList().get(group);
                     Intent intent=new Intent(operating_manager.this,NewClassActivity.class);
-                    intent.putExtra("className",classBean.getClassName());
-                    intent.putExtra("note",classBean.getNote());
-                    startActivityForResult(intent,2);
+                    intent.putExtra("action",1);
+                    intent.putExtra("storeId",list.get(group).getStoreId());
                 }else if(type==ExpandableListView.PACKED_POSITION_TYPE_CHILD){
 
-                    ArrayList<String>list=new ArrayList<>();
-                    for(int i=0;i<listBean.getList().size();i++){
-                        list.add(listBean.getList().get(i).getClassName());
-                    }
-                    String[]strings=new String[list.size()];
-                    strings=list.toArray(strings);
-                    GoodsListBean.GoodsBean goodsBean= listBean.getList().get(group).getList().get(child);
-                    Intent intent=new Intent(operating_manager.this,NewGood.class);
-                    Bundle bundle=new Bundle();
-                    intent.putExtra("className",strings);
-                    bundle.putSerializable("goods",goodsBean);
-                    intent.putExtra("goods",bundle);
-                    startActivityForResult(intent,2);
                 }
                 break;
             case R.id.del:
@@ -181,9 +188,7 @@ public class operating_manager extends AppCompatActivity implements View.OnClick
                             .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-                                    classBeans.remove(group);
-                                    listView.setAdapter(adapter);
-
+                                    new HttpUtil("http://39.98.68.40:8080/RetailManager/deleteCommodityType.do?commodityId="+list.get(group).getClassificationId(),handler,1);
                                 }
                             }).setNegativeButton("取消", new DialogInterface.OnClickListener() {
                         @Override
@@ -196,9 +201,8 @@ public class operating_manager extends AppCompatActivity implements View.OnClick
                         .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                listBean.getList().get(group).getList().remove(child);
-                                listView.collapseGroup(group);
-                                listView.expandGroup(group);
+                                new HttpUtil("http://39.98.68.40:8080/RetailManager/deletesCommodity.do?commodityId="+list.get(group).getCommodityListBeans().get(child).getId(),handler,1);
+
                             }
                         }).setNegativeButton("取消", new DialogInterface.OnClickListener() {
                     @Override
@@ -229,87 +233,44 @@ public class operating_manager extends AppCompatActivity implements View.OnClick
                 break;
             //底部新建商品
             case R.id.ly_NewGoods:
-                ArrayList<String>list=new ArrayList<>();
-                for(int i=0;i<listBean.getList().size();i++){
-                    list.add(listBean.getList().get(i).getClassName());
-                }
-                String[]strings=new String[list.size()];
-                strings=list.toArray(strings);
                 Intent intent=new Intent(operating_manager.this,NewGood.class);
-                intent.putExtra("className",strings);
                 startActivityForResult(intent,1);
                 break;
-            case R.id.save:
 
-                break;
         }
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        switch (requestCode){
-            case 1://新建
-                if(resultCode==1){
-                    String className=data.getStringExtra("className");
-                    String note=data.getStringExtra("note");
-                    boolean isRepeat=false;
-                    for(int i=0;i<listBean.getList().size();i++){
-                        if(className.equals(listBean.getList().get(i).getClassName())){
-                            isRepeat=true;
-                        }
-                    }
-                    if(!isRepeat){
-                        insertClassName(className, note);
-                    }else{
-                        Toast.makeText(this, "分类名已存在", Toast.LENGTH_SHORT).show();
-                    }
-
-                }
-                if (resultCode==2){
-                    Bundle bundle= data.getBundleExtra("goods");
-                    GoodsListBean.GoodsBean goodsBean= (GoodsListBean.GoodsBean) bundle.getSerializable("data");
-                    for(int i=0;i<listBean.getList().size();i++){
-                        if(goodsBean.getGoodsClass().equals(listBean.getList().get(i).getClassName())){
-                            listBean.getList().get(i).getList().add(goodsBean);
-                            listView.collapseGroup(i);
-                            listView.expandGroup(i);
-                            break;
-                        }
-                    }
-                }
-                break;
-            case 2://修改
-                if(resultCode==1){
-                    listBean.getList().get(group).setClassName(data.getStringExtra("className"));
-                    listBean.getList().get(group).setNote(data.getStringExtra("note"));
-                    adapter.notifyDataSetChanged();
-                }
-                if(resultCode==2){
-                    GoodsListBean.GoodsBean goods= (GoodsListBean.GoodsBean) data.getBundleExtra("goods").getSerializable("data");
-                    GoodsListBean.GoodsBean goodsBean=listBean.getList().get(group).getList().get(child);
-                    goodsBean.setGoodsClass(goods.getGoodsClass());
-                    goodsBean.setGoodsImage(goods.getGoodsImage());
-                    goodsBean.setGoodsName(goods.getGoodsName());
-                    goodsBean.setGoodsPrice(goods.getGoodsPrice());
-                    goodsBean.setGoodsUnit(goods.getGoodsUnit());
-                    goodsBean.setInventory(goods.getInventory());
-                    goodsBean.setMinCount(goods.getMinCount());
-                    goodsBean.setSellingTime(goods.getSellingTime());
-                    listView.collapseGroup(group);
-                    listView.expandGroup(group);
-                }
-                break;
+        if(resultCode==RESULT_OK){
+            //调用服务器更新数据
+            Updata();
         }
     }
+    private void Updata(){
+        new HttpUtil("http://39.98.68.40:8080/RetailManager/login.do?3roleId=2&phone=test001&password=123",handler,0).openConn();
+    }
+    private void initData(UserInformBean userBean){
+        list=new ArrayList<>();
+        for(int i=0;i<userBean.getCommodityTypeList().size();i++){
+            UserInformBean.CommodityTypeListBean typeListBean= userBean.getCommodityTypeList().get(i);
+            List<UserInformBean.CommodityListBean>listBean=new ArrayList<>();
+            for(int k=0;k<userBean.getCommodityList().size();k++){
+                if(userBean.getCommodityList().get(k).getFirsttypeId()==typeListBean.getClassificationId()){
+                    listBean.add(userBean.getCommodityList().get(k));
+                }
+            }
+            ClassInfoBean.ClassBean classBean=new ClassInfoBean.ClassBean(
+                    typeListBean.getClassificationId(),
+                    typeListBean.getClassificationName(),
+                    typeListBean.getParentId(),
+                    typeListBean.getType(),
+                    typeListBean.getTypeDescribe(),
+                    typeListBean.getStoreId(),
+                    listBean
+            );
+            list.add(classBean);
+        }
 
-    private void insertClassName(String className, String note) {
-//        ContentValues contentValues=new ContentValues();
-//        contentValues.put("className",className);
-//        contentValues.put("note",note);
-//        database.insert(GoodsSqlHelper.ClassTable,null,contentValues);
-        classBean=new GoodsListBean.ClassBean(className,note,new ArrayList<GoodsListBean.GoodsBean>());
-        classBeans.add(classBean);
-        adapter.notifyDataSetChanged();
-        //listBean
     }
 }
