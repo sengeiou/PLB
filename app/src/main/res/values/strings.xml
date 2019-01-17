@@ -11,4 +11,6 @@
         <item>瓶</item>
         <item>个</item>
     </string-array>
+    <string name="rule_text">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ`¬!"£$%^*()~=#{}[];':,./?/*-_+&#060;&#062;&#064;&#038;</string>
+
 </resources>
