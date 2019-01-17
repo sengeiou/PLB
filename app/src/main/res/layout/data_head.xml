@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="45dp"
+    android:layout_height="@dimen/data_head_layout_height"
     android:background="@color/colorHard">
         <ImageView
             android:id="@+id/close1"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="@dimen/data_head_ImageView"
+            android:layout_height="@dimen/data_head_ImageView"
             android:background="@mipmap/quit"
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"/>
@@ -16,6 +16,6 @@
             android:text="经营统计"
             android:textColor="@color/colorHard_text"
             android:layout_centerInParent="true"
-            android:textSize="20dp"
-            android:padding="10dp"/>
+            android:textSize="@dimen/data_head_textSize"
+            android:padding="@dimen/data_head_padding"/>
 </RelativeLayout>

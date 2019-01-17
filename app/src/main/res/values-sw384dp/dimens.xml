@@ -7,10 +7,13 @@
 	<dimen name="login_reg_textSize">16.0000sp</dimen>
 	<dimen name="login_reg_margin">10.6667dp</dimen>
 	<dimen name="login_toobar_textSize">26.6667sp</dimen>
+	<dimen name="reg_textSize">10.6667sp</dimen>
 	<dimen name="reg_botton_textSize">21.3333sp</dimen>
 	<dimen name="reg_botton_padding">5.3333dp</dimen>
-	<dimen name="reg_image">128.0000dp</dimen>
-	<dimen name="reg_image_margin">10.6667dp</dimen>
+	<dimen name="reg_image">117.3333dp</dimen>
+	<dimen name="reg_image1">85.3333dp</dimen>
+	<dimen name="reg_image2">106.6667dp</dimen>
+	<dimen name="reg_image_margin">5.3333dp</dimen>
 	<dimen name="reg_edit_width">53.3333dp</dimen>
 	<dimen name="reg_edit_height">53.3333dp</dimen>
 	<dimen name="reg_edit_margin">16.0000dp</dimen>
@@ -114,7 +117,7 @@
 	<dimen name="activity_business_state_botton_size">19.2000sp</dimen>
 	<dimen name="activity_business_state_padding">21.3333dp</dimen>
 	<dimen name="activity_business_updata_time_text1_size">21.3333sp</dimen>
-	<dimen name="activity_business_updata_time_select_day_size">16.0000sp</dimen>
+	<dimen name="activity_business_updata_time_select_day_size">12.8000sp</dimen>
 	<dimen name="activity_business_updata_time_date_size">26.6667sp</dimen>
 	<dimen name="activity_business_updata_time_margin">10.6667dp</dimen>
 	<dimen name="activity_business_updata_time_text3">19.2000sp</dimen>
@@ -199,4 +202,16 @@
 	<dimen name="businessdaily_frg_layout_marginTop">21.3333dp</dimen>
 	<dimen name="businessdaily_frg_lineaner_paddingLeft">32.0000dp</dimen>
 	<dimen name="businessdaily_frg_lineaner_layout_marginTop">42.6667dp</dimen>
+	<dimen name="activity_business_frag_Titlepadding">10.6667dp</dimen>
+	<dimen name="activity_business_frag_TitletextSize">21.3333sp</dimen>
+	<dimen name="activity_business_frag_textSize">19.2000sp</dimen>
+	<dimen name="activity_business_frag_layout_marginTop">21.3333dp</dimen>
+	<dimen name="activity_business_frag_ttextSize">17.0667sp</dimen>
+	<dimen name="data_head_layout_height">53.3333dp</dimen>
+	<dimen name="data_head_ImageView">32.0000dp</dimen>
+	<dimen name="data_head_textSize">21.3333sp</dimen>
+	<dimen name="data_head_padding">10.6667dp</dimen>
+	<dimen name="operating_head_layout_height">53.3333dp</dimen>
+	<dimen name="operating_head_padding">5.3333dp</dimen>
+	<dimen name="operating_head_textSize">26.6667sp</dimen>
 </resources>

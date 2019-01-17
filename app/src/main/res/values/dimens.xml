@@ -259,5 +259,19 @@
     <dimen name="businessdaily_frg_lineaner_paddingLeft">30dp</dimen>
     <dimen name="businessdaily_frg_lineaner_layout_marginTop">40dp</dimen>
 
+    <!--经营统计-->
+    <dimen name="activity_business_frag_Titlepadding">10dp</dimen>
+    <dimen name="activity_business_frag_TitletextSize">20sp</dimen>
+    <dimen name="activity_business_frag_textSize">18sp</dimen>
+    <dimen name="activity_business_frag_layout_marginTop">20dp</dimen>
+    <dimen name="activity_business_frag_ttextSize">16sp</dimen>
 
+    <!--head-->
+    <dimen name="data_head_layout_height">50dp</dimen>
+    <dimen name="data_head_ImageView">30dp</dimen>
+    <dimen name="data_head_textSize">20sp</dimen>
+    <dimen name="data_head_padding">10dp</dimen>
+    <dimen name="operating_head_layout_height">50dp</dimen>
+    <dimen name="operating_head_padding">5dp</dimen>
+    <dimen name="operating_head_textSize">25sp</dimen>
 </resources>

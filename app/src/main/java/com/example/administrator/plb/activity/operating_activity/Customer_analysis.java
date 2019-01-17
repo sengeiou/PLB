@@ -1,6 +1,7 @@
 package com.example.administrator.plb.activity.operating_activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
@@ -45,6 +46,7 @@ public class Customer_analysis extends AppCompatActivity implements View.OnClick
         initView();
         manager=getSupportFragmentManager();
         mCustomer1.performClick();
+        initData();
     }
 
     private void initView() {
@@ -130,5 +132,14 @@ public class Customer_analysis extends AppCompatActivity implements View.OnClick
         Transaction.commit();
     }
 
+    private void initData() {
+        Intent intent=getIntent();
+        int item= intent.getIntExtra("type",0);
+        if(item==0){
+            mCustomer1.performClick();
+        }else {
+            mCustomer2.performClick();
+        }
+    }
 
 }

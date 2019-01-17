@@ -1,5 +1,6 @@
 package com.example.administrator.plb.fragment.operating_fragment.businessdata;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -12,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.administrator.plb.R;
+import com.example.administrator.plb.activity.operating_activity.Customer_analysis;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -100,6 +102,7 @@ public class Businessdata_frg extends Fragment implements View.OnClickListener {
      * 55人
      */
     private TextView mCount2;
+    private Intent intent;
 
     @Nullable
     @Override
@@ -166,7 +169,9 @@ public class Businessdata_frg extends Fragment implements View.OnClickListener {
             default:
                 break;
             case R.id.click_to:
-
+                intent= new Intent(getActivity(), Customer_analysis.class);
+                intent.putExtra("type",1);
+                startActivity(intent);
                 break;
         }
     }

@@ -6,16 +6,16 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/operating_head_layout_height"
         android:background="@color/colorHard">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="门店运营"
             android:gravity="center"
-            android:textSize="25dp"
+            android:textSize="@dimen/operating_head_textSize"
             android:textColor="@color/white"
-            android:padding="5dp"/>
+            android:padding="@dimen/operating_head_padding"/>
 
     </LinearLayout>
 

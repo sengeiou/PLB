@@ -3,208 +3,151 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="营业总览"
-        android:padding="@dimen/activity_business_frag1_padding"
-        android:textSize="@dimen/activity_business_frag1_textSize"/>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center">
-
-        <TableLayout
-            android:layout_width="@dimen/activity_business_frag1_tablewidth"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center">
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="@dimen/activity_business_frag1_paddingTop">
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="2"
-                    android:layout_height="wrap_content"
-                    android:text="营业总额"
-                    android:gravity="right"
-                    android:textSize="@dimen/activity_business_frag1_textsize1"
-                    android:padding="@dimen/activity_business_frag1_padding"
-                    android:drawableRight="@mipmap/helps"
-                    />
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="3"
-                    android:layout_height="wrap_content"
-                    android:text="商家补贴"
-                    android:gravity="right"
-                    android:textSize="@dimen/activity_business_frag1_textsize1"
-                    android:padding="@dimen/activity_business_frag1_padding"
-                    android:drawableRight="@mipmap/helps"
-                    />
-
-            </TableRow>
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1.5"
-                    android:layout_height="wrap_content"
-                    android:text="￥"
-                    android:gravity="right"
-                    android:textSize="@dimen/activity_business_frag1_textsize2"
-                    />
-                <TextView
-                    android:id="@+id/num1"
-                    android:layout_width="0dp"
-                    android:layout_weight="2"
-                    android:layout_height="wrap_content"
-                    android:text="9999"
-                    android:gravity="left"
-                    android:textSize="@dimen/activity_business_frag1_textsize2"
-                    />
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="2.5"
-                    android:layout_height="wrap_content"
-                    android:text="￥"
-                    android:gravity="right"
-                    android:textSize="@dimen/activity_business_frag1_textsize2"
-                    />
-                <TextView
-                    android:id="@+id/num2"
-                    android:layout_width="0dp"
-                    android:layout_weight="2"
-                    android:layout_height="wrap_content"
-                    android:text="9999"
-                    android:gravity="left"
-                    android:textSize="@dimen/activity_business_frag1_textsize2"
-                    />
-            </TableRow>
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="@dimen/activity_business_frag1_paddingTop"
-                >
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="2"
-                    android:layout_height="wrap_content"
-                    android:text="有效订单量"
-                    android:gravity="right"
-                    android:textSize="@dimen/activity_business_frag1_textsize1"
-                    android:padding="@dimen/activity_business_frag1_padding"
-                    android:drawableRight="@mipmap/helps"
-                    />
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="3"
-                    android:layout_height="wrap_content"
-                    android:text="无效订单量"
-                    android:gravity="right"
-                    android:textSize="@dimen/activity_business_frag1_textsize1"
-                    android:padding="@dimen/activity_business_frag1_padding"
-                    android:drawableRight="@mipmap/helps"
-                    />
-
-            </TableRow>
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/num3"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:text="9999"
-                    android:gravity="center"
-                    android:textSize="@dimen/activity_business_frag1_textsize2"
-                    />
-
-                <TextView
-                    android:id="@+id/num4"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:text="9999"
-                    android:gravity="center"
-                    android:textSize="@dimen/activity_business_frag1_textsize2"
-                    />
-            </TableRow>
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/activity_business_frag1_layout_marginTop"
-                >
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="2"
-                    android:layout_height="wrap_content"
-                    android:text="客单价￥"
-                    android:gravity="right"
-                    android:textSize="@dimen/activity_business_frag1_textsize3"
-                    />
-                <TextView
-                    android:id="@+id/num5"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:text="33.5"
-                    android:gravity="left"
-                    android:textSize="@dimen/activity_business_frag1_textsize3"
-                    />
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="4"
-                    android:layout_height="wrap_content"
-                    android:text="损失营业额￥"
-                    android:gravity="right"
-                    android:textSize="@dimen/activity_business_frag1_textsize3"
-                    />
-                <TextView
-                    android:id="@+id/num6"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:text="33.5"
-                    android:gravity="left"
-                    android:textSize="@dimen/activity_business_frag1_textsize3"
-                    />
-            </TableRow>
-        </TableLayout>
+            android:text="营业总览"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:padding="@dimen/activity_business_frag_Titlepadding"
+            android:textSize="@dimen/activity_business_frag_TitletextSize"/>
+        <TextView
+            android:id="@+id/business_time1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="今日"
+            android:gravity="center"
+            android:padding="@dimen/activity_business_frag_Titlepadding"
+            android:textSize="@dimen/activity_business_frag_textSize"/>
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/activity_business_frag_Titlepadding"
+        >
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="营业总额"
+                android:textSize="@dimen/activity_business_frag_textSize"
+                android:drawableRight="@mipmap/helps"/>
+            <TextView
+                android:id="@+id/amount_of_business1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="￥1,872.5"
+                android:textSize="@dimen/activity_business_frag_TitletextSize"
+                android:textColor="@color/black"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_business_frag_layout_marginTop"
+                android:text="有效订单量"
+                android:textSize="@dimen/activity_business_frag_textSize"
+                android:drawableRight="@mipmap/helps"/>
+            <TextView
+                android:id="@+id/Effective_order_quantity1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="53"
+                android:textSize="@dimen/activity_business_frag_TitletextSize"
+                android:gravity="center"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/guest_unit_price1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="客单价￥35.33"
+                android:textSize="@dimen/activity_business_frag_ttextSize"
+                android:gravity="center"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="商家补贴"
+                android:textSize="@dimen/activity_business_frag_textSize"
+                android:drawableRight="@mipmap/helps"/>
+            <TextView
+                android:id="@+id/Merchants_subsidies1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="￥73"
+                android:textSize="@dimen/activity_business_frag_TitletextSize"
+                android:textColor="@color/black"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_business_frag_layout_marginTop"
+                android:text="无效订单量"
+                android:textSize="@dimen/activity_business_frag_textSize"
+                android:drawableRight="@mipmap/helps"/>
+            <TextView
+                android:id="@+id/Invalid_order_quantity1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="@dimen/activity_business_frag_TitletextSize"
+                android:gravity="center"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/Lost_turnover1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="损失营业额约￥0"
+                android:textSize="@dimen/activity_business_frag_ttextSize"
+                android:gravity="center"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="@dimen/activity_business_frag1_paddingTop"
-        android:padding="@dimen/activity_business_frag1_layout_marginTop"
+        android:layout_marginTop="@dimen/activity_business_frag_layout_marginTop"
+        android:padding="@dimen/activity_business_frag_Titlepadding"
         android:background="@color/colorBottomView">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="1.昨天营业数据请以今天10：00后的数据为准"
             android:gravity="left"
-            android:textSize="@dimen/activity_business_frag1_textsize2"
+            android:textSize="@dimen/activity_business_frag_textSize"
             />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="2..如需查看每日营业具体数据，请前往电脑板进行查询和下载"
             android:gravity="left"
-            android:textSize="@dimen/activity_business_frag1_textsize2"
+            android:textSize="@dimen/activity_business_frag_textSize"
             />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="3.如需订单对账，请查看门店管理>财务信息>订单对账"
             android:gravity="left"
-            android:textSize="@dimen/activity_business_frag1_textsize2"
+            android:textSize="@dimen/activity_business_frag_textSize"
             />
     </LinearLayout>
 

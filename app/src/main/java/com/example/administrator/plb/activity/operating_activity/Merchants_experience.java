@@ -52,9 +52,7 @@ public class Merchants_experience extends AppCompatActivity implements View.OnCl
         mExperienceSinkView.setPercent(mPercent);
 
         mExperienceTime.setText(CacheUntil.getString(this,KEY_Text_Time,""));
-        /*if(CacheUntil.getBoolean(this,KEY_REMEMBER_TIME,false)){
-            mExperienceTime.setText(CacheUntil.getString(this,KEY_Text_Time,""));
-        }*/
+
     }
 
     private void initView() {
@@ -80,6 +78,7 @@ public class Merchants_experience extends AppCompatActivity implements View.OnCl
         mData2.add(new qustionBeanNo(R.mipmap.avgtime_no, "近7天，平均每天接单时长：" + num2 + "秒"));
         mData2.add(new qustionBeanNo(R.mipmap.action_no, "销售额上升"));
         mData2.add(new qustionBeanNo(R.mipmap.action_no, "销售量增加"));
+        mData2.add(new qustionBeanNo(R.mipmap.action_no, "访问顾客增加"));
 
         //Adapter初始化
         myAdapter1 = new MyAdapters<qustionBeanYes>((ArrayList) mData1, R.layout.item_one) {
@@ -129,7 +128,6 @@ public class Merchants_experience extends AppCompatActivity implements View.OnCl
         mThread.start();
     }
 
-    public static final String KEY_REMEMBER_TIME="rememberTime";
     public static final String KEY_Text_Time="Text_Time";
     @Override
     public void onClick(View v) {
@@ -141,7 +139,7 @@ public class Merchants_experience extends AppCompatActivity implements View.OnCl
                 break;
             case R.id.experience_sinkView:
                 check();
-                SimpleDateFormat format=new SimpleDateFormat("yyyy-MM-dd DD:mm:ss");
+                SimpleDateFormat format=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 String data=format.format(System.currentTimeMillis());
                 mExperienceTime.setText(""+data);
                 String mExperienceTimes=mExperienceTime.getText().toString().trim();

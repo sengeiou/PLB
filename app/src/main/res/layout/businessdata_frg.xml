@@ -50,7 +50,7 @@
                     android:textColor="@color/black"
                     android:paddingLeft="@dimen/businessdaily_frg_paddingLeft"
                     />
-                <TextView
+               <!-- <TextView
                     android:layout_width="0dp"
                     android:layout_weight="2"
                     android:layout_height="wrap_content"
@@ -59,7 +59,7 @@
                     android:textColor="@color/gray"
                     android:paddingLeft="@dimen/businessdaily_frg_paddingLeft"
                     android:drawableRight="@mipmap/next_to"
-                    />
+                    />-->
             </LinearLayout>
 
             <LinearLayout

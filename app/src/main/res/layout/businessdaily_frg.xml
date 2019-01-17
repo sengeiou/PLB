@@ -50,8 +50,8 @@
                     android:textColor="@color/black"
                     android:paddingLeft="@dimen/businessdaily_frg_paddingLeft"
                     />
-                <TextView
-                    android:id="@+id/click"
+                <!--<TextView
+
                     android:layout_width="0dp"
                     android:layout_weight="2"
                     android:layout_height="wrap_content"
@@ -60,7 +60,7 @@
                     android:textColor="@color/gray"
                     android:paddingLeft="@dimen/businessdaily_frg_paddingLeft"
                     android:drawableRight="@mipmap/next_to"
-                    />
+                    />-->
             </LinearLayout>
 
             <LinearLayout
@@ -113,6 +113,7 @@
                             android:id="@+id/trafficaccess_top_img"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
                             android:src="@mipmap/top"/>
 
                         <TextView
@@ -174,6 +175,7 @@
                             android:id="@+id/trafficorder_blow_img"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
                             android:src="@mipmap/buttom"/>
 
                         <TextView
@@ -231,6 +233,7 @@
                             android:id="@+id/traffic_count_img"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
                             android:src="@mipmap/buttom"/>
 
                         <TextView
@@ -262,6 +265,7 @@
                     android:paddingLeft="@dimen/businessdaily_frg_paddingLeft"
                     />
                 <TextView
+                    android:id="@+id/click"
                     android:layout_width="0dp"
                     android:layout_weight="2"
                     android:layout_height="wrap_content"
@@ -323,6 +327,7 @@
                             android:id="@+id/access_top_img"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
                             android:src="@mipmap/buttom"/>
 
                         <TextView
@@ -384,6 +389,7 @@
                             android:id="@+id/order_blow_img"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
                             android:src="@mipmap/buttom"/>
 
                         <TextView
@@ -441,6 +447,7 @@
                             android:id="@+id/count_img"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
                             android:src="@mipmap/buttom"/>
 
                         <TextView
