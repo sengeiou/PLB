@@ -23,6 +23,9 @@ import com.example.administrator.plb.until.CacheUntil;
 import com.example.administrator.plb.until.HttpUtil;
 import com.google.gson.Gson;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -49,11 +52,25 @@ public class UpdateTimeActivity extends AppCompatActivity implements View.OnClic
                 if (msg.obj!=null){
                     infoJson = msg.obj.toString();
                     initView();
+                    CacheUntil.putString(getApplicationContext(), "infoJson", infoJson);
                 }
             }
             if (msg.what == msgWhat){
                 if (msg.obj!=null){
                     Log.e("rel", msg.obj.toString());
+                    try {
+                        String string = new JSONObject(msg.obj.toString()).getString("result");
+                        if (string.equals("OK")){
+                            initData();
+                            Intent intent = new Intent(UpdateTimeActivity.this,YingYeStateActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }else {
+                            Toast.makeText(UpdateTimeActivity.this, "修改失败", Toast.LENGTH_SHORT).show();
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         }
@@ -299,6 +316,8 @@ public class UpdateTimeActivity extends AppCompatActivity implements View.OnClic
                 endDialog.show();
                 break;
             case R.id.back:
+                intent = new Intent(UpdateTimeActivity.this,YingYeStateActivity.class);
+                startActivity(intent);
                 finish();
                 break;
         }

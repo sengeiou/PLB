@@ -27,6 +27,11 @@ import com.example.administrator.plb.entity.UserInformBean;
 import com.example.administrator.plb.until.CacheUntil;
 import com.google.gson.Gson;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 
 public class MyFragment extends Fragment implements View.OnClickListener {
 
@@ -49,6 +54,9 @@ public class MyFragment extends Fragment implements View.OnClickListener {
 
     private String myName;
     private int myState;
+    private SimpleDateFormat format = new SimpleDateFormat("HH:mm");
+    private String strOpenTime;
+    private String strCloseTime;
 
     @Nullable
     @Override
@@ -78,9 +86,26 @@ public class MyFragment extends Fragment implements View.OnClickListener {
         if(myState == 0){
             tvMyState.setText("停止营业");
         }else{
-            tvMyState.setText("正在营业");
+            /**
+             * 获取系统时间
+             */
+            Date time = Calendar.getInstance().getTime();
+            String f = format.format(time);
+            strOpenTime = userInformBean.getStore().getOpenTime();
+            strCloseTime = userInformBean.getStore().getCloseTime();
+            try {
+                Date openTime = format.parse(strOpenTime);
+                Date closeTime = format.parse(strCloseTime);
+                Date thisTime = format.parse(f);
+                if ((openTime.getTime() - thisTime.getTime())<=0 && (closeTime.getTime() - thisTime.getTime())>=0){
+                    tvMyState.setText("正在营业");
+                }else {
+                    tvMyState.setText("未到营业时间");
+                }
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
         }
-
     }
 
     private void initView() {

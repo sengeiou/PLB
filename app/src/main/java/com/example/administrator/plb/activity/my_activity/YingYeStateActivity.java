@@ -22,6 +22,11 @@ import com.example.administrator.plb.until.CacheUntil;
 import com.example.administrator.plb.until.HttpUtil;
 import com.google.gson.Gson;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 public class YingYeStateActivity extends AppCompatActivity implements View.OnClickListener {
 
     /**
@@ -65,9 +70,7 @@ public class YingYeStateActivity extends AppCompatActivity implements View.OnCli
     private int state = 0;
     private LinearLayout llYyTime;
 
-
-
-
+    private SimpleDateFormat format = new SimpleDateFormat("HH:mm");
 
     private Handler handler = new Handler(){
         @Override
@@ -86,6 +89,42 @@ public class YingYeStateActivity extends AppCompatActivity implements View.OnCli
                 startActivity(intent);
                 finish();
             }
+            if (msg.what == 3){
+                if (msg.obj != null){
+                    String string = msg.obj.toString();
+                    UserInformBean.StoreBean store = new Gson().fromJson(string, UserInformBean.class).getStore();
+                    if (state == 1){
+                        /**
+                         * 获取系统时间
+                         */
+                        Date time = Calendar.getInstance().getTime();
+                        String f = YingYeStateActivity.this.format.format(time);
+
+                        strOpenTime = store.getOpenTime();
+                        strCloseTime = store.getCloseTime();
+
+                        int tuesday = store.getTuesday();
+                        int wednesday = store.getWednesday();
+                        int thursday = store.getThursday();
+                        int friday = store.getFriday();
+                        int sunday = store.getSunday();
+                        int saturday = store.getSaturday();
+                        try {
+                            Date openTime = YingYeStateActivity.this.format.parse(strOpenTime);
+                            Date closeTime = YingYeStateActivity.this.format.parse(strCloseTime);
+                            Date thisTime = format.parse(f);
+                            if ((openTime.getTime() - thisTime.getTime())<=0 && (closeTime.getTime() - thisTime.getTime())>=0){
+                                startStateSetting();
+                            }else {
+                                state = 2;
+                                notTimeStateSetting();
+                            }
+                        } catch (ParseException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }
         }
     };
     private AlertDialog dialog;
@@ -93,16 +132,16 @@ public class YingYeStateActivity extends AppCompatActivity implements View.OnCli
     private UserInformBean userInformBean;
     private String userName;
     private String pwd;
+    private String strOpenTime;
+    private String strCloseTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ying_ye_state);
         initView();
-        /**
-         * 初始化营业状态显示
-         */
         initShowState();
+        initData();
 
     }
 
@@ -123,6 +162,12 @@ public class YingYeStateActivity extends AppCompatActivity implements View.OnCli
                 stopStateSetting();
             }
         }
+    }
+
+    private void initData() {
+        String url = "http://39.98.68.40:8080/RetailManager/login.do?username="+userName+"&password="+pwd+"&roleId="+2;
+        HttpUtil httpUtil = new HttpUtil(url,handler,3);
+        httpUtil.openConn();
     }
 
     private void initView() {
@@ -147,7 +192,8 @@ public class YingYeStateActivity extends AppCompatActivity implements View.OnCli
     private void notTimeStateSetting(){
         ivYyState.setImageResource(R.drawable.state1);
         tvYyState.setText("待开始营业");
-        tvYyTime.setText("10:30-23:00");
+        llYyTime.setVisibility(View.VISIBLE);
+        tvYyTime.setText(strOpenTime+"-"+strCloseTime);
         tvYyTimeSm.setText("当前店铺处于设置的营业时间外，且设置了不接受预订单");
         btnYyState.setText("停止营业");
         btnYyState.setTextColor(Color.RED);
@@ -175,6 +221,7 @@ public class YingYeStateActivity extends AppCompatActivity implements View.OnCli
     private void startStateSetting(){
         ivYyState.setImageResource(R.drawable.state3);
         tvYyState.setText("正在营业");
+        llYyTime.setVisibility(View.GONE);
         tvYyTimeSm.setText("当前店铺处于设置的营业时间内，可以接收新订单");
         btnYyState.setText("停止营业");
         btnYyState.setTextColor(Color.RED);
@@ -193,7 +240,7 @@ public class YingYeStateActivity extends AppCompatActivity implements View.OnCli
         if (state==1){
             sendState = 0;
         }else if (state==0){
-            sendState = 1;
+            initData();
         }
         String url="http://39.98.68.40:8080/RetailManager/updateShopHours?state="+sendState+"&storeId="+store.getStoreId();
         HttpUtil httpUtil = new HttpUtil(url,handler,1);
@@ -218,6 +265,7 @@ public class YingYeStateActivity extends AppCompatActivity implements View.OnCli
             case R.id.tv_yy_alter_time:
                 Intent intent = new Intent(YingYeStateActivity.this,UpdateTimeActivity.class);
                 startActivity(intent);
+                finish();
                 break;
         }
     }
