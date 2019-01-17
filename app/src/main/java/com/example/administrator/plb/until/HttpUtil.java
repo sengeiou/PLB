@@ -4,7 +4,11 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -40,7 +44,15 @@ public class HttpUtil {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 Message msg = new Message();
-                msg.obj = request.body();
+                InputStream inputStream = response.body().byteStream();
+                Reader reader = new InputStreamReader(inputStream);
+                BufferedReader bufferedReader = new BufferedReader(reader);
+                StringBuffer str = new StringBuffer();
+                String cont;
+                while ((cont = bufferedReader.readLine())!=null){
+                    str.append(cont);
+                }
+                msg.obj = str.toString();
                 msg.what = what;
                 handler.sendMessage(msg);
             }

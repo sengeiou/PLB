@@ -51,6 +51,7 @@ public class PhotoUntil {
     }
 
 
+
     //打开相册
     public void gallery() {
         Intent intent = new Intent(Intent.ACTION_PICK,null);

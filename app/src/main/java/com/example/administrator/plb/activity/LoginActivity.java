@@ -14,6 +14,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,6 +35,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private EditText mPassword;
     private Button mLogin;
     private TextView mReg;
+    private LinearLayout prbLogin;
     String[]permissions=new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.CAMERA};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         mUsername = (EditText) findViewById(R.id.username);
         mPassword = (EditText) findViewById(R.id.password);
         mLogin = (Button) findViewById(R.id.login);
+        prbLogin = findViewById(R.id.prb_login);
+        prbLogin.setVisibility(View.GONE);
         mReg = (TextView) findViewById(R.id.reg);
         mReg.setOnClickListener(this);
         mLogin.setOnClickListener(this);
@@ -70,9 +74,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         switch (v.getId()) {
             case R.id.login:
                 //显示加载View
-
+                prbLogin.setVisibility(View.VISIBLE);
                 //提交信息
-                submit();
+                boolean submit = submit();
+                if (submit){
+                    prbLogin.setVisibility(View.VISIBLE);
+                }else{
+
+                }
+
                 break;
             case R.id.reg:
                 Intent intent=new Intent(LoginActivity.this,RegActivity.class);

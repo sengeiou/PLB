@@ -19,6 +19,9 @@ import com.example.administrator.plb.R;
 import com.example.administrator.plb.until.CountDownTimerUtils;
 import com.example.administrator.plb.until.HttpUtil;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.net.HttpURLConnection;
 
 /**
@@ -41,15 +44,47 @@ public class RegActivity extends AppCompatActivity implements View.OnClickListen
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-           if(msg.what==1){
-               progressBar.setVisibility(View.GONE);
+            if(msg.what==1){
+                if (msg.obj!=null){
+                    progressBar.setVisibility(View.GONE);
                     countDownTimerUtils=new CountDownTimerUtils(getcode,60000,1000);
                     countDownTimerUtils.start();
+                    Log.e("sss",msg.obj.toString()+"");
+                }else {
+                    Log.e("obj", "obj为空");
+                }
 
-                    Log.e("sss",msg.obj+"");
-           }
+            }
+            if (msg.what == 2){
+                if (msg.obj!=null){
+                    String str = msg.obj.toString();
+                    try {
+                        int state = new JSONObject(str).getInt("state");
+                        if (state == 200){
+                            progressBar.setVisibility(View.GONE);
+                            Intent intent = new Intent(RegActivity.this,LoginActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }else {
+                            Toast.makeText(RegActivity.this, "注册失败", Toast.LENGTH_SHORT).show();
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        Log.e("JSON解析失败", e.getMessage());
+                    }
+                }else {
+                    Log.e("obj", "obj为空");
+                }
+            }
         }
     };
+
+
+    private String strPwd;
+    private String strPhone;
+    private String strCode;
+    private int roleId = 2;//用户角色
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,7 +96,7 @@ public class RegActivity extends AppCompatActivity implements View.OnClickListen
     private void initView() {
         username=findViewById(R.id.username);
 
-         mPassword = (EditText) findViewById(R.id.password);
+        mPassword = (EditText) findViewById(R.id.password);
         mRepassword = (EditText) findViewById(R.id.repassword);
         mReg = (Button) findViewById(R.id.reg);
         telphone=findViewById(R.id.telphone);
@@ -78,10 +113,13 @@ public class RegActivity extends AppCompatActivity implements View.OnClickListen
         switch (v.getId()) {
             case R.id.reg:
               if(submit()){
-                  Intent intent=new Intent(RegActivity.this,RegIDCardActivity.class);
-                  startActivity(intent);
+                  strPwd = mPassword.getText().toString();
+                  strPhone = telphone.getText().toString();
+                  strCode = this.code.getText().toString();
+                  progressBar.setVisibility(View.VISIBLE);
+                  sendInfo(strPhone, strPwd, roleId, strCode);
               }
-                break;
+            break;
             case R.id.getCode:
                 if(TextUtils.isEmpty(telphone.getText()) ){
                     Toast.makeText(this, "请输入手机号", Toast.LENGTH_SHORT).show();
@@ -93,6 +131,12 @@ public class RegActivity extends AppCompatActivity implements View.OnClickListen
                 }
                 break;
         }
+    }
+
+    private void sendInfo(String phone,String pwd,int roleId,String code){
+        String url = "http://39.98.68.40:8080/RetailManager/register?phone="+phone+"&password="+pwd+"&roleId="+roleId+"&code="+code;
+        HttpUtil httpUtil = new HttpUtil(url,handler,2);
+        httpUtil.openConn();
     }
 
     private void Connetion() {
