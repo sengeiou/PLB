@@ -2,6 +2,7 @@ package com.example.administrator.plb.activity;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,7 +21,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.administrator.plb.R;
+import com.example.administrator.plb.entity.UserInformBean;
 import com.example.administrator.plb.until.CacheUntil;
+import com.example.administrator.plb.until.HttpUtil;
+import com.google.gson.Gson;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -33,10 +38,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private EditText mUsername;
     private EditText mPassword;
+    private int roleId = 2;
     private Button mLogin;
     private TextView mReg;
     private LinearLayout prbLogin;
     String[]permissions=new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.CAMERA};
+    private String passwordString;
+    private String usernameString;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,17 +65,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         mLogin.setOnClickListener(this);
 
         //获取存储的登陆信息
-        String username=CacheUntil.getString(this,"username","");
+        /*String username=CacheUntil.getString(this,"username","");
         String password=CacheUntil.getString(this,"password","");
         mUsername.setText(username);
-        mPassword.setText(password);
-        if(!TextUtils.isEmpty(username) && !TextUtils.isEmpty(password)){
-            //如果两者不为空则为自动调用接口登陆
+        mPassword.setText(password);*/
 
-            //显示加载View
-        }else{
-            //如果不成功则提示用户手动登陆
-        }
     }
 
     @Override
@@ -79,8 +82,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 boolean submit = submit();
                 if (submit){
                     prbLogin.setVisibility(View.VISIBLE);
-                }else{
-
+                    String username = mUsername.getText().toString();
+                    String pwd = mPassword.getText().toString();
+                    sendInfo(username,pwd);
                 }
 
                 break;
@@ -89,6 +93,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 startActivityForResult(intent,1);
                 break;
         }
+    }
+
+    private void sendInfo(String username,String pwd){
+        String url = "http://39.98.68.40:8080/RetailManager/login.do?username="+username+"&password="+pwd+"&roleId="+roleId;
+        HttpUtil httpUtil = new HttpUtil(url,handler,1);
+        httpUtil.openConn();
     }
 
     @Override
@@ -100,33 +110,32 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private boolean submit() {
         // validate
-        String usernameString = mUsername.getText().toString().trim();
+        usernameString = mUsername.getText().toString().trim();
+        passwordString = mPassword.getText().toString().trim();
         if (TextUtils.isEmpty(usernameString)) {
-            Toast.makeText(this, "请输入账号", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "请输入手机号", Toast.LENGTH_SHORT).show();
             return false;
         }
-
-        String passwordString = mPassword.getText().toString().trim();
         if (TextUtils.isEmpty(passwordString)) {
             Toast.makeText(this, "请输入密码", Toast.LENGTH_SHORT).show();
             return false;
         }
-
-        //调用接口，验证登陆
-
-
         return true;
-
     }
 
     private Handler handler=new Handler(){
         @Override
         public void handleMessage(Message msg) {
-            switch (msg.what){
-                case 0://登陆失败
-                    break;
-                case 1://登陆成功
-                    break;
+            if (msg.what==1){
+                prbLogin.setVisibility(View.GONE);
+                if (msg.obj!=null){
+                    //Log.e("objq", msg.obj.toString());
+                    String json = msg.obj.toString();
+                    CacheUntil.putString(getApplicationContext(), "infoJson", json);
+                    Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
             }
         }
     };
