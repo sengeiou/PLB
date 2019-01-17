@@ -1,12 +1,14 @@
 package com.example.administrator.plb.fragment;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -21,6 +23,9 @@ import com.example.administrator.plb.R;
 import com.example.administrator.plb.activity.my_activity.LingShengSettingActivity;
 import com.example.administrator.plb.activity.my_activity.MendianSettingActivity;
 import com.example.administrator.plb.activity.my_activity.YingYeStateActivity;
+import com.example.administrator.plb.entity.UserInformBean;
+import com.example.administrator.plb.until.CacheUntil;
+import com.google.gson.Gson;
 
 
 public class MyFragment extends Fragment implements View.OnClickListener {
@@ -48,7 +53,18 @@ public class MyFragment extends Fragment implements View.OnClickListener {
         view = inflater.inflate(R.layout.fragment_my, null);
         setHasOptionsMenu(true);
         initView();
+        initData();
         return view;
+    }
+
+    private void initData() {
+        String infoJson = CacheUntil.getString(getActivity(), "infoJson", "");
+        Log.e("infoJson", infoJson);
+        /*UserInformBean userInformBean = new Gson().fromJson(infoJson, UserInformBean.class);
+        UserInformBean.UserInfoBean userInfo = userInformBean.getUserInfo();
+        String name = userInfo.getName();*/
+
+
     }
 
     private void initView() {

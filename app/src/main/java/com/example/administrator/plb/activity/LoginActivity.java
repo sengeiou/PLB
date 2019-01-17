@@ -66,7 +66,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         //获取存储的登陆信息
         String info=CacheUntil.getString(this,"infoJson","");
-        if (info!=null){
+        if (!TextUtils.isEmpty(info)){
             Intent intent = new Intent(LoginActivity.this,MainActivity.class);
             startActivity(intent);
             finish();
