@@ -19,6 +19,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.administrator.plb.R;
+import com.example.administrator.plb.activity.LoginActivity;
 import com.example.administrator.plb.activity.my_activity.LingShengSettingActivity;
 import com.example.administrator.plb.activity.my_activity.MendianSettingActivity;
 import com.example.administrator.plb.activity.my_activity.YingYeStateActivity;
@@ -47,6 +48,7 @@ public class MyFragment extends Fragment implements View.OnClickListener {
     private Toolbar toolbar;
 
     private String myName;
+    private int myState;
 
     @Nullable
     @Override
@@ -63,7 +65,21 @@ public class MyFragment extends Fragment implements View.OnClickListener {
         Log.e("infoJson", infoJson);
         UserInformBean userInformBean = new Gson().fromJson(infoJson, UserInformBean.class);
         UserInformBean.UserInfoBean userInfo = userInformBean.getUserInfo();
+
+
+        Log.e("-------name-------", userInfo.getName());
         String myName = userInfo.getName();
+        tvMyName.setText(myName);
+        tvMyZh.setText(myName);
+
+
+        myState = userInformBean.getStore().getState();
+        Log.e("--------state--------", ""+myState);
+        if(myState == 0){
+            tvMyState.setText("停止营业");
+        }else{
+            tvMyState.setText("正在营业");
+        }
 
     }
 
@@ -114,6 +130,7 @@ public class MyFragment extends Fragment implements View.OnClickListener {
         tvMyLogout.setOnClickListener(this);
     }
 
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -143,6 +160,13 @@ public class MyFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.cancel:
+                CacheUntil.putString(getContext(),"infoJson","");
+                Intent intent = new Intent(getActivity(), LoginActivity.class);
+                getActivity().startActivity(intent);
+                break;
+        }
         return super.onOptionsItemSelected(item);
     }
 }
