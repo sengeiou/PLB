@@ -65,10 +65,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         mLogin.setOnClickListener(this);
 
         //获取存储的登陆信息
-        /*String username=CacheUntil.getString(this,"username","");
-        String password=CacheUntil.getString(this,"password","");
-        mUsername.setText(username);
-        mPassword.setText(password);*/
+        String info=CacheUntil.getString(this,"infoJson","");
+        if (info!=null){
+            Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
 
     }
 

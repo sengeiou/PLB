@@ -113,6 +113,9 @@ public class MyFragment extends Fragment implements View.OnClickListener {
                 intent = new Intent(getActivity(), YingYeStateActivity.class);
                 getActivity().startActivity(intent);
                 break;
+            case R.id.tv_my_logout:
+
+                break;
 
         }
     }
