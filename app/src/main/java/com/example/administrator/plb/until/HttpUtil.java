@@ -31,7 +31,7 @@ public class HttpUtil {
 
     public void openConn(){
         OkHttpClient client=new OkHttpClient();
-        final Request request = new Request.Builder()
+         Request request = new Request.Builder()
                 .get()
                 .url(url)
                 .build();
@@ -40,6 +40,7 @@ public class HttpUtil {
             @Override
             public void onFailure(Call call, IOException e) {
                 Log.e("httpError","请求失败"+e.getMessage());
+                handler.sendEmptyMessage(-1);
             }
             @Override
             public void onResponse(Call call, Response response) throws IOException {
@@ -52,10 +53,44 @@ public class HttpUtil {
                 while ((cont = bufferedReader.readLine())!=null){
                     str.append(cont);
                 }
+                Log.e("123",str.toString());
+                msg.obj = str.toString().replaceAll("\n","").replaceAll("\t","").replaceAll(" ","");
+                msg.what = what;
+                handler.sendMessage(msg);
+            }
+        });
+    }
+    public void openPostConn(String json){
+        OkHttpClient client=new OkHttpClient();
+        RequestBody requestBody=RequestBody.create(MediaType.parse("application/json"),json);
+        Request request = new Request.Builder()
+                .post(requestBody)
+                .url(url)
+                .build();
+
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                Log.e("httpError","请求失败"+e.getMessage());
+                handler.sendEmptyMessage(-1);
+            }
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                Message msg = new Message();
+                InputStream inputStream = response.body().byteStream();
+                Reader reader = new InputStreamReader(inputStream);
+                BufferedReader bufferedReader = new BufferedReader(reader);
+                StringBuffer str = new StringBuffer();
+                String cont;
+                while ((cont = bufferedReader.readLine())!=null){
+                    str.append(cont);
+                }
+                Log.e("123",str.toString());
                 msg.obj = str.toString();
                 msg.what = what;
                 handler.sendMessage(msg);
             }
         });
     }
+
 }

@@ -36,10 +36,7 @@ public class ReminderFragment extends Fragment {
         mList=view.findViewById(R.id.list);
 
         list=new ArrayList<>();
-        List<OrderBean.ShoppingBean> beans=new ArrayList<>();
-        beans.add(new OrderBean.ShoppingBean("杜蕾斯",1,40));
-        list.add(new OrderBean(1,"立即送达","隔壁老王","1748899174","2019-04-04",1,40,"123456789","天马山",beans));
-        adapter=new ReminderFragmentAdapter(getActivity(),list);
+
         mList.setAdapter(adapter);
     }
 }

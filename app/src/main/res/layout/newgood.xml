@@ -392,6 +392,44 @@
                         android:digits="0123456789"/>
 
                 </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/activity_newGood_info_item_height">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="保质期"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/activity_newGood_text_size"
+                        android:layout_marginLeft="@dimen/activity_newGood_text_margin"/>
+
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true">
+                        <EditText
+                            android:gravity="right|center_vertical"
+                            android:id="@+id/et_shelfLife"
+                            android:layout_width="@dimen/activity_newGood_info_item_edit_height"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentRight="true"
+                            android:hint="请填写保质期"
+                            android:background="@null"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:maxLength="30"
+                            android:layout_marginRight="@dimen/activity_newGood_info_item_edit_marginRight"
+                            android:digits="0123456789."/>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="0.5dp"
@@ -431,47 +469,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <!--可售时间-->
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/activity_newGood_info_item_height">
 
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:text="可售时间"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/activity_newGood_text_size"
-                        android:layout_marginLeft="@dimen/activity_newGood_text_margin"/>
-
-
-                    <LinearLayout
-                        android:gravity="center"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_alignParentRight="true">
-
-                        <TextView
-                            android:id="@+id/time"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:layout_alignParentRight="true"
-                            android:text="时间不限"
-                            android:textSize="@dimen/activity_newGood_text_size"
-                            />
-
-                        <ImageView
-                            android:layout_width="@dimen/activity_newGood_text_size"
-                            android:layout_height="@dimen/activity_newGood_text_size"
-                            android:background="@mipmap/next"
-                            android:layout_marginRight="@dimen/activity_newGood_info_item_edit_marginRight"
-                            />
-                    </LinearLayout>
-
-                </RelativeLayout>
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/activity_newGood_info_item_height">

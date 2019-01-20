@@ -23,16 +23,16 @@ import java.util.List;
 
 public class ReminderFragmentAdapter extends BaseAdapter implements View.OnClickListener{
     private Context context;
-    private List<OrderBean> list;
+    private OrderBean orderBean;
 
-    public ReminderFragmentAdapter(Context context, List<OrderBean> list) {
+    public ReminderFragmentAdapter(Context context, OrderBean orderBean) {
         this.context = context;
-        this.list = list;
+        this.orderBean = orderBean;
     }
 
     @Override
     public int getCount() {
-        return list.size();
+        return orderBean.getResult().size();
     }
 
     @Override
@@ -55,24 +55,24 @@ public class ReminderFragmentAdapter extends BaseAdapter implements View.OnClick
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
-        viewHolder.mId.setText("" + list.get(position).getId());
-        viewHolder.mName.setText(list.get(position).getUsername());
-        viewHolder.mPhone.setText(list.get(position).getPhone());
-        viewHolder.mTime.setText("" + list.get(position).getTime());
-        viewHolder.mTotal.setText("￥"+list.get(position).getTotal() + "");
-        viewHolder.mOrderNumber.setText("订单编号:" + list.get(position).getOrderNumber());
-        viewHolder.mAddress.setText(list.get(position).getAddress());
-        List<OrderBean.ShoppingBean> shoppingBeans = list.get(position).getList();
+        viewHolder.mId.setText("" + orderBean.getResult().get(position).getId());
+        viewHolder.mName.setText(orderBean.getResult().get(position).getConsignee());
+        viewHolder.mPhone.setText(orderBean.getResult().get(position).getPhone());
+        viewHolder.mTime.setText("" + orderBean.getResult().get(position).getOrderTime());
+        viewHolder.mTotal.setText("￥"+orderBean.getResult().get(position).getMoney() + "");
+        viewHolder.mOrderNumber.setText("订单编号:" + orderBean.getResult().get(position).getOrderid());
+        viewHolder.mAddress.setText(orderBean.getResult().get(position).getAddress());
+        List<OrderBean.ResultBean.OrderitemVOBean>shoppingBeans= orderBean.getResult().get(position).getOrderitemVO();
         for (int i = 0; i < shoppingBeans.size(); i++) {
-            OrderBean.ShoppingBean bean = shoppingBeans.get(i);
+            OrderBean.ResultBean.OrderitemVOBean bean = shoppingBeans.get(i);
             TableRow.LayoutParams params = new TableRow.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, 1);
             TableRow tableRow = new TableRow(context);
             TextView textView1 = new TextView(context);
             TextView textView2 = new TextView(context);
             TextView textView3 = new TextView(context);
-            textView1.setText(bean.getName());
-            textView2.setText("x" + bean.getNumber());
-            textView3.setText("￥" + bean.getPrice());
+            textView1.setText(bean.getGoodsName());
+            textView2.setText("x" + bean.getNumber()+"/"+bean.getSubtotal());
+            textView3.setText("￥" + bean.getSubtotal());
             textView1.setLayoutParams(params);
             textView2.setLayoutParams(params);
             textView3.setLayoutParams(params);

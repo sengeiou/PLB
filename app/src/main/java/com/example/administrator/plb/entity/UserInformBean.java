@@ -802,8 +802,6 @@ public class UserInformBean {
         private double wholesalePrice;
         private double retailPrice;
         private double marketPrice;
-        private String image;
-        private String detailedurl;
         private String unit;
         private int minNum;
         private String shelfLife;
@@ -815,6 +813,8 @@ public class UserInformBean {
         private int storeId;
         private int stocks;
         private int isShelfs;
+        private String image;
+        private String detailedurl;
 
         public int getId() {
             return id;

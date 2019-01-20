@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AlertDialog;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -14,26 +15,41 @@ import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.administrator.plb.R;
 import com.example.administrator.plb.entity.OrderBean;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class RefundFragmentAdapter extends BaseAdapter implements View.OnClickListener{
+public class OrderCompletedAdapter extends BaseAdapter implements View.OnClickListener{
+
     private Context context;
     private OrderBean orderBean;
+    private List<OrderBean.ResultBean>list;
+    private int index;
+    public OrderCompletedAdapter(Context context, OrderBean orderBean,int index) {
+        this.context=context;
+        this.orderBean=orderBean;
+        this.index=index;
+        getList(orderBean);
+    }
 
-    public RefundFragmentAdapter(Context context, OrderBean orderBean) {
-        this.context = context;
-        this.orderBean = orderBean;
+    private void getList(OrderBean orderBean) {
+        list=new ArrayList<>();
+        for(int i=0;i<orderBean.getResult().size();i++){
+            if(orderBean.getResult().get(i).getState()==2){
+                list.add(orderBean.getResult().get(i));
+            }
+        }
     }
 
     @Override
     public int getCount() {
-        return orderBean.getResult().size();
+
+        return list.size();
     }
+
 
     @Override
     public Object getItem(int position) {
@@ -47,22 +63,23 @@ public class RefundFragmentAdapter extends BaseAdapter implements View.OnClickLi
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ViewHolder viewHolder;
+        CompensateFragmentAdapter.ViewHolder viewHolder;
         if (convertView == null) {
-            convertView = LayoutInflater.from(context).inflate(R.layout.fragment_refund_adapter, null);
-            viewHolder = new ViewHolder(convertView);
+            convertView = LayoutInflater.from(context).inflate(R.layout.fragment_order_completed_adapter, null);
+            viewHolder = new CompensateFragmentAdapter.ViewHolder(convertView);
             convertView.setTag(viewHolder);
         } else {
-            viewHolder = (ViewHolder) convertView.getTag();
+            viewHolder = (CompensateFragmentAdapter.ViewHolder) convertView.getTag();
         }
-        viewHolder.mId.setText("" + orderBean.getResult().get(position).getId());
-        viewHolder.mName.setText(orderBean.getResult().get(position).getConsignee());
-        viewHolder.mPhone.setText(orderBean.getResult().get(position).getPhone());
-        viewHolder.mTime.setText("" + orderBean.getResult().get(position).getOrderTime());
-        viewHolder.mTotal.setText("￥"+orderBean.getResult().get(position).getMoney() + "");
-        viewHolder.mOrderNumber.setText("订单编号:" + orderBean.getResult().get(position).getOrderid());
-        viewHolder.mAddress.setText(orderBean.getResult().get(position).getAddress());
-        List<OrderBean.ResultBean.OrderitemVOBean>shoppingBeans= orderBean.getResult().get(position).getOrderitemVO();
+        viewHolder.mId.setText("" + list.get(position).getId());
+        viewHolder.mName.setText(list.get(position).getConsignee());
+        viewHolder.mPhone.setText(list.get(position).getPhone());
+        viewHolder.mTime.setText("" + list.get(position).getOrderTime());
+        viewHolder.mTotal.setText("￥"+list.get(position).getMoney() + "");
+        viewHolder.mOrderNumber.setText("订单编号:" + list.get(position).getOrderid());
+        viewHolder.mAddress.setText(list.get(position).getAddress());
+        viewHolder.mTable.removeAllViews();
+        List<OrderBean.ResultBean.OrderitemVOBean> shoppingBeans= list.get(position).getOrderitemVO();
         for (int i = 0; i < shoppingBeans.size(); i++) {
             OrderBean.ResultBean.OrderitemVOBean bean = shoppingBeans.get(i);
             TableRow.LayoutParams params = new TableRow.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, 1);
@@ -71,7 +88,7 @@ public class RefundFragmentAdapter extends BaseAdapter implements View.OnClickLi
             TextView textView2 = new TextView(context);
             TextView textView3 = new TextView(context);
             textView1.setText(bean.getGoodsName());
-            textView2.setText("x" + bean.getNumber()+"/"+bean.getSubtotal());
+            textView2.setText("x" + bean.getNumber()+"/"+bean.getUnit().trim());
             textView3.setText("￥" + bean.getSubtotal());
             textView1.setLayoutParams(params);
             textView2.setLayoutParams(params);
@@ -100,28 +117,9 @@ public class RefundFragmentAdapter extends BaseAdapter implements View.OnClickLi
                 Intent intent=new Intent(Intent.ACTION_DIAL, Uri.parse("tel:"+phone));
                 context.startActivity(intent);
                 break;
-            case R.id.cancel_order:
-                showCancelOrderDiaLog();
-                break;
-            case R.id.accept:
-                break;
         }
     }
 
-    private void showCancelOrderDiaLog() {
-        AlertDialog.Builder dialog=new AlertDialog.Builder(context).setNeutralButton("取消", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-
-            }
-        }).setPositiveButton("确定", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-
-            }
-        }).setMessage("确定取消订单？");
-        dialog.create().show();
-    }
 
 
     public static class ViewHolder {
@@ -135,8 +133,6 @@ public class RefundFragmentAdapter extends BaseAdapter implements View.OnClickLi
         public TextView mTransport;
         public TextView mTotal;
         public TextView mOrderNumber;
-        public Button mCancelOrder;
-        public Button mAccept;
         public TextView mAddress;
 
         public ViewHolder(View rootView) {
@@ -150,13 +146,10 @@ public class RefundFragmentAdapter extends BaseAdapter implements View.OnClickLi
             this.mTransport = (TextView) rootView.findViewById(R.id.transport);
             this.mTotal = (TextView) rootView.findViewById(R.id.total);
             this.mOrderNumber = (TextView) rootView.findViewById(R.id.order_number);
-            this.mCancelOrder = (Button) rootView.findViewById(R.id.cancel_order);
-            this.mAccept = (Button) rootView.findViewById(R.id.accept);
             this.mAddress = (TextView) rootView.findViewById(R.id.address);
 
         }
 
 
     }
-
 }

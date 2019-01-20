@@ -34,4 +34,12 @@ public class CacheUntil {
          }
        return preferences.getString(key,def);
     }
+    public static void removeString(Context c,String key,String def){
+         if(context==null){
+             context=c;
+             preferences=context.getSharedPreferences("cache",Context.MODE_PRIVATE);
+         }
+        preferences.edit().remove(key).commit();
+
+    }
 }

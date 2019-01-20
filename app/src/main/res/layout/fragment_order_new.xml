@@ -5,6 +5,24 @@
     android:layout_height="match_parent"
     android:background="@color/colorOrderBg"
     >
+    <LinearLayout
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:src="@drawable/order"
+            android:layout_width="@dimen/order_tips_image_width"
+            android:layout_height="@dimen/order_tips_image_height" />
+        <TextView
+            android:layout_margin="@dimen/order_tips_text_margin"
+            android:textColor="#bfbfbf"
+            android:textSize="@dimen/order_tips_text_size"
+            android:layout_gravity="center"
+            android:text="暂无订单"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
     <ListView
         android:fastScrollEnabled="false"
         android:scrollbars="none"

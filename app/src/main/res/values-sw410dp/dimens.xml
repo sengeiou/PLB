@@ -214,4 +214,8 @@
 	<dimen name="operating_head_layout_height">56.9444dp</dimen>
 	<dimen name="operating_head_padding">5.6944dp</dimen>
 	<dimen name="operating_head_textSize">28.4722sp</dimen>
+	<dimen name="order_tips_image_width">113.8889dp</dimen>
+	<dimen name="order_tips_image_height">113.8889dp</dimen>
+	<dimen name="order_tips_text_size">22.7778sp</dimen>
+	<dimen name="order_tips_text_margin">11.3889dp</dimen>
 </resources>

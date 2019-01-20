@@ -99,7 +99,7 @@ public class operating_manager extends AppCompatActivity implements View.OnClick
         listView.setOnChildClickListener(onChildClickListener);
         registerForContextMenu(listView);
         refresh.setCanLoadMore(false);
-        bean=new Gson().fromJson(CacheUntil.getString(this,"userInfo",""),UserInformBean.class);
+        bean=new Gson().fromJson(CacheUntil.getString(this,"infoJson",""),UserInformBean.class);
 
         if(bean!=null){
             refresh();
@@ -122,14 +122,15 @@ public class operating_manager extends AppCompatActivity implements View.OnClick
                     refresh.finishRefresh();
                     String result=msg.obj.toString();
                     if(result.indexOf("userInfo")!=-1){
-                        CacheUntil.putString(operating_manager.this,"userInfo",result);
+                        CacheUntil.putString(operating_manager.this,"infoJson",result);
                         bean=new Gson().fromJson(result,UserInformBean.class);
                         refresh();
                     }
                     break;
                 case 1:
-                    if(msg.obj.toString().indexOf("ok")!=-1){
+                    if(msg.obj.toString().indexOf("OK")!=-1){
                         Toast.makeText(operating_manager.this, "删除成功", Toast.LENGTH_SHORT).show();
+                        Updata();
                     }
                     break;
 
@@ -176,8 +177,15 @@ public class operating_manager extends AppCompatActivity implements View.OnClick
                     Intent intent=new Intent(operating_manager.this,NewClassActivity.class);
                     intent.putExtra("action",1);
                     intent.putExtra("storeId",list.get(group).getStoreId());
+                    intent.putExtra("classificationId",list.get(group).getClassificationId());
+                    intent.putExtra("className",list.get(group).getClassificationName());
+                    intent.putExtra("note",list.get(group).getTypeDescribe().toString());
+                    startActivityForResult(intent,1);
                 }else if(type==ExpandableListView.PACKED_POSITION_TYPE_CHILD){
-
+                    Intent intent=new Intent(operating_manager.this,NewGood.class);
+                    intent.putExtra("action",1);
+                    intent.putExtra("storeId",list.get(group).getStoreId());
+                    startActivityForResult(intent,1);
                 }
                 break;
             case R.id.del:
@@ -188,7 +196,7 @@ public class operating_manager extends AppCompatActivity implements View.OnClick
                             .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-                                    new HttpUtil("http://39.98.68.40:8080/RetailManager/deleteCommodityType.do?commodityId="+list.get(group).getClassificationId(),handler,1);
+                                    new HttpUtil("http://39.98.68.40:8080/RetailManager/deleteCommodityType?classificationId="+list.get(group).getClassificationId(),handler,1).openConn();
                                 }
                             }).setNegativeButton("取消", new DialogInterface.OnClickListener() {
                         @Override
@@ -225,7 +233,10 @@ public class operating_manager extends AppCompatActivity implements View.OnClick
                 break;
             //底部商品管理
             case R.id.ly_classification:
-                startActivityForResult(new Intent(operating_manager.this,NewClassActivity.class),1);
+                Intent intent1 = new Intent(operating_manager.this, NewClassActivity.class);
+                intent1.putExtra("action",0);
+                intent1.putExtra("storeId",bean.getStore().getStoreId());
+                startActivityForResult(intent1,1);
                 break;
             //底部排序批量操作
             case R.id.ly_TheSorting:
@@ -234,6 +245,16 @@ public class operating_manager extends AppCompatActivity implements View.OnClick
             //底部新建商品
             case R.id.ly_NewGoods:
                 Intent intent=new Intent(operating_manager.this,NewGood.class);
+                int[]classId=new int[list.size()];
+                String[]classNames=new String[list.size()];
+                for(int i=0;i<list.size();i++){
+                    classId[i]=list.get(i).getClassificationId();
+                    classNames[i]=list.get(i).getClassificationName();
+                }
+                intent.putExtra("storeId",bean.getStore().getStoreId());
+                intent.putExtra("firsttypeId",bean.getStore().getStoreId());
+                intent.putExtra("classId",classId);
+                intent.putExtra("classNames",classNames);
                 startActivityForResult(intent,1);
                 break;
 
@@ -248,7 +269,7 @@ public class operating_manager extends AppCompatActivity implements View.OnClick
         }
     }
     private void Updata(){
-        new HttpUtil("http://39.98.68.40:8080/RetailManager/login.do?3roleId=2&phone=test001&password=123",handler,0).openConn();
+        new HttpUtil("http://39.98.68.40:8080/RetailManager/login.do?roleId=2&phone=test001&password=123",handler,0).openConn();
     }
     private void initData(UserInformBean userBean){
         list=new ArrayList<>();

@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
@@ -13,22 +15,33 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 
 import com.example.administrator.plb.R;
 import com.example.administrator.plb.adapter.FragmentAdapter;
+import com.example.administrator.plb.entity.UserInformBean;
 import com.example.administrator.plb.fragment.MyFragment;
 import com.example.administrator.plb.fragment.OperatingFragment;
 import com.example.administrator.plb.fragment.OrderFragment;
 import com.example.administrator.plb.fragment.OrderManageFragment;
+import com.example.administrator.plb.until.CacheUntil;
 import com.example.administrator.plb.until.GDLocation;
+import com.example.administrator.plb.until.HttpUtil;
+import com.google.gson.Gson;
 
+import org.greenrobot.eventbus.EventBus;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -40,10 +53,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ViewPager viewPager;
     private BottomNavigationView bottomView;
     private FragmentAdapter adapter;
+    private LinearLayout linearLayout;
+    private String today;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        initHttpData();
         initView();
         initData();
         /**
@@ -51,6 +67,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
          */
         //location();
 
+    }
+
+    private void initHttpData() {
+        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+        Calendar ca = Calendar.getInstance();//得到一个Calendar的实例
+        today  = sdf.format(ca.getTime());
+        ca.setTime(ca.getTime()); //设置时间为当前时间
+        ca.add(Calendar.DATE, 1); //天数减1
+        String tomorrow= sdf.format(ca.getTime());
+        UserInformBean userInformBean = new Gson().fromJson(CacheUntil.getString(this, "infoJson", ""), UserInformBean.class);
+        new HttpUtil("http://39.98.68.40:8080/RetailManager/getOrderByTime?" +
+                "storeId="+userInformBean.getStore().getStoreId()+
+                "&startTime="+today+
+                "&endTime="+tomorrow,handler,0).openConn();
     }
 
     private void location() {
@@ -61,6 +91,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void initView() {
         viewPager = (ViewPager) findViewById(R.id.viewPager);
         bottomView = (BottomNavigationView) findViewById(R.id.bottomView);
+        linearLayout = findViewById(R.id.prb_login);
     }
 
     private void initData() {
@@ -129,7 +160,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-
+    private Handler handler=new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            linearLayout.setVisibility(View.GONE);
+            switch (msg.what){
+                case -1:
+                    Toast.makeText(MainActivity.this, "请求失败，请检查网络", Toast.LENGTH_SHORT).show();
+                    break;
+                case 0:
+                    String result=msg.obj.toString();
+                    if(result.indexOf("address")!=-1){
+                        CacheUntil.putString(MainActivity.this,today,result);
+                        EventBus.getDefault().post(result);
+                    }
+                    break;
+            }
+        }
+    };
 
 
 
