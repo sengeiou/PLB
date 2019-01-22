@@ -48,13 +48,13 @@
 	<dimen name="operating_activity_last_layout_padding">22.7778dp</dimen>
 	<dimen name="operating_activity_last_layout_image_padding">5.6944dp</dimen>
 	<dimen name="operating_activity_line_height">9.1111dp</dimen>
-	<dimen name="fragment_my_tourImage_size">91.1111dp</dimen>
+	<dimen name="fragment_my_tourImage_size">68.3333dp</dimen>
 	<dimen name="fragment_my_tourImage_margin">5.6944dp</dimen>
-	<dimen name="fragment_my_name_size">22.7778sp</dimen>
+	<dimen name="fragment_my_name_size">18.2222sp</dimen>
 	<dimen name="fragment_my_info_margin">11.3889dp</dimen>
 	<dimen name="fragment_my_name_paddinng">5.6944dp</dimen>
-	<dimen name="fragment_my_preview_textSize">18.2222sp</dimen>
-	<dimen name="fragment_my_state_size">20.5000sp</dimen>
+	<dimen name="fragment_my_preview_textSize">14.8056sp</dimen>
+	<dimen name="fragment_my_state_size">15.9444sp</dimen>
 	<dimen name="fragment_my_state_padding">11.3889dp</dimen>
 	<dimen name="fragment_my_setting_padding">22.7778dp</dimen>
 	<dimen name="fragment_my_setting_item_padding">5.6944dp</dimen>
