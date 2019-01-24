@@ -27,4 +27,7 @@
         <item name="colorControlNormal">@android:color/white</item>
         <item name="overlapAnchor">false</item>
     </style>
+    <style name="TabLayout">
+        <item name="android:textSize">@dimen/order_tab_text_size</item>
+    </style>
 </resources>

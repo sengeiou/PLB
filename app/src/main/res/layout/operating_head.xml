@@ -13,9 +13,9 @@
             android:layout_height="match_parent"
             android:text="门店运营"
             android:gravity="center"
-            android:textSize="@dimen/operating_head_textSize"
+            android:textSize="@dimen/toobar_title_text"
             android:textColor="@color/white"
-            android:padding="@dimen/operating_head_padding"/>
+            />
 
     </LinearLayout>
 

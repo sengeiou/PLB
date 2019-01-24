@@ -264,7 +264,7 @@ public class NewGood extends AppCompatActivity implements View.OnClickListener {
             jsonObject.put("wholesalePrice",Double.parseDouble(wholesalePrice));
             jsonObject.put("retailPrice",Double.parseDouble(retailPrice));
             jsonObject.put("marketPrice",Double.parseDouble(marketPrice));
-            jsonObject.put("Image",stringBuffer.toString());
+            jsonObject.put("image",stringBuffer.toString());
             jsonObject.put("detailedurl",stringBuffer.toString());
             jsonObject.put("unit",unit[sp_unit.getSelectedItemPosition()]);
 
@@ -314,14 +314,16 @@ public class NewGood extends AppCompatActivity implements View.OnClickListener {
     private Handler handler=new Handler(){
         @Override
         public void handleMessage(Message msg) {
-            String result=msg.obj.toString();
             switch (msg.what){
                 case 0:
+                    String result=msg.obj.toString();
                     if(result.indexOf("OK")!=-1){
                         Toast.makeText(NewGood.this, "添加成功", Toast.LENGTH_SHORT).show();
                     }else{
                         Toast.makeText(NewGood.this, "添加失败", Toast.LENGTH_SHORT).show();
                     }
+                    break;
+                case -1:
                     break;
             }
         }

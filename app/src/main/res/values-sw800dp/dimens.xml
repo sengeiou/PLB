@@ -6,7 +6,7 @@
 	<dimen name="login_botton_textSize">55.5556sp</dimen>
 	<dimen name="login_reg_textSize">33.3333sp</dimen>
 	<dimen name="login_reg_margin">22.2222dp</dimen>
-	<dimen name="login_toobar_textSize">55.5556sp</dimen>
+	<dimen name="login_toobar_textSize">44.4444sp</dimen>
 	<dimen name="reg_textSize">22.2222sp</dimen>
 	<dimen name="reg_botton_textSize">44.4444sp</dimen>
 	<dimen name="reg_botton_padding">11.1111dp</dimen>
@@ -19,7 +19,7 @@
 	<dimen name="reg_edit_margin">33.3333dp</dimen>
 	<dimen name="main_bottomView">111.1111dp</dimen>
 	<dimen name="order_toolbar">111.1111dp</dimen>
-	<dimen name="toobar_title_text">55.5556sp</dimen>
+	<dimen name="toobar_title_text">44.4444sp</dimen>
 	<dimen name="order_tab">222.2222dp</dimen>
 	<dimen name="order_tab_image_size">66.6667dp</dimen>
 	<dimen name="order_tab_text_size">33.3333sp</dimen>

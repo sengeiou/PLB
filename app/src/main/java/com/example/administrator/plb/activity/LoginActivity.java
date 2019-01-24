@@ -25,6 +25,9 @@ import com.example.administrator.plb.entity.UserInformBean;
 import com.example.administrator.plb.until.CacheUntil;
 import com.example.administrator.plb.until.HttpUtil;
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+
+import org.json.JSONObject;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -130,7 +133,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         public void handleMessage(Message msg) {
             if (msg.what==1){
                 prbLogin.setVisibility(View.GONE);
-                if (msg.obj!=null){
+                String result = msg.obj.toString();
+                if (msg.obj.toString().indexOf("userInfo")!=-1){
                     //Log.e("objq", msg.obj.toString());
                     String json = msg.obj.toString();
                     CacheUntil.putString(getApplicationContext(), "infoJson", json);
@@ -139,6 +143,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     Intent intent = new Intent(LoginActivity.this,MainActivity.class);
                     startActivity(intent);
                     finish();
+                }else{
+                    Toast.makeText(LoginActivity.this, "账号或密码错误", Toast.LENGTH_SHORT).show();
                 }
             }
         }

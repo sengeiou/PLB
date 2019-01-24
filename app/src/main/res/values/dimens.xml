@@ -8,7 +8,7 @@
     <dimen name="login_botton_textSize">25sp</dimen>
     <dimen name="login_reg_textSize">15sp</dimen>
     <dimen name="login_reg_margin">10dp</dimen>
-    <dimen name="login_toobar_textSize">25sp</dimen>
+    <dimen name="login_toobar_textSize">20sp</dimen>
 
     <!--注册页面-->
     <dimen name="reg_textSize">10sp</dimen>
@@ -28,7 +28,7 @@
 
     <!--待处理-->
     <dimen name="order_toolbar">50dp</dimen>
-    <dimen name="toobar_title_text">25sp</dimen>
+    <dimen name="toobar_title_text">20sp</dimen>
     <dimen name="order_tab">100dp</dimen>
 
     <!--待处理订单TabLayout-->

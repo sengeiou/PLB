@@ -28,12 +28,13 @@
                 android:layout_height="wrap_content" />
             <EditText
                 android:layout_margin="@dimen/order_manager_seach_editText_margin"
-                android:padding="5dp"
+                android:padding="@dimen/order_manager_seach_editText_padding"
                 android:background="@color/colorHard_et"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
-                android:layout_height="30dp" />
+                android:layout_height="@dimen/order_manager_seach_editText_height" />
             <TextView
+                android:textSize="@dimen/toobar_title_text"
                 android:textColor="@color/colorHard_text"
                 android:id="@+id/reservation"
                 android:text="预订单"
@@ -42,16 +43,15 @@
         </LinearLayout>
     </android.support.v7.widget.Toolbar>
     <android.support.design.widget.TabLayout
+        app:tabTextAppearance="@style/TabLayout"
         app:tabGravity="fill"
         app:tabMaxWidth="0dp"
         app:tabSelectedTextColor="@color/colorMain"
         app:tabTextColor="#FFF"
-        app:tabBackground="@android:color/transparent"
-        app:tabRippleColor="@android:color/transparent"
         android:background="@color/colorHard"
         android:id="@+id/tab"
         android:layout_width="match_parent"
-        android:layout_height="50dp">
+        android:layout_height="@dimen/operating_head_layout_height">
     </android.support.design.widget.TabLayout>
             <android.support.v4.view.ViewPager
                 android:id="@+id/viewPager"

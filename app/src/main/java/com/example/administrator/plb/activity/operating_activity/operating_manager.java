@@ -32,7 +32,6 @@ import com.example.administrator.plb.adapter.GoodsListAdapter;
 import com.example.administrator.plb.entity.ClassInfoBean;
 import com.example.administrator.plb.entity.GoodsListBean;
 import com.example.administrator.plb.entity.UserInformBean;
-import com.example.administrator.plb.sqllite.GoodsSqlHelper;
 import com.example.administrator.plb.until.CacheUntil;
 import com.example.administrator.plb.until.HttpUtil;
 import com.google.gson.Gson;

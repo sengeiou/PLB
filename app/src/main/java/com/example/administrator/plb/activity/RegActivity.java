@@ -29,7 +29,6 @@ import java.net.HttpURLConnection;
  */
 public class RegActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private EditText username;
     private EditText mPassword;
     private EditText mRepassword;
     private EditText telphone;
@@ -44,9 +43,9 @@ public class RegActivity extends AppCompatActivity implements View.OnClickListen
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
+            progressBar.setVisibility(View.GONE);
             if(msg.what==1){
                 if (msg.obj!=null){
-                    progressBar.setVisibility(View.GONE);
                     countDownTimerUtils=new CountDownTimerUtils(getcode,60000,1000);
                     countDownTimerUtils.start();
                     Log.e("sss",msg.obj.toString()+"");
@@ -94,7 +93,6 @@ public class RegActivity extends AppCompatActivity implements View.OnClickListen
 
     @SuppressLint("WrongViewCast")
     private void initView() {
-        username=findViewById(R.id.username);
 
         mPassword = (EditText) findViewById(R.id.password);
         mRepassword = (EditText) findViewById(R.id.repassword);
@@ -148,14 +146,6 @@ public class RegActivity extends AppCompatActivity implements View.OnClickListen
     private boolean submit() {
         // validate
 
-        if(TextUtils.isEmpty( username.getText())){
-            Toast.makeText(this, "请输入用户名", Toast.LENGTH_SHORT).show();
-            return false;
-        }
-        if(username.getText().length()>6){
-            Toast.makeText(this, "不能超过6个字符", Toast.LENGTH_SHORT).show();
-        }
-
         passwordString = mPassword.getText().toString().trim();
         if (TextUtils.isEmpty(passwordString)) {
             Toast.makeText(this, "请输入密码", Toast.LENGTH_SHORT).show();
@@ -173,11 +163,12 @@ public class RegActivity extends AppCompatActivity implements View.OnClickListen
         }
         if(telphone.length()!=11){
             Toast.makeText(this, "手机号不正确", Toast.LENGTH_SHORT).show();
-            return  false;
+            return false;
         }
 
         if (TextUtils.isEmpty(code.getText())){
             Toast.makeText(this, "验证码不能为空", Toast.LENGTH_SHORT).show();
+            return false;
         }
         return true;
     }
