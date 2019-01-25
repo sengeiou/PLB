@@ -11,7 +11,9 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.example.administrator.plb.R;
+import com.example.administrator.plb.activity.operating_activity.ExtractionActivity;
 import com.example.administrator.plb.activity.operating_activity.FastRefundActivity;
+import com.example.administrator.plb.activity.operating_activity.ShopActivity;
 import com.example.administrator.plb.activity.operating_activity.operating_configuration;
 import com.example.administrator.plb.activity.operating_activity.operating_data;
 import com.example.administrator.plb.activity.operating_activity.operating_evaluation;
@@ -88,14 +90,16 @@ public class OperatingFragment extends Fragment implements View.OnClickListener 
                 /*门店推广*/
                 break;
             case R.id.configuration:
-                startActivity(new Intent(getActivity(),operating_configuration.class));
                 /*活动配置*/
+                startActivity(new Intent(getActivity(),operating_configuration.class));
                 break;
             case R.id.Tosign_up:
                 /*活动报名*/
+                startActivity(new Intent(getActivity(),operating_configuration.class));
                 break;
             case R.id.stare:
                 /*店铺*/
+                startActivity(new Intent(getActivity(),ShopActivity.class));
                 break;
             case R.id.opr_refund:
                 /*极速退款*/
@@ -103,6 +107,7 @@ public class OperatingFragment extends Fragment implements View.OnClickListener 
                 break;
             case R.id.opr_invite:
                 /*货物自取*/
+                startActivity(new Intent(getActivity(),ExtractionActivity.class));
                 break;
             case R.id.Replenish:
                 /*进货商*/

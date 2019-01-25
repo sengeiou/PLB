@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.operating_activity.ShopActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/operating_head_layout_height"
+        android:background="@color/colorHard">
+        <ImageView
+            android:id="@+id/back"
+            android:layout_centerVertical="true"
+            android:src="@drawable/back"
+            android:layout_width="@dimen/activity_inform_back_size"
+            android:layout_height="@dimen/activity_inform_back_size" />
+        <TextView
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="店铺"
+            android:textSize="@dimen/toobar_title_text"
+            android:textColor="@color/white"
+            />
+
+    </RelativeLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/shop_info_activity_viewpager_height"></android.support.v4.view.ViewPager>
+    <TableLayout
+        android:layout_margin="@dimen/shop_info_activity_tableRow_padding"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TableRow android:padding="@dimen/shop_info_activity_tableRow_padding">
+            <TextView
+                android:id="@+id/shop_name"
+                android:textSize="@dimen/shop_info_activity_textSize"
+                android:text="店铺名称："/>
+            <TextView
+               android:layout_gravity="right"
+                android:textSize="@dimen/shop_info_activity_textSize" android:text="阳光批发有限公司"/>
+        </TableRow>
+        <TableRow android:padding="@dimen/shop_info_activity_tableRow_padding">
+            <TextView
+                android:textSize="@dimen/shop_info_activity_textSize" android:text="店铺地点："/>
+            <TextView
+                android:layout_gravity="right"
+                android:id="@+id/shop_address"
+                android:textSize="@dimen/shop_info_activity_textSize" android:text="湖南省衡阳市环城南路52号"/>
+        </TableRow>
+        <TableRow android:padding="@dimen/shop_info_activity_tableRow_padding">
+            <TextView
+                android:textSize="@dimen/shop_info_activity_textSize" android:text="经营者："/>
+            <TextView
+                android:layout_gravity="right"
+                android:id="@+id/shop_master"
+                android:textSize="@dimen/shop_info_activity_textSize" android:text="张三"/>
+        </TableRow>
+        <TableRow android:padding="@dimen/shop_info_activity_tableRow_padding">
+            <TextView
+                android:textSize="@dimen/shop_info_activity_textSize" android:text="注册时间："/>
+            <TextView
+                android:layout_gravity="right"
+                android:id="@+id/shop_registered_time"
+                android:textSize="@dimen/shop_info_activity_textSize" android:text="2019-1-11"/>
+        </TableRow>
+        <TableRow android:padding="@dimen/shop_info_activity_tableRow_padding">
+            <TextView
+                android:textSize="@dimen/shop_info_activity_textSize" android:text="营业执照时间："/>
+            <TextView
+                android:layout_gravity="right"
+                android:id="@+id/license_startTime"
+                android:textSize="@dimen/shop_info_activity_textSize" android:text="2019-1-1"/>
+            />
+        </TableRow>
+        <TableRow android:padding="@dimen/shop_info_activity_tableRow_padding">
+            <TextView
+                android:textSize="@dimen/shop_info_activity_textSize" android:text="营业执照到期时间："/>
+            <TextView
+                android:layout_gravity="right"
+                android:id="@+id/license_endTime"
+                android:textSize="@dimen/shop_info_activity_textSize" android:text="2020-1-1"/>
+        </TableRow>
+        <Button
+            android:textSize="@dimen/shop_info_activity_textSize"
+            android:id="@+id/btn_update"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:text="营业执照更新"
+            android:background="@drawable/login_button_selector"/>
+    </TableLayout>
+</LinearLayout>

@@ -218,4 +218,7 @@
 	<dimen name="order_tips_image_height">177.7778dp</dimen>
 	<dimen name="order_tips_text_size">35.5556sp</dimen>
 	<dimen name="order_tips_text_margin">17.7778dp</dimen>
+	<dimen name="shop_info_activity_tableRow_padding">17.7778dp</dimen>
+	<dimen name="shop_info_activity_textSize">26.6667sp</dimen>
+	<dimen name="shop_info_activity_viewpager_height">355.5556dp</dimen>
 </resources>

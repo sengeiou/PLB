@@ -42,30 +42,30 @@
 
         <service android:name="com.amap.api.location.APSService" />
 
-        <activity android:name=".activity.MainActivity" >
-        </activity>
-        <activity android:name=".activity.LoginActivity" >
+        <activity android:name=".activity.MainActivity" />
+        <activity android:name=".activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.RegActivity" >
-
-        </activity>
+        <activity android:name=".activity.RegActivity" />
         <activity android:name=".activity.GuideActivity" />
         <activity android:name=".activity.my_activity.MendianSettingActivity" />
         <activity android:name=".activity.my_activity.LingShengSettingActivity" />
         <activity android:name=".activity.my_activity.YingYeStateActivity" />
         <activity android:name=".activity.my_activity.SelectDayListviewActivity" />
         <activity android:name=".activity.my_activity.UpdateTimeActivity" />
-        <activity android:name=".activity.RegIDCardActivity" >
-            <!--<intent-filter>
+        <activity android:name=".activity.RegIDCardActivity">
+
+            <!--
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            </intent-filter>
+            -->
         </activity>
         <activity android:name=".activity.operating_activity.operating_manager" />
         <activity android:name=".activity.operating_activity.operating_evaluation" />
@@ -93,7 +93,9 @@
         <activity android:name=".activity.operating_activity.NewClassActivity" />
         <activity android:name=".activity.operating_activity.FastRefundActivity" />
         <activity android:name=".activity.operating_activity.DepositActivity" />
-        <activity android:name=".activity.operating_activity.DayMoneyActivity"></activity>
+        <activity android:name=".activity.operating_activity.DayMoneyActivity" />
+        <activity android:name=".activity.operating_activity.ShopActivity" />
+        <activity android:name=".activity.operating_activity.ExtractionActivity"></activity>
     </application>
 
 </manifest>

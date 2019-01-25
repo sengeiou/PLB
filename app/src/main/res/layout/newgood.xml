@@ -78,6 +78,7 @@
 
                     </RelativeLayout>
                     <EditText
+                        android:textSize="@dimen/activity_newGood_text_size"
                         android:layout_margin="@dimen/activity_newGood_info_item_edit_marginRight"
                         android:id="@+id/et_goodsName"
                         android:gravity="right|center_vertical"
@@ -108,6 +109,7 @@
 
                     </RelativeLayout>
                     <EditText
+                        android:textSize="@dimen/activity_newGood_text_size"
                         android:layout_margin="@dimen/activity_newGood_info_item_edit_marginRight"
                         android:id="@+id/et_info"
                         android:gravity="right|center_vertical"
@@ -150,7 +152,7 @@
                 <!--图片上传-->
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="80dp">
+                    android:layout_height="@dimen/activity_newGood_goods_image_size">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -161,18 +163,9 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="上传图片"
+                            android:text="上传商品图片"
                             android:textColor="@color/black"
                             android:textSize="@dimen/activity_newGood_text_size"
-                            android:layout_marginLeft="@dimen/activity_newGood_text_margin"
-                            />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="图片需要大于600*450像素"
-                            android:layout_marginTop="@dimen/activity_newGood_info_item_image_marginTop"
-                            android:textColor="@color/colorBottomView_nochecked"
-                            android:textSize="@dimen/activity_newGood_text2_size"
                             android:layout_marginLeft="@dimen/activity_newGood_text_margin"
                             />
                     </LinearLayout>
@@ -199,7 +192,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginTop="12dp">
+                android:layout_margin="5dp">
 
                 <!--价格-->
                 <RelativeLayout
@@ -217,6 +210,7 @@
                         android:layout_marginLeft="@dimen/activity_newGood_text_margin"/>
 
                     <EditText
+                        android:textSize="@dimen/activity_newGood_text_size"
                         android:gravity="right|center_vertical"
                         android:id="@+id/et_wholesalePrice"
                         android:layout_width="@dimen/activity_newGood_info_item_edit_height"
@@ -251,6 +245,7 @@
 
                     <EditText
                         android:gravity="right|center_vertical"
+                        android:textSize="@dimen/activity_newGood_text_size"
                         android:id="@+id/et_marketPrice"
                         android:layout_width="@dimen/activity_newGood_info_item_edit_height"
                         android:layout_height="match_parent"
@@ -283,6 +278,7 @@
                         android:layout_marginLeft="@dimen/activity_newGood_text_margin"/>
 
                     <EditText
+                        android:textSize="@dimen/activity_newGood_text_size"
                         android:gravity="right|center_vertical"
                         android:id="@+id/et_retailPrice"
                         android:layout_width="@dimen/activity_newGood_info_item_edit_height"
@@ -316,12 +312,13 @@
                         android:layout_marginLeft="@dimen/activity_newGood_text_margin"/>
 
                     <EditText
+                        android:textSize="@dimen/activity_newGood_text_size"
                         android:gravity="right|center_vertical"
                         android:id="@+id/et_brand"
                         android:layout_width="@dimen/activity_newGood_info_item_edit_height"
                         android:layout_height="match_parent"
                         android:layout_alignParentRight="true"
-                        android:hint="请填写价格"
+                        android:hint="请填写品牌"
                         android:background="@null"
                         android:maxLines="1"
                         android:singleLine="true"
@@ -349,6 +346,7 @@
                         android:layout_marginLeft="@dimen/activity_newGood_text_margin"/>
 
                     <EditText
+                        android:textSize="@dimen/activity_newGood_text_size"
                         android:inputType="number"
                         android:hint="0"
                         android:id="@+id/et_stocks"
@@ -379,6 +377,7 @@
                         android:layout_marginLeft="@dimen/activity_newGood_text_margin"/>
 
                     <EditText
+                        android:textSize="@dimen/activity_newGood_text_size"
                         android:background="@null"
                         android:id="@+id/et_minCount"
                         android:layout_width="@dimen/activity_newGood_info_item_edit_height"
@@ -390,7 +389,7 @@
                         android:gravity="right|center_vertical"
                         android:layout_margin="@dimen/activity_newGood_text_margin"
                         android:digits="0123456789"/>
-
+                    
                 </RelativeLayout>
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -410,10 +409,11 @@
                     <LinearLayout
                         android:gravity="center"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_centerVertical="true"
                         android:layout_alignParentRight="true">
                         <EditText
+                            android:textSize="@dimen/activity_newGood_text_size"
                             android:gravity="right|center_vertical"
                             android:id="@+id/et_shelfLife"
                             android:layout_width="@dimen/activity_newGood_info_item_edit_height"
@@ -426,7 +426,10 @@
                             android:maxLength="30"
                             android:layout_marginRight="@dimen/activity_newGood_info_item_edit_marginRight"
                             android:digits="0123456789."/>
-
+                        <TextView
+                            android:text="年"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
                     </LinearLayout>
 
                 </RelativeLayout>

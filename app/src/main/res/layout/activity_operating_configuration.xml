@@ -6,14 +6,14 @@
     android:orientation="vertical">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="@dimen/order_manager_toolbar"
         android:background="@color/colorHard">
         <ImageView
             android:id="@+id/img_back"
             android:layout_centerVertical="true"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_margin="5dp"
+            android:layout_width="@dimen/activity_inform_back_size"
+            android:layout_height="@dimen/activity_inform_back_size"
+            android:layout_margin="@dimen/activity_inform_back_margin"
             android:src="@drawable/back"/>
         <LinearLayout
             android:layout_centerInParent="true"
@@ -22,9 +22,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
             <android.support.design.widget.TabLayout
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                app:tabGravity="fill"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:tabGravity="center"
                 app:tabMaxWidth="0dp"
                 app:tabSelectedTextColor="@color/colorMain"
                 app:tabTextColor="#FFF"

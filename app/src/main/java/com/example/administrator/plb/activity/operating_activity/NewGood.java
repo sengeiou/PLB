@@ -121,7 +121,6 @@ public class NewGood extends AppCompatActivity implements View.OnClickListener {
     }
 
     private File file;
-    private Bitmap bitmap;
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if (requestCode == CAMERA && resultCode == RESULT_OK) {
@@ -131,14 +130,7 @@ public class NewGood extends AppCompatActivity implements View.OnClickListener {
             file = photoUntil.crop(new File(photoUntil.handleImage(data)));
         }
         if (requestCode == CROP && resultCode == RESULT_OK) {
-            InputStream in= null;
-            try {
-                in = new FileInputStream(file);
-                bitmap=BitmapFactory.decodeStream(in);
-                Glide.with(this).load(file).asBitmap().error(R.mipmap.logo).into(goodsImage);
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
+            Glide.with(this).load(file).asBitmap().error(R.mipmap.logo).into(goodsImage);
 
         }
     }
@@ -239,7 +231,11 @@ public class NewGood extends AppCompatActivity implements View.OnClickListener {
             Toast.makeText(this, "请填写保质期", Toast.LENGTH_SHORT).show();
             return;
         }
-        Toast.makeText(this, "ok", Toast.LENGTH_SHORT).show();
+
+        if(file==null){
+            Toast.makeText(this, "请添加商品图片", Toast.LENGTH_SHORT).show();
+        }
+
         StringBuffer stringBuffer = getStringBuffer();
 
 //        String json="{\n" +

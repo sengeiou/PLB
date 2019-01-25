@@ -21,7 +21,7 @@
             android:layout_centerInParent="true"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="极速退款"
+            android:text="货物自取"
             android:gravity="center"
             android:textSize="@dimen/login_toobar_textSize"
             android:textColor="@color/white"
@@ -44,7 +44,7 @@
         <TextView
             android:layout_centerVertical="true"
             android:textSize="@dimen/refund_activity_text_size"
-            android:text="极速退款"
+            android:text="货物自取"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <Switch
@@ -56,30 +56,5 @@
             android:layout_height="wrap_content" />
     </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_centerVertical="true"
-            android:textSize="@dimen/refund_activity_text_size"
-            android:text="设置时间"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <LinearLayout
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_margin="@dimen/activity_newGood_text_margin"
-                android:textSize="@dimen/refund_activity_text_size"
-                android:layout_gravity="center"
-                android:text="3分钟"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-
-
-    </RelativeLayout>
 
 </LinearLayout>
